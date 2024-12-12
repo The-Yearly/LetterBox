@@ -1,0 +1,105 @@
+#navBar{
+    position: fixed;
+    top:0px;
+    left: 0px;
+    width: 100%;
+    height: 90px;
+    background-color:rgb(10, 8, 8);
+  }
+#searchBar{
+  position: fixed;
+  border-radius: 20px;
+  top:25px;
+  left: 950px;
+  width: 590px;
+  height:45px;
+  background-color:rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(218, 202, 202, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+#search_ico{
+  position: absolute;
+  top:33px;
+  right:380px;
+}
+
+#home_ico{
+  position: absolute;
+  top: 10px;
+  left:0px;
+  
+}
+.navOptions{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 30px;
+}
+#Movies:hover{
+  border-bottom: 2px solid white;
+  border-radius: 3px;
+}
+#Movies{
+  position: absolute;
+  left:350px;
+  top:20px;
+}
+#List:hover{
+  border-bottom: 2px solid white;
+  border-radius: 3px;
+}
+#List{
+  position: absolute;
+  left:500px;
+  top:20px;
+}
+#Members:hover{
+  border-bottom: 2px solid white;
+  border-radius: 3px;
+}
+#Members{
+  position: absolute;
+  left:620px;
+  top:20px;
+}
+#Journal:hover{
+  border-bottom: 2px solid white;
+  border-radius: 3px;
+}
+#Journal{
+  position: absolute;
+  left:790px;
+  top:20px;
+}
+#profile:hover{
+  border: 3px solid white;
+  border-radius: 50%;
+
+}
+#profile{
+  position: absolute;
+  right: 10px;
+  top:20px;
+}
+.MovieCard:hover{
+  background-color: rgb(10, 8, 8);
+}
+.MovieCard{
+  width: 500px;
+  height: 180px;
+  position: relative;
+  left:1200px;
+  top:130px;
+  
+}
+.MoveImage{
+  position: absolute;
+  left:10px;
+  top:10px;
+}
+.MovieTitle{
+  position: absolute;
+  left:200px;
+  top:10px;
+
+}
