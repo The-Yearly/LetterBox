@@ -82,13 +82,15 @@
   top:20px;
 }
 .MovieCard:hover{
-  background-color: rgb(10, 8, 8);
+  background-color: rgb(22, 21, 21);
 }
 .MovieCard{
   width: 500px;
+  border: 1px solid white;
   height: 180px;
   position: relative;
   left:1200px;
+  overflow: hidden;
   top:130px;
   
 }
@@ -99,7 +101,38 @@
 }
 .MovieTitle{
   position: absolute;
+  font-family: "Abril";
+  font-size: 26px;
   left:200px;
   top:10px;
 
+}
+.MovieVeiws{
+  position: absolute;
+  top:95px;
+  left:180px;
+}
+#TopMovie{
+  position: absolute;
+  left: 70px;
+  top:150px;
+  opacity: 50%;
+  width: 1050px;
+  height: 550px;
+}
+#TopPoster{
+  position: absolute;
+  left:70px;
+  top:330px;
+  height: 370px;
+}
+#Title{
+  font-size:40px;
+  font-family: "Abril";
+  color:white;
+  font-weight: 800;
+  position: absolute;
+  top:500px;
+  left:450px;
+  
 }

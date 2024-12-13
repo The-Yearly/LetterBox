@@ -1,16 +1,9 @@
-#TopMovie{
-    position: absolute;
-    left: 70px;
-    top:150px;
-    opacity: 50%;
+.overLay:hover{
+    top:100px;
 }
-#Title{
-    font-size:40px;
-    font-family: "Abril";
-    color:white;
-    font-weight: 800;
+.overLay{
     position: absolute;
-    top:500px;
-    left:450px;
-    
+    width: 280px;
+    height: 300px;
+    background-color: grey;
 }
