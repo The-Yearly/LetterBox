@@ -1,0 +1,46 @@
+[{
+    "id":0,
+    "name":"John",
+    "username":"theyearly",
+    "movies_reviewed":430,
+    "movies_watched":550,
+    "favorites":[0,1,2,3,4],
+    "image":"https://media.licdn.com/dms/image/v2/D5603AQHBycfjLdwtaw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1730208655682?e=1740009600&v=beta&t=bXfHR-mulfYQa1TUYj1AeQLGGnXGltdHVnFvBZdlE1Q"
+
+},{
+    "id":1,
+    "name":"AbhinavD",
+    "username":"ValikavuReviews",
+    "movies_reviewed":410,
+    "movies_watched":500,
+    "favorites":[1,2,1,3,4],
+    "image":"https://media.licdn.com/dms/image/v2/D4D03AQFCJscTJICjhg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1724338346611?e=1740009600&v=beta&t=SDui0jn_6uLs_WVD2Qx1cc8sOQIuS3XJdQIbJ5EhIKc"
+},
+{
+    "id":2,
+    "name":"Parthiv",
+    "username":"ParthivM",
+    "movies_reviewed":390,
+    "movies_watched":450,
+    "favorites":[4,3,1,2,0],
+    "image":"https://media.licdn.com/dms/image/v2/D5603AQF50t-OCqrRIw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1714211573130?e=1740009600&v=beta&t=h23qAfum4pb1UUTn26WSZi0S7Hk4XllW4iTDF_RvT2Y"
+},
+{
+    "id":3,
+    "name":"Vasudev B",
+    "username":"Vaszzu",
+    "movies_reviewed":330,
+    "movies_watched":460,
+    "favorites":[0,1,3,2,4],
+    "image":"https://media.licdn.com/dms/image/v2/D5603AQEmzEQf46WTdw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1721812415334?e=1740009600&v=beta&t=k-YDEdd3FdY69EK_4i_kOhBsLtlWo-np5l1CLgvbFJM"
+},{
+    "id":4,
+    "name":"Harisankar",
+    "username":"SankaramReveiws",
+    "movies_reviewed":300,
+    "movies_watched":520,
+    "favorites":[0,1,2,3,4],
+    "image":"https://media.licdn.com/dms/image/v2/D5603AQEbbEHN_hL6Sw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1709067461897?e=1740009600&v=beta&t=5zC7Je93jzhaPFIZV6k457Wmk2gfShsfy_bf7eYrTkU"
+   
+}
+]

@@ -1,0 +1,9 @@
+p#membersHeading{
+    position: absolute;
+    left: 560px;
+    top:140px;
+    color: white;
+    font-weight: 700;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
