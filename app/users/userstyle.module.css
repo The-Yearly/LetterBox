@@ -95,12 +95,63 @@
     top:230px;
     border: 1px solid rgb(172, 171, 171);
 }
-#profileButton{
-    position: absolute;
-    font-family: 'Courier New', Courier, monospace;   
-    top:15px;
-    left: 150px;
+.highlight{
     border-bottom: 3px solid rgb(72, 165, 72);
     border-radius: 2px;
     padding-bottom: 8px;
 }
+#profileButton{
+    position: absolute;
+    font-family: 'Courier New', Courier, monospace;   
+    top:15px;
+    left: 30px;
+}
+#filmsButton{
+    position: absolute;
+    font-family: 'Courier New', Courier, monospace;   
+    top:15px;
+    left: 150px;
+}
+#reviewButton{
+    position: absolute;
+    font-family: 'Courier New', Courier, monospace;   
+    top:15px;
+    left: 260px;
+}
+#diaryButton{
+    position: absolute;
+    font-family: 'Courier New', Courier, monospace;   
+    top:15px;
+    left: 380px;
+}
+#watchlistButton{
+    position: absolute;
+    font-family: 'Courier New', Courier, monospace;   
+    top:15px;
+    left: 480px;
+}
+#listButton{
+    position: absolute;
+    font-family: 'Courier New', Courier, monospace;   
+    top:15px;
+    left: 620px;
+}
+#likeButton{
+    position: absolute;
+    font-family: 'Courier New', Courier, monospace;   
+    top:15px;
+    left: 730px;
+}
+#followingButton{
+    position: absolute;
+    font-family: 'Courier New', Courier, monospace;   
+    top:15px;
+    left: 850px;
+}
+#followersButton{
+    position: absolute;
+    font-family: 'Courier New', Courier, monospace;   
+    top:15px;
+    left: 1000px;
+}
+

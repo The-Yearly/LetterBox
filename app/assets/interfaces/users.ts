@@ -11,6 +11,7 @@ export interface Users{
     followers:number[],
     films:number[],
     liked:number[],
+    watchlist:number[],
     image:string;
     reviews:Reviews[],  
 }

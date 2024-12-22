@@ -63,15 +63,34 @@
     font-weight: 900;
 }
 .revMoviePoster{
-    padding-top: 30px;
+    position: relative;
+    top:30px;
+    padding-top: 0px;
     padding-left: 10px;
     width: 140px;
     height: 200px;
     border-radius:10px;
 }
 .movieCard{
-    padding-top: 30px;
-    width: 100px;
-    height: 100px;
-    background-color: aqua;
+    width: 700px;
+    border: 1px rgb(172, 171, 171) solid;
+    height: auto;
+    min-height: 300px;
+
+
+}
+.movieName{
+    position: relative;
+    bottom: 160px;
+    font-size:24px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    left: 230px;
+}
+.movieReview{
+    position: relative;
+    bottom: 150px;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    left: 170px;
 }
