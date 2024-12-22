@@ -294,28 +294,30 @@ p#reviewsandfilmsrated{
   font-size: 13px;
   color: white; 
 }
-.fav img{
-  width: 50px;
-  height: 80px;
-}
 .fav1{
   position: relative;
+  width: 40px;
+  height: 60px;
   left: -10px;
   
 }
 .fav2{
   position: relative;
-  left: 0px;
+  width: 40px;
+  height: 60px;
+  left: 10px;
 }
 .fav3{
   position: relative;
-  left: 10px;
+  width: 40px;
+  height: 60px;
+  left: 20px;
 }
 .fav4{
   position: relative;
-  width: 50px;
-  height: 80px;
-  left:20px;
+  width: 40px;
+  height: 60px;
+  left:30px;
 }
 .favMovies{
   position: relative;
@@ -327,5 +329,5 @@ p#reviewsandfilmsrated{
   list-style-type: none;
   display: flex;
 }
-.favMovies li{  
+.favMovies li{
   margin-right:-10px;}

@@ -1,0 +1,77 @@
+#favorites{
+    position: absolute;
+    border-top: 1px solid rgb(172, 171, 171);;
+    top:350px;
+    left: 410px;
+    width: 700px; 
+    height: 500px;
+}
+#favHeading{
+    color: white;
+    position: absolute;
+    top:-30px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+}
+#favMovies{
+    display: flex;
+}
+#favMovies li{
+    margin-left: 10px;
+}
+.MoviePoster{
+    padding-top: 30px;
+    padding-left: 10px;
+    width: 170px;
+    height: 250px;
+    border-radius:10px;
+}
+#recentHeading{
+    color: white;
+    position: absolute;
+    top:-30px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+}
+.recentActivity{
+    position: absolute;
+    border-top: 1px solid rgb(172, 171, 171);;
+    top:680px;
+    left: 410px;
+    width: 700px; 
+    height: 500px;
+}
+#recentActivityList{
+    display: flex;
+}
+#recentActivityList li{
+    margin-left: 10px;
+}
+#reviews{
+    position: absolute;
+    border-top: 1px solid rgb(172, 171, 171);;
+    top:1000px;
+    left: 410px;
+    width: 700px; 
+    height:auto;
+}
+#reviewHeading{
+    color: white;
+    position: absolute;
+    top:-30px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+}
+.revMoviePoster{
+    padding-top: 30px;
+    padding-left: 10px;
+    width: 140px;
+    height: 200px;
+    border-radius:10px;
+}
+.movieCard{
+    padding-top: 30px;
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+}

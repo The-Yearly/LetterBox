@@ -1,0 +1,106 @@
+#userCard{
+    position: absolute;
+    top:110px;
+    left: 400px;
+    width: 1000px;
+    height: 100px;
+
+}
+#profilePic{
+    position: relative;
+    top:0px;
+    left: 10px;
+    border-radius: 49%;
+    width:100px;
+    max-height: 150px;
+}
+#username{
+    position: relative;
+    left: 135px;
+    bottom:67px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;   
+}
+#moviesSeen{
+    position: absolute;
+    left: 750px;
+    top:18px;
+    border-right: 1px solid rgb(78, 78, 78);
+}
+.stats p{
+    font-family: "albia";
+}
+#moviesSeenno{
+    font-size: 22px;
+    font-weight: 700;
+    padding-right: 20px;
+}
+#moviesThisYear{
+    position: absolute;
+    left: 820px;
+    top:18px;
+    border-right: 1px solid rgb(78, 78, 78);
+}
+
+#moviesThisYearno{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+    padding-right: 40px;
+}
+#moviesList{
+    position: absolute;
+    left: 910px;
+    top:18px;
+    border-right: 1px solid rgb(78, 78, 78);;
+}
+#moviesListp{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+    padding-right: 40px;
+}
+#Followers{
+    position: absolute;
+    left: 980px;
+    top:18px;
+    padding-right: 15px;
+    border-right: 1px solid rgb(78, 78, 78);;
+}
+#Followersp{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+    padding-right: 40px;
+}
+#Following{
+    position: absolute;
+    left: 1080px;
+    top:18px;
+    padding-right: 15px;
+    border-right: 1px solid rgb(78, 78, 78);;
+}
+#Followingp{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+    padding-right: 40px;
+}
+#pageRouter{
+    position: absolute;
+    width: 1150px;
+    height: 50px;
+    left: 410px;
+    top:230px;
+    border: 1px solid rgb(172, 171, 171);
+}
+#profileButton{
+    position: absolute;
+    font-family: 'Courier New', Courier, monospace;   
+    top:15px;
+    left: 150px;
+    border-bottom: 3px solid rgb(72, 165, 72);
+    border-radius: 2px;
+    padding-bottom: 8px;
+}

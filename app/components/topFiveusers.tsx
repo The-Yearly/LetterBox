@@ -2,24 +2,10 @@ import data from "../assets/users.json"
 import styles from "./components.module.css"
 import Image from "next/image";
 import movies from "../assets/movies.json"
+import Link from "next/link";
+import {Users} from "@/app/assets/interfaces/users"
+import { Movie   } from "../assets/interfaces/movies";
 export default async function TopFiveUsers(){
-    interface Users{
-        id:number;
-        name:string;
-        username:string;
-        movies_reviewed:number;
-        movies_watched:number;
-        favorites:number[];
-        image:string;
-    }
-    interface Movie{
-        id:number;
-        name:string;
-        banner:string
-        poster:string;
-        views:number;
-        likes:number;
-      }
     const userMovie:Movie[]=movies
     const users:Users[]=data.slice(0,5)
     return(
@@ -27,7 +13,7 @@ export default async function TopFiveUsers(){
             <ul className={styles.topRow}>
             <p id={styles.featuredMembers}>Featured Members</p>
                 {users.map((user)=>
-                <li key={user.id}><div className={styles.memberBox}><Image id={styles.profileIcon} alt={user.id+"'s image"} src={user.image} width={100} height={100}/>
+                <li key={user.id}><div className={styles.memberBox}><Link href={"/users/"+user.id}><Image id={styles.profileIcon} alt={user.id+"'s image"} src={user.image} width={100} height={100}/></Link>
                 <p className={styles.memberUserName}>{user.name}</p>
                 <p id={styles.reviewsandfilmsrated}>{user.movies_watched} Films {user.movies_reviewed} Reviews</p>
                 <ul className={styles.favMovies}>

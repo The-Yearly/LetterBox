@@ -3,16 +3,9 @@ import Image from "next/image";
 import styles from "./components.module.css"
 import topThreeimage from "../assets/movies.json"
 import { useState,useEffect } from "react";
+import { Movie } from "../assets/interfaces/movies";
 export default function BigThreeImages(){
     var [count,setCount]=useState(0)
-    interface Movie{
-        id:number;
-        name:string;
-        banner:string
-        poster:string;
-        views:number;
-        likes:number;
-      }
       const topThree:Movie[]=topThreeimage.slice(0,3)
       function changeImage(){
         count+=1;

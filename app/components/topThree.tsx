@@ -1,15 +1,8 @@
 import styles from "./components.module.css"
 import Image from "next/image";
 import topThreedata from "../assets/movies.json"
+import { Movie } from "../assets/interfaces/movies";
 export default function TopThree(){
-    interface Movie{
-        id:number;
-        name:string;
-        banner:string
-        poster:string;
-        views:number;
-        likes:number;
-    }
     const topThree:Movie[]=topThreedata.slice(0,3)
     return(
         <div className={styles.TopThree}>
