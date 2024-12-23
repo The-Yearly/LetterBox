@@ -1,7 +1,7 @@
 import userdata from "@/app/assets/users.json"
 import moviedata from "@/app/assets/movies.json"
 import Image from "next/image"
-import styles from "@/app/assets/styles/profile.module.css"
+import styles from "../styles/profile.module.css"
 import { Movie } from "../../assets/interfaces/movies"
 import { Users } from "../../assets/interfaces/users"
 export default function Profile(props:any){
@@ -23,16 +23,16 @@ export default function Profile(props:any){
                     {fav.map(movie=><li key={"S"+movies[movie].id}><Image className={styles.MoviePoster} src={movies[movie].poster} alt="Movie" width={170} height={250}/></li>)}
                 </ul>
             </div>
-            <div key={"s"} id={styles.reviews}>
-                <p id={styles.reviewHeading}>Reviews</p>
-                    {reviews.map(Review=> 
-                    <div key={Review.id} className={styles.movieCard}>
-                        <Image className={styles.revMoviePoster} alt="Movie Poster" width={170} height={250} src={movies[Review.id].poster}/>
-                        <p className={styles.movieName}>{movies[Review.id].name}</p>
-                        <p className={styles.movieReview}>{Review.review}</p>
-                    </div>)}
-                    <br/>
-            </div>
+                <div key={"s"} id={styles.reviews}>
+                    <p id={styles.reviewHeading}>Reviews</p>
+                        {reviews.map(Review=> 
+                        <div key={Review.id} className={styles.movieCard}>
+                            <Image className={styles.revMoviePoster} alt="Movie Poster" width={170} height={250} src={movies[Review.id].poster}/>
+                            <p className={styles.movieName}>{movies[Review.id].name}</p>
+                            <p className={styles.movieReview}>{Review.review}</p>
+                        </div>)}
+                        <br/>
+                </div>
         </>
     )
 }

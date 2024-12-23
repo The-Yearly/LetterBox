@@ -8,6 +8,8 @@ import {useState,use} from "react"
 import UserMovies from "@/app/users/components/usermovies"
 import LikedMovies from "../components/liked"
 import WatchList from "../components/watchlist"
+import FollowersPage from "../components/followers"
+import FollowingPage from "../components/following"
 interface userid{id:number}
 export default function UserProfileI({params}:any){
     const users:Users[]=userdata
@@ -24,6 +26,10 @@ export default function UserProfileI({params}:any){
                 return <WatchList id={user.id}/>
             case 6:
                 return <LikedMovies id={user.id}/>
+            case 7:
+                return <FollowingPage id={user.id}/>
+            case 8:
+                return <FollowersPage id={user.id}/> 
             default:
                 return <Profile id={userid.id}/>
         }

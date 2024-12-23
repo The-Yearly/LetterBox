@@ -48,7 +48,7 @@
     margin-left: 10px;
 }
 #reviews{
-    position: absolute;
+    position:relative;
     border-top: 1px solid rgb(172, 171, 171);;
     top:1000px;
     left: 410px;
@@ -90,6 +90,9 @@
 .movieReview{
     position: relative;
     bottom: 150px;
+    width: 510px;
+    display: flex;
+    flex-wrap: wrap;
     font-size: 16px;
     font-family: 'Courier New', Courier, monospace;
     left: 170px;
