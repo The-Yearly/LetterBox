@@ -10,6 +10,7 @@ import LikedMovies from "../components/liked"
 import WatchList from "../components/watchlist"
 import FollowersPage from "../components/followers"
 import FollowingPage from "../components/following"
+import UserList from "../components/lists"
 interface userid{id:number}
 export default function UserProfileI({params}:any){
     const users:Users[]=userdata
@@ -22,13 +23,15 @@ export default function UserProfileI({params}:any){
                 return <Profile id={userid.id}/>
             case 2:
                 return <UserMovies id={userid.id}/>
-            case 4:
+            case 5:
                 return <WatchList id={user.id}/>
             case 6:
-                return <LikedMovies id={user.id}/>
+                return <UserList id={user.id}/>
             case 7:
-                return <FollowingPage id={user.id}/>
+                return <LikedMovies id={user.id}/>
             case 8:
+                return <FollowingPage id={user.id}/>
+            case 9:
                 return <FollowersPage id={user.id}/> 
             default:
                 return <Profile id={userid.id}/>
@@ -42,21 +45,21 @@ export default function UserProfileI({params}:any){
                 <div className={styles.stats}>
                 <div id={styles.moviesSeen}><p id={styles.moviesSeenno}>{user.movies_watched}</p><p>Films</p></div>
                 <div id={styles.moviesThisYear}><p id={styles.moviesThisYearno}>{user.movies_reviewed}</p><p>This Year</p></div>
-                <div id={styles.moviesList}><p id={styles.moviesListp}>{user.lists.length}</p><p>Lists</p></div>  
+                <div id={styles.moviesList}><p id={styles.moviesListp}>{user.list.length}</p><p>Lists</p></div>  
                 <div id={styles.Followers}><p id={styles.Followersp}>{user.followers.length}</p><p>Followers</p></div>    
                 <div id={styles.Following}><p id={styles.Followingp}>{user.following.length}</p><p>Following</p></div>    
                 </div>
             </div>
             <div id={styles.pageRouter}>
-                <button onClick={()=>{changeContent(1)}} id={styles.profileButton}>Profile</button>
-                <button onClick={()=>{changeContent(2)}} id={styles.filmsButton}>Films</button>
-                <button onClick={()=>{changeContent(3)}} id={styles.reviewButton}>Reviews</button>
-                <button onClick={()=>{changeContent(3)}} id={styles.diaryButton}>Diary</button>
-                <button onClick={()=>{changeContent(4)}} id={styles.watchlistButton}>WatchList</button>
-                <button onClick={()=>{changeContent(5)}} id={styles.listButton}>Lists</button>
-                <button onClick={()=>{changeContent(6)}} id={styles.likeButton}>Likes</button>
-                <button onClick={()=>{changeContent(7)}} id={styles.followingButton}>Following</button>
-                <button onClick={()=>{changeContent(8)}} id={styles.followersButton}>Followers</button>
+                <button onClick={()=>{changeContent(1)}} className={page==1?styles.highlight: styles.nohighlight} id={styles.profileButton}>Profile</button>
+                <button onClick={()=>{changeContent(2)}} className={page==2?styles.highlight: styles.nohighlight} id={styles.filmsButton}>Films</button>
+                <button onClick={()=>{changeContent(3)}} className={page==3?styles.highlight: styles.nohighlight} id={styles.reviewButton}>Reviews</button>
+                <button onClick={()=>{changeContent(4)}} className={page==4?styles.highlight: styles.nohighlight}id={styles.diaryButton}>Diary</button>
+                <button onClick={()=>{changeContent(5)}} className={page==5?styles.highlight: styles.nohighlight} id={styles.watchlistButton}>WatchList</button>
+                <button onClick={()=>{changeContent(6)}} className={page==6?styles.highlight: styles.nohighlight} id={styles.listButton}>Lists</button>
+                <button onClick={()=>{changeContent(7)}} className={page==7?styles.highlight: styles.nohighlight} id={styles.likeButton}>Likes</button>
+                <button onClick={()=>{changeContent(8)}} className={page==8?styles.highlight: styles.nohighlight} id={styles.followingButton}>Following</button>
+                <button onClick={()=>{changeContent(9)}} className={page==9?styles.highlight: styles.nohighlight} id={styles.followersButton}>Followers</button>
 
             </div>
                 {renderComponent()}

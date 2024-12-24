@@ -6,7 +6,6 @@ export interface Users{
     movies_reviewed:number;
     movies_watched:number;
     favorites:number[];
-    lists:number[];
     following:number[],
     followers:number[],
     films:number[],
@@ -14,4 +13,5 @@ export interface Users{
     watchlist:number[],
     image:string;
     reviews:Reviews[],  
+    list:number[],
 }

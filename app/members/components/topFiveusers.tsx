@@ -1,10 +1,10 @@
-import data from "../assets/users.json"
-import styles from "./components.module.css"
+import data from "@/app/assets/users.json"
+import styles from "../styles/top5.module.css"
 import Image from "next/image";
-import movies from "../assets/movies.json"
+import movies from "@/app/assets/movies.json"
 import Link from "next/link";
 import {Users} from "@/app/assets/interfaces/users"
-import { Movie   } from "../assets/interfaces/movies";
+import { Movie } from "@/app/assets/interfaces/movies"
 export default async function TopFiveUsers(){
     const userMovie:Movie[]=movies
     const users:Users[]=data.slice(0,5)

@@ -1,0 +1,39 @@
+#allReviews{
+    position: absolute;
+    width: 1150px; 
+    height: 800px;
+    top:300px;
+    left: 410px;
+}
+#listheading{
+    position: absolute;
+    top:30px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    width: 100%;
+    padding-left: 10px;
+    border-bottom:  1px solid rgb(172, 171, 171);;
+}
+.listCard{
+    position: relative;
+    top:50px;
+    margin-top: 40px;
+    width: 60%;
+    height: 30px;
+    padding-bottom: 160px;
+    border-bottom: 1px solid rgb(172, 171, 171);
+}
+.moviePoster{
+    position: absolute;
+    top:0px;
+    width: 90px;
+    height: 130px;
+}
+.listName{
+    position: relative;
+    top: 20px;
+    font-size:20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+    left: 200px;
+}

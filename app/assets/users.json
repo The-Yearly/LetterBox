@@ -5,29 +5,30 @@
     "movies_reviewed":430,
     "movies_watched":550,
     "favorites":[0,1,2,3],
-    "lists":[1,2,3,4,5],
     "following":[1,2,3],
     "followers":[1,2],
     "films":[0,1],
     "liked":[0,1,2,3],
     "watchlist":[5,4,6,10,8,9],
     "image":"https://media.licdn.com/dms/image/v2/D5603AQHBycfjLdwtaw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1730208655682?e=1740009600&v=beta&t=bXfHR-mulfYQa1TUYj1AeQLGGnXGltdHVnFvBZdlE1Q",
-    "reviews":[{"id":0,"stars":3,"watchdate":"27/10/2024","review":"rr","likes":4},{"id":2,"stars":3,"watchdate":"23/8/2024","review":"Francis Ford Coppola’s The Godfather (1972) is a cinematic landmark that redefined the crime genre. Adapted from Mario Puzo’s novel, it masterfully explores power, loyalty, and family through the Corleone Mafia dynasty.Marlon Brando delivers an iconic performance as Don Vito Corleone, balancing menace with humanity, while Al Pacino’s transformation as Michael Corleone—from reluctant outsider to ruthless leader—is both gripping and tragic.Coppola’s direction, Gordon Willis’s moody cinematography, and Nino Rota’s haunting score create an unforgettable experience. The script, rich in tension and sharp dialogue, elevates the story beyond a gangster saga into a profound exploration of morality and ambition.A true masterpiece, The Godfather remains an essential watch and a towering achievement in film history.","likes":2},{"id":1,"stars":2,"watchdate":"27/10/2024","review":"ssr","likes":4}]
-},{
+    "reviews":[{"id":0,"stars":3,"watchdate":"27/10/2024","review":"rr","likes":4},{"id":2,"stars":3,"watchdate":"23/8/2024","review":"Francis Ford Coppola’s The Godfather (1972) is a cinematic landmark that redefined the crime genre. Adapted from Mario Puzo’s novel, it masterfully explores power, loyalty, and family through the Corleone Mafia dynasty.Marlon Brando delivers an iconic performance as Don Vito Corleone, balancing menace with humanity, while Al Pacino’s transformation as Michael Corleone—from reluctant outsider to ruthless leader—is both gripping and tragic.Coppola’s direction, Gordon Willis’s moody cinematography, and Nino Rota’s haunting score create an unforgettable experience. The script, rich in tension and sharp dialogue, elevates the story beyond a gangster saga into a profound exploration of morality and ambition.A true masterpiece, The Godfather remains an essential watch and a towering achievement in film history.","likes":2},{"id":1,"stars":2,"watchdate":"27/10/2024","review":"ssr","likes":4}],
+    "list":[0,1,2]
+}
+,{
     "id":1,
     "name":"AbhinavD",
     "username":"ValikavuReviews",
     "movies_reviewed":410,
     "movies_watched":500,
     "favorites":[1,2,5,3],
-    "lists":[1,2,3,4,5],
     "following":[1,2,3],
     "followers":[1,2],
     "films":[0,1],
     "liked":[0,1,2,3],
     "watchlist":[5,4,6,10,8,9],
     "image":"https://media.licdn.com/dms/image/v2/D4D03AQFCJscTJICjhg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1724338346611?e=1740009600&v=beta&t=SDui0jn_6uLs_WVD2Qx1cc8sOQIuS3XJdQIbJ5EhIKc",
-    "reviews":[{"id":0,"stars":3,"watchdate":"27/10/2024","review":"rr","likes":4},{"id":2,"stars":3,"watchdate":"23/8/2024","review":"rr","likes":2},{"id":1,"stars":2,"watchdate":"27/10/2024","review":"rr","likes":4}]
+    "reviews":[{"id":0,"stars":3,"watchdate":"27/10/2024","review":"rr","likes":4},{"id":2,"stars":3,"watchdate":"23/8/2024","review":"rr","likes":2},{"id":1,"stars":2,"watchdate":"27/10/2024","review":"rr","likes":4}],
+    "list":[0,1,2]
 },
 {
     "id":2,
@@ -36,14 +37,14 @@
     "movies_reviewed":390,
     "movies_watched":450,
     "favorites":[4,3,1,2],
-    "lists":[1,2,3,4,5],
     "following":[1,2,3],
     "followers":[3,4],
     "films":[0,1,2,3,4,5,6,7,8,9,10],
     "liked":[0,1,2,3],
     "watchlist":[5,4,6,10,8,9,3,1,2],
     "image":"https://media.licdn.com/dms/image/v2/D5603AQF50t-OCqrRIw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1714211573130?e=1740009600&v=beta&t=h23qAfum4pb1UUTn26WSZi0S7Hk4XllW4iTDF_RvT2Y",
-    "reviews":[{"id":0,"stars":3,"watchdate":"27/10/2024","review":"rr","likes":4},{"id":2,"stars":3,"watchdate":"23/8/2024","review":"rr","likes":2},{"id":1,"stars":2,"watchdate":"27/10/2024","review":"rr","likes":4}]
+    "reviews":[{"id":0,"stars":3,"watchdate":"27/10/2024","review":"rr","likes":4},{"id":2,"stars":3,"watchdate":"23/8/2024","review":"rr","likes":2},{"id":1,"stars":2,"watchdate":"27/10/2024","review":"rr","likes":4}],
+    "list":[0,1,2]
 },
 {
     "id":3,
@@ -52,14 +53,14 @@
     "movies_reviewed":330,
     "movies_watched":460,
     "favorites":[0,1,3,2],
-    "lists":[1,2,3,4,5],
     "following":[1,2,3],
     "followers":[1,2],
     "films":[0,1],
     "liked":[0,1,2,3],
     "watchlist":[5,4,6,10,8,9],
     "image":"https://media.licdn.com/dms/image/v2/D5603AQEmzEQf46WTdw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1721812415334?e=1740009600&v=beta&t=k-YDEdd3FdY69EK_4i_kOhBsLtlWo-np5l1CLgvbFJM",
-    "reviews":[{"id":0,"stars":3,"watchdate":"27/10/2024","review":"rr","likes":4},{"id":2,"stars":3,"watchdate":"23/8/2024","review":"rr","likes":2},{"id":1,"stars":2,"watchdate":"27/10/2024","review":"rr","likes":4}]
+    "reviews":[{"id":0,"stars":3,"watchdate":"27/10/2024","review":"rr","likes":4},{"id":2,"stars":3,"watchdate":"23/8/2024","review":"rr","likes":2},{"id":1,"stars":2,"watchdate":"27/10/2024","review":"rr","likes":4}],
+    "list":[0,1,2]
 },
 {
     "id":4,
@@ -68,14 +69,13 @@
     "movies_reviewed":300,
     "movies_watched":520,
     "favorites":[0,1,2,3],
-    "lists":[1,2,3,4,5],
     "following":[1,2,3],
     "followers":[1,2],
     "films":[0,1],
     "liked":[0,1,2,3],
     "watchlist":[5,4,6,10,8,9],
     "image":"https://media.licdn.com/dms/image/v2/D5603AQEbbEHN_hL6Sw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1709067461897?e=1740009600&v=beta&t=5zC7Je93jzhaPFIZV6k457Wmk2gfShsfy_bf7eYrTkU",
-    "reviews":[{"id":0,"stars":3,"watchdate":"27/10/2024","review":"rr","likes":4},{"id":2,"stars":3,"watchdate":"23/8/2024","review":"rr","likes":2},{"id":1,"stars":2,"watchdate":"27/10/2024","review":"rr","likes":4}]
-   
+    "reviews":[{"id":0,"stars":3,"watchdate":"27/10/2024","review":"rr","likes":4},{"id":2,"stars":3,"watchdate":"23/8/2024","review":"rr","likes":2},{"id":1,"stars":2,"watchdate":"27/10/2024","review":"rr","likes":4}],
+    "list":[0,1,2]
 }
 ]

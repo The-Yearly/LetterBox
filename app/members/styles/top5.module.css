@@ -1,0 +1,86 @@
+.topRow{
+    position: absolute;
+    top:250px;
+    left: 25%;
+    padding: 0;
+    margin: 40px;
+    list-style-type: none;
+    display: flex;
+  }
+  .topRow li{
+    margin-right: 40px;
+  }
+  p#featuredMembers{
+    position: absolute;
+    left: -5%;
+    top:-70px;
+    color: white;   
+    font-size: 20px;
+    border-bottom: 1px gray solid;
+    width:110%;
+  }
+  p#reviewsandfilmsrated{
+    position: relative;
+    top:10px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    color: white; 
+  }
+  .fav1{
+    position: relative;
+    width: 40px;
+    height: 60px;
+    left: -10px;
+    
+  }
+  .fav2{
+    position: relative;
+    width: 40px;
+    height: 60px;
+    left: 10px;
+  }
+  .fav3{
+    position: relative;
+    width: 40px;
+    height: 60px;
+    left: 20px;
+  }
+  .fav4{
+    position: relative;
+    width: 40px;
+    height: 60px;
+    left:30px;
+  }
+  .favMovies{
+    position: relative;
+    top:-20px;
+    width: 210px;
+    left: -40px;
+    padding: 0;
+    margin: 40px;
+    list-style-type: none;
+    display: flex;
+  }
+  .favMovies li{
+    margin-right:-10px;}
+    #profileIcon{
+        border-radius: 50%;
+        width: 100%;
+        height: 100%; 
+        max-height: 165px;
+      
+      }
+      .memberBox{
+        width: 165px;
+        height: 250px;
+      
+      }
+      .memberUserName{
+        position: absolute;
+        bottom:-10px;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        position: relative;
+        text-align: center;
+      }

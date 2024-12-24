@@ -1,0 +1,28 @@
+#allMovies{
+    position: absolute;
+    width: 1150px; 
+    height: 800px;
+    top:340px;
+    left: 410px;
+}
+#all_movies{
+    position: absolute;
+    top:50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#all_movies li{
+    margin-left: 20px;
+}
+#listheading{
+    position: absolute;
+    top:130px;
+    left: 410px;
+    font-family: 'albia';
+    font-size: 30px;
+    text-align: center;
+    width: 1150px; 
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border-bottom:  1px solid rgb(172, 171, 171);;
+}

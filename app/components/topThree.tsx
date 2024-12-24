@@ -11,7 +11,9 @@ export default function TopThree(){
             <div className={styles.MovieCard}>
                 <p className={styles.MovieTitle}>{movie.name}</p>
                 <Image src={movie.poster} className={styles.MovieImage} alt="Top 3 Image" width={130} height={150}/>
-                <Image className={styles.MovieVeiws} src={"/assets/images/eye.png"} alt="Eye" width={30} height={30}/>
+                <Image className={styles.MovieVeiws} src={"/assets/images/eye.png"} alt="Eye" width={20} height={20}/>
+                <p className={styles.views}>{movie.views}</p>
+                <Image className={styles.likesIco} src={"/assets/images/likes.png"} alt="Like" width={20} height={20}/>
             </div>
             <br/>
            </li>)}
