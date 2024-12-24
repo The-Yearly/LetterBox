@@ -8,6 +8,19 @@
   top:0px;
   left: 25%;
 }
+.popularThisWeek{
+  position: absolute;
+  top:700px;
+  left: 25%;
+  padding: 0;
+  margin: 40px;
+  list-style-type: none;
+  display: flex;
+}
+.popularThisWeek li{
+  margin-right: 40px;
+}
+
 .topRow{
     position: absolute;
     top:250px;

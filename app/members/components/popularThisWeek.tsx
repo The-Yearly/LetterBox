@@ -5,14 +5,14 @@ import movies from "@/app/assets/movies.json"
 import Link from "next/link";
 import {Users} from "@/app/assets/interfaces/users"
 import { Movie } from "@/app/assets/interfaces/movies"
-export default async function TopFiveUsers(props:any){
+export default async function PopularThisWeek(props:any){
     const userMovie:Movie[]=movies
     let page=props.page
-    const users:Users[]=data.slice(0,5)
+    const users:Users[]=data.slice(5,10)
     return(
-        <div className={page=="home"?styles.a:styles.b}>
-            <ul className={styles.topRow}>
-            <p id={styles.featuredMembers}>Featured Members</p>
+        <>
+            <ul className={styles.popularThisWeek}>
+            <p id={styles.featuredMembers}>Popular This Week</p>
                 {users.map((user)=>
                 <li key={user.id}><div className={styles.memberBox}><Link href={"/users/"+user.id}><Image id={styles.profileIcon} alt={user.id+"'s image"} src={user.image} width={100} height={100}/></Link>
                 <p className={styles.memberUserName}>{user.username}</p>
@@ -25,7 +25,7 @@ export default async function TopFiveUsers(props:any){
                 </ul>
                 </div></li>)}
             </ul>
-        </div>
+        </>
     )
 
 }
