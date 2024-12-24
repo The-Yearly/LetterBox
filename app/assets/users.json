@@ -28,7 +28,7 @@
     "watchlist":[5,4,6,10,8,9],
     "image":"https://media.licdn.com/dms/image/v2/D4D03AQFCJscTJICjhg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1724338346611?e=1740009600&v=beta&t=SDui0jn_6uLs_WVD2Qx1cc8sOQIuS3XJdQIbJ5EhIKc",
     "reviews":[{"id":0,"stars":3,"watchdate":"27/10/2024","review":"rr","likes":4},{"id":2,"stars":3,"watchdate":"23/8/2024","review":"rr","likes":2},{"id":1,"stars":2,"watchdate":"27/10/2024","review":"rr","likes":4}],
-    "list":[0,1,2]
+    "list":[3]
 },
 {
     "id":2,
@@ -44,7 +44,7 @@
     "watchlist":[5,4,6,10,8,9,3,1,2],
     "image":"https://media.licdn.com/dms/image/v2/D5603AQF50t-OCqrRIw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1714211573130?e=1740009600&v=beta&t=h23qAfum4pb1UUTn26WSZi0S7Hk4XllW4iTDF_RvT2Y",
     "reviews":[{"id":0,"stars":3,"watchdate":"27/10/2024","review":"rr","likes":4},{"id":2,"stars":3,"watchdate":"23/8/2024","review":"rr","likes":2},{"id":1,"stars":2,"watchdate":"27/10/2024","review":"rr","likes":4}],
-    "list":[0,1,2]
+    "list":[4,7]
 },
 {
     "id":3,
@@ -60,7 +60,7 @@
     "watchlist":[5,4,6,10,8,9],
     "image":"https://media.licdn.com/dms/image/v2/D5603AQEmzEQf46WTdw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1721812415334?e=1740009600&v=beta&t=k-YDEdd3FdY69EK_4i_kOhBsLtlWo-np5l1CLgvbFJM",
     "reviews":[{"id":0,"stars":3,"watchdate":"27/10/2024","review":"rr","likes":4},{"id":2,"stars":3,"watchdate":"23/8/2024","review":"rr","likes":2},{"id":1,"stars":2,"watchdate":"27/10/2024","review":"rr","likes":4}],
-    "list":[0,1,2]
+    "list":[5,8]
 },
 {
     "id":4,
@@ -76,6 +76,6 @@
     "watchlist":[5,4,6,10,8,9],
     "image":"https://media.licdn.com/dms/image/v2/D5603AQEbbEHN_hL6Sw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1709067461897?e=1740009600&v=beta&t=5zC7Je93jzhaPFIZV6k457Wmk2gfShsfy_bf7eYrTkU",
     "reviews":[{"id":0,"stars":3,"watchdate":"27/10/2024","review":"rr","likes":4},{"id":2,"stars":3,"watchdate":"23/8/2024","review":"rr","likes":2},{"id":1,"stars":2,"watchdate":"27/10/2024","review":"rr","likes":4}],
-    "list":[0,1,2]
+    "list":[6]
 }
 ]

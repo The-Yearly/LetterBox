@@ -8,8 +8,8 @@ export default function NavBar(){
     return(
         <div id={styles.navBar}>
             <Link href={"/"}><Image id={styles.home_ico} src={"/assets/images/icon.png"} alt="Home" width={300} height={300}/></Link>
-            <p className={styles.navOptions} id={styles.Movies}>Movies</p>
-            <p className={styles.navOptions} id={styles.List}>Lists</p>
+            <Link href={"/movies"}><p className={styles.navOptions} id={styles.Movies}>Movies</p></Link>
+            <Link href={"/lists"}><p className={styles.navOptions} id={styles.List}>Lists</p></Link>
             <Link href={"/members"}><p className={styles.navOptions} id={styles.Members}>Members</p></Link>
             <p className={styles.navOptions} id={styles.Journal}>Journals</p>
             <input type="text" name="searchBar" id={styles.searchBar}/>

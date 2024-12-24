@@ -1,3 +1,13 @@
+.a{
+  position: absolute;
+  top:1020px;
+  left: 25%;
+}
+.b{
+  position: absolute;
+  top:0px;
+  left: 25%;
+}
 .topRow{
     position: absolute;
     top:250px;

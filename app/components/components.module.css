@@ -126,6 +126,14 @@
   left: 210px;
   top:130px;
 }
+.MovieLikes{
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  position: absolute;
+  left: 310px;
+  top:130px;
+}
 #TopMovie{
   position: absolute;
   left: 70px;

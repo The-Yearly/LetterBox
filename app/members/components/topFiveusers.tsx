@@ -5,11 +5,12 @@ import movies from "@/app/assets/movies.json"
 import Link from "next/link";
 import {Users} from "@/app/assets/interfaces/users"
 import { Movie } from "@/app/assets/interfaces/movies"
-export default async function TopFiveUsers(){
+export default async function TopFiveUsers(props:any){
     const userMovie:Movie[]=movies
+    let page=props.page
     const users:Users[]=data.slice(0,5)
     return(
-        <>
+        <div className={page=="home"?styles.a:styles.b}>
             <ul className={styles.topRow}>
             <p id={styles.featuredMembers}>Featured Members</p>
                 {users.map((user)=>
@@ -24,7 +25,7 @@ export default async function TopFiveUsers(){
                 </ul>
                 </div></li>)}
             </ul>
-        </>
+        </div>
     )
 
 }

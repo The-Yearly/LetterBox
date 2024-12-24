@@ -1,4 +1,4 @@
-import styles from "../lists.module.css"
+import styles from "../styles/lists.module.css"
 import { Lists } from "@/app/assets/interfaces/lists"
 import { Movie } from "@/app/assets/interfaces/movies"
 import { Users } from "@/app/assets/interfaces/users"

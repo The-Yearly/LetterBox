@@ -22,7 +22,7 @@ export default function UserList(props:any){
                     {userLists.map(index=>
                     <div key={index} className={styles.listCard}>
                         <Image src={movies[ulists[index].films[0]].poster} className={styles.moviePoster} alt="Poster" width={100} height={100}/>
-                        <Link href={"/list/"+index} className={styles.listName}>{ulists[index].title}</Link>
+                        <Link href={"/lists/"+index} className={styles.listName}>{ulists[index].title}</Link>
                     </div>)}
                  </ul>
             </div>

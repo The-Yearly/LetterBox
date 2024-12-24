@@ -1,0 +1,92 @@
+.a{
+    position: absolute;
+    top:1450px;
+    left: 0%;
+  }
+  .b{
+    position: absolute;
+    top:0px;
+    left: 0%;
+  }
+.topRow{
+    position: absolute;
+    top:250px;
+    left: 25%;
+    padding: 0;
+    margin: 40px;
+    list-style-type: none;
+    display: flex;
+}
+.topRow li{
+    margin-right: 25px;
+}
+
+p#topLists{
+    position: absolute;
+    left:25%;
+    top:-70px;
+    color: white;  
+    text-align: center; 
+    font-size: 20px;
+    border-bottom: 1px gray solid;
+    width:80%;
+}
+.Poster{
+    width: 150px;
+    height:250px; 
+    border: 1px solid rgb(58, 58, 58);
+
+}
+.memberBox{
+    position: relative;
+    left:200px;
+    width: 470px;
+    height: 380px;
+}
+
+#m1{
+    position: relative;
+    top:0px;
+    left: 0px;
+    z-index: 5;
+}
+#m2{
+    position: relative;
+    top:-250px;
+    left:80px;
+    z-index: 4;
+}
+#m3{
+    position: relative;
+    top:-500px;
+    left:160px;
+    z-index: 3;
+    
+}
+#m4{
+    position: relative;
+    top:-750px;
+    left:240px;
+    z-index: 2;
+}
+#m5{
+    position: relative;
+    top:-1000px;
+    left:320px;
+    z-index: 1;
+}
+#listTitle{
+    position: relative;
+    top:-980px;
+    width: 100%;
+    height: 100px;
+}
+#listTitle p{
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-family: "Albia";
+    flex-wrap: wrap;
+    font-weight: 800;
+}

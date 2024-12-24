@@ -5,6 +5,6 @@ export default function Members(){
     return(
     <>
         <p id={styles.membersHeading}>Film lovers, critics and friends — find popular members.</p>
-        <TopFiveUsers/>
+        <TopFiveUsers page={"members"}/>
     </>)
 }
