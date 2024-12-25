@@ -1,10 +1,13 @@
+;'use client'
 import usersdata from "@/app/assets/users.json"
 import { Users } from "@/app/assets/interfaces/users"
 import styles from "../styles/members.module.css"
 import Image from "next/image"
 import Link from "next/link"
+import { useState } from "react"
 export default function AllMembers(){
-    const users:Users[]=usersdata
+    const [size,changeSize]=useState(0)
+    const users:Users[]=usersdata.slice(size,size+5)
     return(
         <>
             <ul id={styles.membersList}>
@@ -19,6 +22,10 @@ export default function AllMembers(){
                     </div>
                 </li>)}
             </ul>
+            <div id={styles.pageController}>
+                <button id={styles.nextButton} className={size!=5?styles.show:styles.hide} onClick={()=>changeSize(size+5)}>Next</button>
+                <button id={styles.prevButton} className={size==0?styles.hide:styles.show} onClick={()=>changeSize(size-5)}>Previous</button>
+            </div>
         </>
     )
 }

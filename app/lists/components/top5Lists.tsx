@@ -16,8 +16,8 @@ export default function TopFiveLists(props:any){
             <ul className={styles.topRow}>
                 <p id={styles.topLists}>Top Lists</p>
                 {lists.map((list)=>
-                <Link href={"lists/"+list.id}>
-                    <li key={list.id}><div className={styles.memberBox}>
+                <Link key={list.id} href={"lists/"+list.id}>
+                    <li><div className={styles.memberBox}>
                         <Image className={styles.Poster} id={styles.m1} alt={list.id+"'s Cover"} src={movies[list.films[0]]?movies[list.films[0]].poster:grey} width={100} height={100}/>
                         <Image className={styles.Poster} id={styles.m2} alt={list.id+"'s Cover"} src={movies[list.films[1]]?movies[list.films[1]].poster:grey} width={100} height={100}/>
                         <Image className={styles.Poster} id={styles.m3} alt={list.id+"'s Cover"} src={movies[list.films[2]]?movies[list.films[2]].poster:grey} width={100} height={100}/>
