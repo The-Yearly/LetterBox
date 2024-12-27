@@ -1,0 +1,45 @@
+#bannerImage{
+    width: 1000px;
+    height: 500px;
+    position: absolute;
+    top:100px;
+    left: 450px;
+    opacity: 60%;
+    border-radius: 40px;
+}
+#moviePoster{
+    position: absolute;
+    top:540px;
+    border-radius: 10px;
+    left: 480px;
+    width: 220px;
+    border: 1px solid rgb(131, 131, 131);
+}
+
+#movieTitle{
+    position: absolute;
+    top:610px;
+    left: 740px;
+    font-size: 30px;
+    width: 500px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    display: flex;
+    flex-wrap: wrap;
+}
+#movieHook{
+    position: relative;
+    top:680px;
+    left: 740px;
+    font-family: 'Courier New', Courier, monospace;
+    width: 500px;
+    font-size: 20px;
+}
+#movieBio{
+    position: relative;
+    top:690px;
+    font-size: 14px;
+    width: 500px;
+    left: 740px;
+    font-family: 'Courier New', Courier, monospace;
+}

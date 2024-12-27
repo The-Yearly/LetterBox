@@ -11,6 +11,7 @@ import WatchList from "../components/watchlist"
 import FollowersPage from "../components/followers"
 import FollowingPage from "../components/following"
 import UserList from "../components/lists"
+import ReviewsPage from "../components/reviews"
 interface userid{id:number}
 export default function UserProfileI({params}:any){
     const users:Users[]=userdata
@@ -20,9 +21,11 @@ export default function UserProfileI({params}:any){
     function renderComponent(){
         switch(page){
             case 1:
-                return <Profile id={userid.id}/>
+                return <Profile id={user.id}/>
             case 2:
-                return <UserMovies id={userid.id}/>
+                return <UserMovies id={user.id}/>
+            case 3:
+                return <ReviewsPage id={user.id} page="reviews" no="3"/>
             case 5:
                 return <WatchList id={user.id}/>
             case 6:

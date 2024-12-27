@@ -5,7 +5,18 @@
         "poster":"https://m.media-amazon.com/images/M/MV5BMTNhMDJmNmYtNDQ5OS00ODdlLWE0ZDAtZTgyYTIwNDY3OTU3XkEyXkFqcGc@._V1_.jpg",
         "banner":"https://pyxis.nymag.com/v1/imgs/4d1/dcf/a33209cb40d7dbd980ba6cdceddc56b0f6-got-poster-s8-2.rsocial.w1200.jpg",
         "views":10000,
-        "likes":3000
+        "likes":3000,
+        "cast":[
+            "Sean Bean", "Michelle Fairley", "Kit Harington", "Sophie Turner",
+            "Maisie Williams", "Isaac Hempstead Wright", "Richard Madden",
+            "Art Parkinson", "Peter Dinklage", "Lena Headey", "Nikolaj Coster-Waldau",
+            "Charles Dance", "Emilia Clarke", "Iain Glen", "Mark Addy",
+            "Stephen Dillane", "Kerry Ingram", "Gethin Anthony"
+        ],
+        "bio":{
+            "title": "Winter Is Coming: The Battle for the Iron Throne",
+            "description": "A land torn by war, betrayal, and power struggles—where only the strongest survive and the ruthless reign supreme."
+          }
         },
         {
             "id":1,
@@ -13,7 +24,18 @@
             "poster":"https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11491197_p_v8_as.jpg",
             "banner":"https://aambar.wordpress.com/wp-content/uploads/2015/12/steve-jobs-movie-poster-header.png",
             "views":9999,
-            "likes":40000
+            "likes":40000,
+            "cast":[
+                "Sean Bean", "Michelle Fairley", "Kit Harington", "Sophie Turner",
+                "Maisie Williams", "Isaac Hempstead Wright", "Richard Madden",
+                "Art Parkinson", "Peter Dinklage", "Lena Headey", "Nikolaj Coster-Waldau",
+                "Charles Dance", "Emilia Clarke", "Iain Glen", "Mark Addy",
+                "Stephen Dillane", "Kerry Ingram", "Gethin Anthony"
+            ],
+            "bio":{
+                "title": "Winter Is Coming: The Battle for the Iron Throne",
+                "description": "A land torn by war, betrayal, and power struggles—where only the strongest survive and the ruthless reign supreme."
+              }
         },
         {   
             "id":2,
@@ -21,7 +43,23 @@
             "poster":"https://m.media-amazon.com/images/M/MV5BYTJkNGQyZDgtZDQ0NC00MDM0LWEzZWQtYzUzZDEwMDljZWNjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
             "banner":"https://communist.red/wp-content/uploads/2022/08/godfather.png",
             "views":8888,
-            "likes":3333
+            "likes":3333,
+            "cast":[
+                "Marlon Brando", 
+                "Al Pacino", 
+                "James Caan", 
+                "Robert Duvall", 
+                "Diane Keaton", 
+                "Talia Shire", 
+                "John Cazale", 
+                "Sterling Hayden", 
+                "Richard Conte", 
+                "Abe Vigoda"
+            ],
+            "bio":{
+                "title": "The Godfather: A Legacy of Power and Betrayal",
+                "description": "A masterful tale of family, crime, and loyalty, where the Corleone family navigates a dangerous world of organized crime, revenge, and moral dilemmas—shaping the fate of a dynasty in the process."
+            }  
         },
         {   
             "id":3,
@@ -29,7 +67,24 @@
             "poster":"https://resizing.flixster.com/xVd9PLVkH69dU3Yo9XLSjdMeu1M=/206x305/v2/https://resizing.flixster.com/_l50Ahm00b-RO9Ao2s3AyMjUWiU=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2ExYTZmMWFkLWViZWItNDNhMS1iZTEwLTcxODk1YTk3NWFhMy53ZWJw",
             "banner":"https://media.aintitcool.com/media/uploads/2018/big_eyes/spider-verse-banner-review.jpg",
             "views":8888,
-            "likes":3333
+            "likes":3333,
+            "cast":[
+                "Shameik Moore", 
+                "Jake Johnson", 
+                "Hailee Steinfeld", 
+                "Mahershala Ali", 
+                "Brian Tyree Henry", 
+                "Lily Tomlin", 
+                "Lauren Vélez", 
+                "John Mulaney", 
+                "Kimiko Glenn", 
+                "Nicolas Cage", 
+                "Liev Schreiber"
+            ],
+            "bio":{
+                "title": "Into the Spider-Verse: A Multiverse of Heroes",
+                "description": "A groundbreaking animated adventure where multiple versions of Spider-Man from alternate realities come together to face an unprecedented threat, redefining the boundaries of heroism and identity."
+              }
         },
         {
             "id":4,
@@ -37,7 +92,21 @@
             "poster":"https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p193428_p_v8_bb.jpg",
             "banner":"https://miro.medium.com/v2/format:webp/1*Soa8CUMJCRsgAA36RPnHNQ@2x.jpeg",
             "views":8888,
-            "likes":3333
+            "likes":3333,
+            "cast": [
+                "Joseph Gordon-Levitt", 
+                "Zooey Deschanel", 
+                "Geoffrey Arend", 
+                "Chloë Grace Moretz", 
+                "Matthew Gray Gubler", 
+                "Clark Gregg", 
+                "Patricia Belcher", 
+                "Rachel Boston"
+            ],
+            "bio":{
+                "title": "500 Days of Summer: Love, Loss, and Reality",
+                "description": "A nonlinear exploration of love, heartbreak, and self-discovery, as one man reflects on his relationship with a woman who doesn’t believe in true love, challenging expectations and emotions along the way."
+              }              
         },
         {
             "id":5,
@@ -45,7 +114,23 @@
             "poster":"https://images-cdn.ubuy.co.in/635f6aafd6e4121a81607274-posters-usa-now-you-see-me-movie.jpg",
             "banner":"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisqVH5M5JZnrDmoq-8DnkIL8B7kWpGVObh87OucxobjjHGe5DO3UYkOvoQY5P2I-TbUQNG74p1H870z8fn8rT9J03i8z15QTi0OgcEzZviX-6jWELHX9AnFo3znS3R7H3ysa6rniFK69c/s640/now-you-see-me-wallpaper-7films.jpg",
             "views":1334,
-            "likes":1230
+            "likes":1230,
+            "cast":[
+                "Jesse Eisenberg", 
+                "Mark Ruffalo", 
+                "Woody Harrelson", 
+                "Isla Fisher", 
+                "Dave Franco", 
+                "Mélanie Laurent", 
+                "Morgan Freeman", 
+                "Michael Caine", 
+                "Common"
+            ],
+            "bio":{
+                "title": "Now You See Me: Masters of Illusion and Deception",
+                "description": "A thrilling heist film where a group of talented illusionists pull off daring bank robberies during their live performances, leaving law enforcement and audiences alike questioning what's real and what's trickery."
+              }
+              
         },
         {
             "id":6,
@@ -53,8 +138,24 @@
             "poster":"https://image.tmdb.org/t/p/original/n0ybibhJtQ5icDqTp8eRytcIHJx.jpg",
             "banner":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIS8khrfNkPOudNQkxVlULk8MPfKsyMouvKA&s",
             "views":1124,
-            "likes":1130
-
+            "likes":1130,
+            "cast":[
+                "Jesse Eisenberg", 
+                "Andrew Garfield", 
+                "Justin Timberlake", 
+                "Rooney Mara", 
+                "Armie Hammer", 
+                "Josh Pence", 
+                "Brenda Song", 
+                "Dakota Johnson", 
+                "David Selby", 
+                "John Getz"
+            ],
+            "bio":{
+                "title": "The Social Network: The Birth of Facebook and the Cost of Ambition",
+                "description": "A compelling drama that chronicles the rise of Facebook and the tumultuous journey of its creator, Mark Zuckerberg, revealing the personal and legal battles that shaped the world’s most influential social media platform."
+              }
+              
         },
         {
             "id":7,
@@ -62,8 +163,23 @@
             "poster":"https://lumiere-a.akamaihd.net/v1/images/image_a39a0e25.jpeg?region=0%2C0%2C800%2C1200",
             "banner":"https://media.licdn.com/dms/image/v2/D4D12AQGrkXO6EQt7gg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1664723998086?e=1740614400&v=beta&t=qgX_oCKHobkuVy8RQu_fdkHkyXgztBL_g-ymRA0tWw8",
             "views":1024,
-            "likes":1000
-
+            "likes":1000,
+            "cast":[
+                "Matt Damon", 
+                "Christian Bale", 
+                "Jon Bernthal", 
+                "Caitriona Balfe", 
+                "Noah Jupe", 
+                "Tracy Letts", 
+                "Josh Lucas", 
+                "Ray McKinnon", 
+                "Bob McCabe", 
+                "Remo Girone"
+            ],
+            "bio":{
+                "title": "Ford v Ferrari: The Battle for Speed and Glory",
+                "description": "A high-octane drama about the fierce rivalry between Ford and Ferrari, as an unlikely partnership between a maverick American car designer and a British driver aims to dethrone Ferrari at the 24 Hours of Le Mans race, defying all odds."
+              }              
         },        
         {
             "id":8,
@@ -71,8 +187,23 @@
             "poster":"https://resizing.flixster.com/ArU-IMVHwwAnVBm05Sv8a0UmSrs=/206x305/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10771057_p_v13_as.jpg",
             "banner":"https://images.squarespace-cdn.com/content/v1/5db9d91c380e6346d8a028ee/00e75f3d-34ed-4051-9ef6-b87ccad301ed/Untitled+design+%287%29.png?format=2500w",
             "views":1424,
-            "likes":1200
-
+            "likes":1200,
+            "cast":[
+                "Benedict Cumberbatch", 
+                "Keira Knightley", 
+                "Matthew Goode", 
+                "Rory Kinnear", 
+                "Charles Dance", 
+                "Mark Strong", 
+                "Allen Leech", 
+                "Matthew Beard", 
+                "Tom Holmes", 
+                "Matthew McFadden"
+            ],
+            "bio":{
+                "title": "The Imitation Game: Breaking Codes, Changing History",
+                "description": "A gripping biographical drama that tells the story of Alan Turing, the brilliant mathematician who cracked the Enigma code during World War II, while facing personal and societal challenges that would define his legacy."
+              }              
         },
         {
             "id":9,
@@ -80,8 +211,23 @@
             "poster":"https://m.media-amazon.com/images/S/pv-target-images/5a697e3a0b26f8130c24252f54ded2858a482c841d64307f50095e553b8ad07b.jpg",
             "banner":"https://mir-s3-cdn-cf.behance.net/project_modules/1400/887f8f69054287.5b730a1885355.jpg",
             "views":1800,
-            "likes":1500
-
+            "likes":1500,
+            "cast":[
+                "Peter Weller", 
+                "Nancy Allen", 
+                "Dan O'Herlihy", 
+                "Ronny Cox", 
+                "Kurtwood Smith", 
+                "Miguel Ferrer", 
+                "Felton Perry", 
+                "Ray Wise", 
+                "Paul McCrane", 
+                "Ronnie Claire Edwards"
+            ],
+            "bio":{
+                "title": "RoboCop: Justice in a Dystopian Future",
+                "description": "Set in a crime-ridden Detroit, a critically wounded cop is transformed into RoboCop, a powerful cyborg enforcer. As he battles crime and corruption, he struggles to retain his humanity in a world where technology and corporate greed dominate."
+              }              
         },
         {
             "id":10,
@@ -89,9 +235,22 @@
             "poster":"https://images-na.ssl-images-amazon.com/images/I/51pDDDB9uCL._SX300_SY300_QL70_FMwebp_.jpg",
             "banner":"https://images.squarespace-cdn.com/content/v1/6117360e2f0be106838fc4e6/dc7ce957-8501-4da4-b3fa-2d1151ff38aa/Pulp-Fiction.jpg?format=2500w",
             "views":1900,
-            "likes":1800
-
+            "likes":1800,
+            "cast":[
+                "John Travolta", 
+                "Uma Thurman", 
+                "Samuel L. Jackson", 
+                "Bruce Willis", 
+                "Ving Rhames", 
+                "Harvey Keitel", 
+                "Tim Roth", 
+                "Amanda Plummer", 
+                "Maria de Medeiros", 
+                "Christopher Walken"
+            ],
+            "bio":{
+                "title": "Pulp Fiction: A Tangle of Crime, Fate, and Redemption",
+                "description": "A genre-defying tale of intersecting lives and twisted stories in the criminal underworld, *Pulp Fiction* weaves together dark humor, unforgettable characters, and nonlinear storytelling to create a cinematic masterpiece."
+              }              
         }
-
-        
     ]

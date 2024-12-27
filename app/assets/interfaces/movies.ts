@@ -1,3 +1,4 @@
+import { Bio } from "./bio";
 export interface Movie{
     id:number;
     name:string;
@@ -5,4 +6,6 @@ export interface Movie{
     poster:string;
     views:number;
     likes:number;
+    cast:string[];  
+    bio:Bio;
   }

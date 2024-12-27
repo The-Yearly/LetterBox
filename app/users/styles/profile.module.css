@@ -47,11 +47,18 @@
 #recentActivityList li{
     margin-left: 10px;
 }
-#reviews{
+.userPage{
     position:relative;
-    border-top: 1px solid rgb(172, 171, 171);;
     top:1000px;
     left: 410px;
+}
+.reviewsPage{
+    position:relative;
+    top:350px;
+    left: 410px;
+}
+#reviews{
+    border-top: 1px solid rgb(172, 171, 171);;
     width: 700px; 
     height:auto;
 }
