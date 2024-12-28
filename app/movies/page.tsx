@@ -1,9 +1,10 @@
 import TopFiveMovies from "./components/top5Movies";
-import styles from "./styles/movies.module.css"
-export default function Movies(){
+import AllMovies from "./components/movies";
+export default function Movies(){   
     return(
-    <>
+    <>  
         <TopFiveMovies/>
+        <AllMovies/>
     </>
     )
 }

@@ -1,0 +1,30 @@
+#allMovies{
+    position:relative;
+    width: 1120px; 
+    height: 800px;
+    top:570px;
+    left: 480px;
+}
+#all_movies{
+    position: absolute;
+    top:50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#all_movies li{
+    margin-left: 20px;
+    padding-top: 30px;
+}
+.moviePoster{
+    width: 143px;
+    height: 210px;
+}
+#filmsheading{
+    position: absolute;
+    top:20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    width: 100%;
+    padding-left: 10px;
+    border-bottom:  1px solid rgb(172, 171, 171);;
+}

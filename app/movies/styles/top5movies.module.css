@@ -5,7 +5,7 @@
   }
 .b{
     position: absolute;
-    top:50px;
+    top:-50px;
     left: 25%;
   }
 .topRow{
@@ -48,4 +48,25 @@ p#topMovies{
     width: 165px;
     height: 260px;
 
+}
+#eyeIco{
+    position: relative;
+    top:21px;
+}
+#viewCount{
+    position: relative;
+    font-size: 12px;
+    top:3px;
+    left:30px;
+}
+#likeIco{
+    position: relative;
+    top:-20px;
+    left:100px;
+}
+#likeCount{
+    position: relative;
+    font-size: 12px;
+    top:-37px;
+    left: 125px;
 }
