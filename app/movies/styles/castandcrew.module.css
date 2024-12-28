@@ -1,0 +1,22 @@
+.nameCard{
+    display: inline-block;
+    flex-wrap: wrap;
+    height: 30px;
+    background-color: rgb(71, 71, 71);
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    color: white;
+}
+#displayArea{
+    position: absolute;
+    top:870px;
+    left: 740px;
+    width: 530px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+.crewDets{
+    position: relative;
+    font-family: "Albia";
+}

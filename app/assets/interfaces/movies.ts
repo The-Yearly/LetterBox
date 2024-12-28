@@ -1,4 +1,6 @@
 import { Bio } from "./bio";
+import { Crew } from "./crew";
+import { MovieDetails } from "./moviedetails";
 export interface Movie{
     id:number;
     name:string;
@@ -8,4 +10,7 @@ export interface Movie{
     likes:number;
     cast:string[];  
     bio:Bio;
+    crew:Crew;
+    details:MovieDetails;
+    genres:string[]|null
   }

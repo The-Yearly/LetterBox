@@ -1,4 +1,3 @@
-import { Reviews } from "./reviews";
 export interface Users{
     id:number;
     name:string;
@@ -12,6 +11,6 @@ export interface Users{
     liked:number[],
     watchlist:number[],
     image:string;
-    reviews:Reviews[],  
+    reviews:number[],
     list:number[],
 }

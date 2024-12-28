@@ -46,11 +46,11 @@ export default function UserProfileI({params}:any){
                 <Image id={styles.profilePic} src={user.image} alt="Profile Pic" height={400} width={300}/>
                 <p id={styles.username}>{user.username}</p>
                 <div className={styles.stats}>
-                <div id={styles.moviesSeen}><p id={styles.moviesSeenno}>{user.movies_watched}</p><p>Films</p></div>
-                <div id={styles.moviesThisYear}><p id={styles.moviesThisYearno}>{user.movies_reviewed}</p><p>This Year</p></div>
-                <div id={styles.moviesList}><p id={styles.moviesListp}>{user.list.length}</p><p>Lists</p></div>  
-                <div id={styles.Followers}><p id={styles.Followersp}>{user.followers.length}</p><p>Followers</p></div>    
-                <div id={styles.Following}><p id={styles.Followingp}>{user.following.length}</p><p>Following</p></div>    
+                <div id={styles.moviesSeen}><p id={styles.moviesSeenno}>{user.movies_watched}</p><button onClick={()=>{changeContent(2)}}>Films</button></div>
+                <div id={styles.moviesThisYear}><p id={styles.moviesThisYearno}>{user.movies_reviewed}</p><button onClick={()=>{changeContent(2)}}>This Year</button></div>
+                <div id={styles.moviesList}><p id={styles.moviesListp}>{user.list.length}</p><button onClick={()=>changeContent(6)}>Lists</button></div>  
+                <div id={styles.Followers}><p id={styles.Followersp}>{user.followers.length}</p><button onClick={()=>changeContent(9)}>Followers</button></div>    
+                <div id={styles.Following}><p id={styles.Followingp}>{user.following.length}</p><button onClick={()=>changeContent(8)}>Following</button></div>    
                 </div>
             </div>
             <div id={styles.pageRouter}>

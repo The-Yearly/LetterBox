@@ -43,3 +43,42 @@
     left: 740px;
     font-family: 'Courier New', Courier, monospace;
 }
+#pageRouter{
+    position: relative;
+    top:740px;
+    left: 735px;
+    width: 500px;
+    border-bottom: 1px solid rgb(131, 131, 131);
+}
+#movieCastTitle{
+    position: absolute;
+    left: 20px;
+    top:-30px;
+    width: 30px;
+}
+#movieCrewTitle{
+    position: absolute;
+    top:-30px;
+    left: 100px;
+    width: 40px;
+}
+#movieDetailsTitle{
+    position: absolute;
+    top:-30px;
+    left: 180px;
+    width: 40px;
+}
+#movieReviewsTitle{
+    position: absolute;
+    top:-30px;
+    left: 260px;
+    width: 40px;
+}
+.highlight{
+    border-bottom: 3px solid rgb(72, 165, 72);
+    border-radius: 2px;
+    padding-bottom: 7px;
+}
+.nohighlight{
+    border: 0px;
+}

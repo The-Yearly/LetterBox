@@ -16,7 +16,24 @@
         "bio":{
             "title": "Winter Is Coming: The Battle for the Iron Throne",
             "description": "A land torn by war, betrayal, and power struggles—where only the strongest survive and the ruthless reign supreme."
-          }
+          },
+        "crew": {
+            "directors": ["Alan Taylor", "David Nutter", "Miguel Sapochnik", "Mark Mylod"],
+            "writers": ["David Benioff", "D.B. Weiss", "Bryan Cogman", "George R.R. Martin"],
+            "producers": ["David Benioff", "D.B. Weiss", "Carolyn Strauss", "Frank Doelger"],
+            "cinematographers": ["Fabian Wagner", "Jonathan Freeman"],
+            "editors": ["Katie Weiland", "Tim Porter", "Crispin Green"],
+            "music_composers": ["Ramin Djawadi"],
+            "production_designers": ["Gemma Jackson", "Deborah Riley"]
+            },
+            "details": {
+                "studios": ["HBO"],
+                "country": ["United States"],
+                "primlanguage": ["English"],
+                "spokenlanguages": ["English", "Dothraki", "High Valyrian"],
+                "alternativetitles": ["Game of Thrones"]
+              },
+            "genres": ["Drama", "Fantasy", "Adventure"]
         },
         {
             "id":1,
@@ -35,7 +52,24 @@
             "bio":{
                 "title": "Winter Is Coming: The Battle for the Iron Throne",
                 "description": "A land torn by war, betrayal, and power struggles—where only the strongest survive and the ruthless reign supreme."
-              }
+              },
+              "crew": {
+                "directors": ["Danny Boyle"],
+                "writers": ["Aaron Sorkin"],
+                "producers": ["Mark Gordon", "Guymon Casady", "Christian Colson", "Scott Rudin"],
+                "cinematographers": ["Alwin H. Küchler"],
+                "editors": ["Elliot Graham"],
+                "music_composers": ["Daniel Pemberton"],
+                "production_designers": ["Guy Hendrix Dyas"]
+              },
+              "details": {
+                "studios": ["Universal Pictures"],
+                "country": ["United States", "United Kingdom"],
+                "primlanguage": ["English"],
+                "spokenlanguages": ["English"],
+                "alternativetitles": ["Steve Jobs"]
+              },
+              "genres": ["Biography", "Drama"]
         },
         {   
             "id":2,
@@ -59,7 +93,24 @@
             "bio":{
                 "title": "The Godfather: A Legacy of Power and Betrayal",
                 "description": "A masterful tale of family, crime, and loyalty, where the Corleone family navigates a dangerous world of organized crime, revenge, and moral dilemmas—shaping the fate of a dynasty in the process."
-            }  
+            },
+            "crew": {
+                "directors": ["Francis Ford Coppola"],
+                "writers": ["Mario Puzo", "Francis Ford Coppola"],
+                "producers": ["Albert S. Ruddy"],
+                "cinematographers": ["Gordon Willis"],
+                "editors": ["William Reynolds", "Peter Zinner"],
+                "music_composers": ["Nino Rota"],
+                "production_designers": ["Dean Tavoularis"]
+                },
+            "details": {
+                "studios": ["Paramount Pictures"],
+                "country": ["United States"],
+                "primlanguage": ["English"],
+                "spokenlanguages": ["English", "Italian"],
+                "alternativetitles": ["The Godfather"]
+                },
+                "genres": ["Crime", "Drama"]
         },
         {   
             "id":3,
@@ -84,7 +135,24 @@
             "bio":{
                 "title": "Into the Spider-Verse: A Multiverse of Heroes",
                 "description": "A groundbreaking animated adventure where multiple versions of Spider-Man from alternate realities come together to face an unprecedented threat, redefining the boundaries of heroism and identity."
-              }
+              },
+              "crew": {
+                "directors": ["Bob Persichetti", "Peter Ramsey", "Rodney Rothman"],
+                "writers": ["Phil Lord", "Rodney Rothman"],
+                "producers": ["Phil Lord", "Christopher Miller", "Avi Arad", "Amy Pascal", "Christina Steinberg"],
+                "cinematographers": null,
+                "music_composers": ["Daniel Pemberton"],
+                "editors": ["Robert Fisher Jr."],
+                "production_designers": ["Justin K. Thompson"]
+              },
+              "details": {
+                "studios": ["Sony Pictures Animation", "Columbia Pictures"],
+                "country": ["United States"],
+                "primlanguage": ["English"],
+                "spokenlanguages": ["English", "Spanish"],
+                "alternativetitles": ["Spider-Man: Into the Spider-Verse"]
+              },
+              "genres": ["Animation", "Action", "Adventure"]
         },
         {
             "id":4,
@@ -106,7 +174,24 @@
             "bio":{
                 "title": "500 Days of Summer: Love, Loss, and Reality",
                 "description": "A nonlinear exploration of love, heartbreak, and self-discovery, as one man reflects on his relationship with a woman who doesn’t believe in true love, challenging expectations and emotions along the way."
-              }              
+              },
+              "crew": {
+                "directors": ["Marc Webb"],
+                "writers": ["Scott Neustadter", "Michael H. Weber"],
+                "producers": ["Mark Waters", "Jessica Tuchinsky", "Mason Novick", "Steven J. Wolfe"],
+                "cinematographers": ["Eric Steelberg"],
+                "editors": ["Alan Edward Bell"],
+                "music_composers": ["Andrea von Foerster"],
+                "production_designers": ["Laura Fox"]
+              },
+              "details": {
+                "studios": ["Fox Searchlight Pictures"],
+                "country": ["United States"],
+                "primlanguage": ["English"],
+                "spokenlanguages": ["English"],
+                "alternativetitles": ["(500) Days of Summer"]
+              },
+              "genres": ["Romance", "Comedy", "Drama"]
         },
         {
             "id":5,
@@ -129,7 +214,24 @@
             "bio":{
                 "title": "Now You See Me: Masters of Illusion and Deception",
                 "description": "A thrilling heist film where a group of talented illusionists pull off daring bank robberies during their live performances, leaving law enforcement and audiences alike questioning what's real and what's trickery."
-              }
+              },
+              "crew": {
+                "directors": ["Louis Leterrier"],
+                "writers": ["Ed Solomon", "Boaz Yakin", "Edward Ricourt"],
+                "producers": ["Roberto Orci", "Alex Kurtzman", "Bobby Cohen"],
+                "cinematographers": ["Larry Fong"],
+                "editors": ["Robert Leighton", "Vincent Tabaillon"],
+                "music_composers": ["Brian Tyler"],
+                "production_designers": ["Peter Wenham"]
+              },
+              "details": {
+                "studios": ["Summit Entertainment"],
+                "country": ["United States"],
+                "primlanguage": ["English"],
+                "spokenlanguages": ["English", "French"],
+                "alternativetitles": ["Now You See Me"]
+              },
+              "genres": ["Thriller", "Mystery", "Crime"]
               
         },
         {
@@ -154,8 +256,24 @@
             "bio":{
                 "title": "The Social Network: The Birth of Facebook and the Cost of Ambition",
                 "description": "A compelling drama that chronicles the rise of Facebook and the tumultuous journey of its creator, Mark Zuckerberg, revealing the personal and legal battles that shaped the world’s most influential social media platform."
-              }
-              
+              },
+            "crew": {
+                "directors": ["David Fincher"],
+                "writers": ["Aaron Sorkin"],
+                "producers": ["Scott Rudin", "Dana Brunetti", "Michael De Luca", "Ceán Chaffin"],
+                "cinematographers": ["Jeff Cronenweth"],
+                "editors": ["Angus Wall", "Kirk Baxter"],
+                "music_composers": ["Trent Reznor", "Atticus Ross"],
+                "production_designers": ["Donald Graham Burt"]
+            },
+            "details": {
+                "studios": ["Columbia Pictures", "Relativity Media"],
+                "country": ["United States"],
+                "primlanguage": ["English"],
+                "spokenlanguages": ["English", "French"],
+                "alternativetitles": ["The Facebook Movie"]
+            },
+            "genres": ["Biography", "Drama"]
         },
         {
             "id":7,
@@ -179,7 +297,24 @@
             "bio":{
                 "title": "Ford v Ferrari: The Battle for Speed and Glory",
                 "description": "A high-octane drama about the fierce rivalry between Ford and Ferrari, as an unlikely partnership between a maverick American car designer and a British driver aims to dethrone Ferrari at the 24 Hours of Le Mans race, defying all odds."
-              }              
+              },
+            "crew": {
+                "directors": ["James Mangold"],
+                "writers": ["Jez Butterworth", "John-Henry Butterworth", "Jason Keller"],
+                "producers": ["Peter Chernin", "Jenno Topping", "James Mangold"],
+                "cinematographers": ["Phedon Papamichael"],
+                "editors": ["Andrew Buckland", "Michael McCusker"],
+                "music_composers": ["Marco Beltrami", "Buck Sanders"],
+                "production_designers": ["François Audouy"]
+            },
+            "details": {
+                "studios": ["20th Century Fox", "Chernin Entertainment"],
+                "country": ["United States"],
+                "primlanguage": ["English"],
+                "spokenlanguages": ["English", "Italian"],
+                "alternativetitles": ["Le Mans '66"]
+            },
+            "genres": ["Action", "Biography", "Drama"]
         },        
         {
             "id":8,
@@ -203,7 +338,24 @@
             "bio":{
                 "title": "The Imitation Game: Breaking Codes, Changing History",
                 "description": "A gripping biographical drama that tells the story of Alan Turing, the brilliant mathematician who cracked the Enigma code during World War II, while facing personal and societal challenges that would define his legacy."
-              }              
+              },
+              "crew": {
+                "directors": ["Morten Tyldum"],
+                "writers": ["Graham Moore"],
+                "producers": ["Nora Grossman", "Ido Ostrowsky", "Teddy Schwarzman"],
+                "cinematographers": ["Óscar Faura"],
+                "editors": ["William Goldenberg"],
+                "music_composers": ["Alexandre Desplat"],
+                "production_designers": ["Maria Djurkovic"]
+              },
+              "details": {
+                "studios": ["Black Bear Pictures", "Bristol Automotive"],
+                "country": ["United Kingdom", "United States"],
+                "primlanguage": ["English"],
+                "spokenlanguages": ["English", "German"],
+                "alternativetitles": ["The Imitation Game"]
+              },
+              "genres": ["Biography", "Drama", "Thriller"]
         },
         {
             "id":9,
@@ -227,7 +379,24 @@
             "bio":{
                 "title": "RoboCop: Justice in a Dystopian Future",
                 "description": "Set in a crime-ridden Detroit, a critically wounded cop is transformed into RoboCop, a powerful cyborg enforcer. As he battles crime and corruption, he struggles to retain his humanity in a world where technology and corporate greed dominate."
-              }              
+              },
+            "crew": {
+            "directors": ["Paul Verhoeven"],
+            "writers": ["Edward Neumeier", "Michael Miner"],
+            "producers": ["Arne Schmidt"],
+            "cinematographers": ["Jost Vacano"],
+            "editors": ["Frank J. Urioste"],
+            "music_composers": ["Basil Poledouris"],
+            "production_designers": ["William Sandell"]
+            },
+            "details": {
+                "studios": ["Orion Pictures"],
+                "country": ["United States"],
+                "primlanguage": ["English"],
+                "spokenlanguages": ["English"],
+                "alternativetitles": ["Robocop"]
+            },
+            "genres": ["Biography", "Drama", "Thriller"]
         },
         {
             "id":10,
@@ -251,6 +420,23 @@
             "bio":{
                 "title": "Pulp Fiction: A Tangle of Crime, Fate, and Redemption",
                 "description": "A genre-defying tale of intersecting lives and twisted stories in the criminal underworld, *Pulp Fiction* weaves together dark humor, unforgettable characters, and nonlinear storytelling to create a cinematic masterpiece."
-              }              
+              },
+            "crew": {
+                "directors": ["Quentin Tarantino"],
+                "writers": ["Quentin Tarantino", "Roger Avary"],
+                "producers": ["Lawrence Bender"],
+                "cinematographers": ["Andrzej Sekula"],
+                "editors": ["Sally Menke"],
+                "music_composers": ["Karyn Rachtman"],
+                "production_designers": ["David Wasco"]
+            },
+            "details": {
+                "studios": ["Miramax"],
+                "country": ["United States"],
+                "primlanguage": ["English"],
+                "spokenlanguages": ["English", "French", "Spanish"],
+                "alternativetitles": ["Pulp Fiction: The Golden Palm Winner"]
+            },
+            "genres": ["Crime", "Drama"]
         }
     ]

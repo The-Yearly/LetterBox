@@ -14,9 +14,9 @@ export default function FollowersPage(props:any){
                 {followers.map(flwrs=>
                 <li key={users[flwrs]["id"]}>
                     <div className={styles.userCard}>
-                        <Image className={styles.profilePic} src={users[flwrs]["image"]} alt="UserImage" width={70} height={70}/>
-                        <Link className={styles.userName} href={"/users/"+users[flwrs]["id"]}>{users[flwrs]["username"]}</Link>
-                        <p className={styles.followers}>followers {users[flwrs]["followers"].length}</p>
+                        <Link href={"/users/"+users[flwrs]["id"]}><Image className={styles.profilePic} src={users[flwrs]["image"]} alt="UserImage" width={70} height={70}/>
+                        <p className={styles.userName}>{users[flwrs]["username"]}</p></Link>
+                        <Link href={"/users/"+users[flwrs]["id"]}><p className={styles.followers}>followers {users[flwrs]["followers"].length}</p></Link>
                         <p className={styles.following}>following {users[flwrs]["following"].length}</p>
                     </div>
                 </li>)}
