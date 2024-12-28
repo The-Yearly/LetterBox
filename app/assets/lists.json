@@ -11,7 +11,7 @@
         "id":1,
         "authorid":1,
         "title":"List 2",
-        "bio":"List 2 is Good",
+        "bio":"The world around us is a constant source of inspiration, filled with vibrant colors, intricate patterns, and endless possibilities. From the gentle rustling of leaves in the wind to the boundless expanse of a starry sky, nature reminds us of the beauty in simplicity and the power of resilience. In our everyday lives, moments of joy can be found in the smallest details—a smile shared with a stranger, the aroma of fresh coffee, or the warmth of sunlight streaming through a window. Life, with all its complexities, is a tapestry woven with experiences that shape us, teach us, and help us grow.",
         "films":[5,0,6,8,3,7,2,9,4],
         "likes":100
     }, 

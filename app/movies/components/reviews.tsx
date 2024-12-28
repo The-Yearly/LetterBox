@@ -13,8 +13,9 @@ export default  function MovieReviewsPage(props:any){
     const allreviews:Reviews[]=reviewsdata
     console.log(props.id)
     const getMovieById = (id: number) => {
-    return allreviews.filter(reviews => reviews.movie_id === id);};
-    const reviews= getMovieById(parseInt(props.id));
+        return allreviews.filter(reviews => reviews.movie_id === id)
+    }
+    const reviews= getMovieById(parseInt(props.id))
     console.log(reviews)
     return(
     <div key={"s"} className={styles.userPage} id={styles.reviews}>

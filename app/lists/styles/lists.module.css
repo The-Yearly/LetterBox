@@ -1,8 +1,8 @@
 #allMovies{
-    position: absolute;
+    position: relative;
     width: 1150px; 
     height: 800px;
-    top:340px;
+    top:100px;
     left: 410px;
 }
 #all_movies{
@@ -30,4 +30,19 @@
     padding-left: 10px;
     padding-bottom: 10px;
     border-bottom:  1px solid rgb(172, 171, 171);
+}
+#listBio{
+    position: relative;
+    font-family: 'Courier New', Courier, monospace;
+    top:180px;
+    display: flex;
+    flex-wrap: wrap;
+    left: 430px;
+    width: 1000px;
+    padding-bottom: 50px;
+}
+#listUser{
+    position: relative;
+    top:150px;
+    left: 1400px;
 }
