@@ -18,10 +18,10 @@ export default async function PopularThisWeek(props:any){
                 <p className={styles.memberUserName}>{user.username}</p>
                 <p id={styles.reviewsandfilmsrated}>{user.movies_watched} Films {user.movies_reviewed} Reviews</p>
                 <ul className={styles.favMovies}>
-                    <li key={1}><Image className={styles.fav1} src={userMovie[user.favorites[0]].poster} width={300} height={300} alt="Image 1"/></li>
-                    <li key={2}><Image className={styles.fav2} src={userMovie[user.favorites[1]].poster} width={300} height={300} alt="Image 2"/></li>
-                    <li key={3}><Image className={styles.fav3} src={userMovie[user.favorites[2]].poster} width={300} height={300} alt="Image 3"/></li>
-                    <li key={4}><Image className={styles.fav4} src={userMovie[user.favorites[3]].poster} width={300} height={300} alt="Image 4"/></li>
+                    <li key={1}><Link href={"/movies/"+userMovie[user.favorites[0]].id}><Image className={styles.fav1} src={userMovie[user.favorites[0]].poster} width={300} height={300} alt="Image 1"/></Link></li>
+                    <li key={2}><Link href={"/movies/"+userMovie[user.favorites[1]].id}><Image className={styles.fav2} src={userMovie[user.favorites[1]].poster} width={300} height={300} alt="Image 2"/></Link></li>
+                    <li key={3}><Link href={"/movies/"+userMovie[user.favorites[2]].id}><Image className={styles.fav3} src={userMovie[user.favorites[2]].poster} width={300} height={300} alt="Image 3"/></Link></li>
+                    <li key={4}><Link href={"/movies/"+userMovie[user.favorites[3]].id}><Image className={styles.fav4} src={userMovie[user.favorites[3]].poster} width={300} height={300} alt="Image 4"/></Link></li>
                 </ul>
                 </div></li>)}
             </ul>

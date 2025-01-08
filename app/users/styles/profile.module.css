@@ -47,6 +47,21 @@
 #recentActivityList li{
     margin-left: 10px;
 }
+#bioHeading{
+    text-align: center;
+}
+#Bio{
+    position: absolute;
+    top:358px;
+    left: 1190px;
+}
+#profileBio{
+    text-align: center;
+    height: auto;
+    width: 360px;
+    border-top:1px solid rgb(172, 171, 171);
+    padding-top: 20px;
+}
 .userPage{
     position:relative;
     top:1000px;
@@ -71,7 +86,7 @@
 }
 .revMoviePoster{
     position: relative;
-    top:30px;
+    top:50px;
     padding-top: 0px;
     padding-left: 10px;
     width: 140px;

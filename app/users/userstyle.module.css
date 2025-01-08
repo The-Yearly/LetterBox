@@ -2,7 +2,7 @@
     position: absolute;
     top:110px;
     left: 400px;
-    width: 1000px;
+    width: 1165px;
     height: 100px;
 
 }
@@ -22,70 +22,111 @@
     font-weight: 600;
     font-family: 'Courier New', Courier, monospace;   
 }
-#moviesSeen{
+#followButton{
     position: absolute;
-    left: 750px;
-    top:18px;
-    border-right: 1px solid rgb(78, 78, 78);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    border: 1px solid  rgb(172, 171, 171);;
+    border-radius: 3px;
+    padding:3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    top:75px;
+    left: 133px;
 }
-.stats p{
+#stats{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top:0px;
+    right: 0px;
+    height: 100px;
+    
+}
+#stats p{
     font-family: "albia";
 }
-#moviesSeenno{
-    font-size: 22px;
-    font-weight: 700;
+#moviesSeen{
+    position: relative;
+    right: 85px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:18px;
     padding-right: 20px;
+    border-right: 1px solid rgb(78, 78, 78);
+}
+#moviesSeenno{
+    font-size: 18px;
+    text-align: center;
+    font-weight: 700;
 }
 #moviesThisYear{
-    position: absolute;
-    left: 820px;
+    position: relative;
+    right:65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    padding-right: 20px;
     top:18px;
     border-right: 1px solid rgb(78, 78, 78);
 }
 
 #moviesThisYearno{
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
     font-weight: 700;
-    padding-right: 40px;
 }
 #moviesList{
-    position: absolute;
-    left: 910px;
+    position: relative;
+    right:45px;
+    display: flex;
+    align-items: center;
+    height: 55px;
+    justify-content: center;
     top:18px;
+    padding-right: 20px;
     border-right: 1px solid rgb(78, 78, 78);;
 }
 #moviesListp{
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
     font-weight: 700;
-    padding-right: 40px;
 }
 #Followers{
-    position: absolute;
-    left: 980px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right:6px;
     top:18px;
-    padding-right: 15px;
-    border-right: 1px solid rgb(78, 78, 78);;
+    height: 55px;
+    padding-right: 20px;
+    border-right: 1px solid rgb(78, 78, 78);
 }
 #Followersp{
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
     font-weight: 700;
-    padding-right: 40px;
 }
 #Following{
-    position: absolute;
-    left: 1080px;
+    position: relative;
+    right: 25px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 20px;
     top:18px;
-    padding-right: 15px;
-    border-right: 1px solid rgb(78, 78, 78);;
+    height: 55px;
+    border-right: 1px solid rgb(78, 78, 78);
 }
 #Followingp{
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
     font-weight: 700;
-    padding-right: 40px;
 }
 #pageRouter{
     position: absolute;
@@ -157,4 +198,9 @@
     top:15px;
     left: 1000px;
 }
-
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}

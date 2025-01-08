@@ -22,7 +22,7 @@ export default  function MovieReviewsPage(props:any){
         <p id={styles.reviewHeading}>Reviews</p>
             {reviews.map(Review=> 
             <div key={Review.id} className={styles.movieCard}>
-                <Link href={"/users/"+users[Review.author_id].id}><Image className={styles.revUserImg} alt="Movie Poster" width={170} height={250} src={users[Review.author_id].image}/></Link>
+                <Link href={"/users/"+users[Review.author_id].id}><Image className={styles.revUserImg} alt="User Icon" width={170} height={250} src={users[Review.author_id].image}/></Link>
                 <p className={styles.movieName}>{movies[Review.movie_id].name}</p>
                 <p className={styles.movieReview}>{Review.review}</p>
             </div>)}

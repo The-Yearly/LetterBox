@@ -7,6 +7,7 @@ import reviewsdata from "@/app/assets/reviews.json"
 import userdata from"@/app/assets/users.json"
 import moviesdata from "@/app/assets/movies.json"
 import { Movie } from "@/app/assets/interfaces/movies"
+import likeIco from "@/app/assets/images/likes.png"
 export default  function reviewsPage(props:any){
     const user:Users=userdata[props.id];
     let userreviews=user.reviews

@@ -17,6 +17,7 @@ export default function UserProfileI({params}:any){
     const users:Users[]=userdata
     const userid:userid=use(params)
     const user=users[userid.id]
+    const [following,setFollowing]=useState(false)
     const [page,changeContent]=useState(1)
     function renderComponent(){
         switch(page){
@@ -45,12 +46,13 @@ export default function UserProfileI({params}:any){
             <div id={styles.userCard}>
                 <Image id={styles.profilePic} src={user.image} alt="Profile Pic" height={400} width={300}/>
                 <p id={styles.username}>{user.username}</p>
-                <div className={styles.stats}>
-                <div id={styles.moviesSeen}><p id={styles.moviesSeenno}>{user.movies_watched}</p><button onClick={()=>{changeContent(2)}}>Films</button></div>
-                <div id={styles.moviesThisYear}><p id={styles.moviesThisYearno}>{user.movies_reviewed}</p><button onClick={()=>{changeContent(2)}}>This Year</button></div>
-                <div id={styles.moviesList}><p id={styles.moviesListp}>{user.list.length}</p><button onClick={()=>changeContent(6)}>Lists</button></div>  
-                <div id={styles.Followers}><p id={styles.Followersp}>{user.followers.length}</p><button onClick={()=>changeContent(9)}>Followers</button></div>    
-                <div id={styles.Following}><p id={styles.Followingp}>{user.following.length}</p><button onClick={()=>changeContent(8)}>Following</button></div>    
+                <button id={styles.followButton} className={following?styles.hide:styles.show} onClick={()=>setFollowing(true)}>Follow</button>
+                <div id={styles.stats}>
+                <div id={styles.moviesSeen}><p id={styles.moviesSeenno}>{user.movies_watched}<br/><button onClick={()=>{changeContent(2)}}>Films</button></p></div>
+                <div id={styles.moviesThisYear}><p id={styles.moviesThisYearno}>{user.movies_reviewed}<br/><button onClick={()=>{changeContent(2)}}>This Year</button></p></div>
+                <div id={styles.moviesList}><p id={styles.moviesListp}>{user.list.length}<br/><button onClick={()=>changeContent(6)}>Lists</button></p></div>  
+                <div id={styles.Following}><p id={styles.Followingp}>{user.following.length}<br/><button onClick={()=>changeContent(8)}>Following</button></p></div>
+                <div id={styles.Followers}><p id={styles.Followersp}>{user.followers.length}<br/><button onClick={()=>changeContent(9)}>Followers</button></p></div>        
                 </div>
             </div>
             <div id={styles.pageRouter}>

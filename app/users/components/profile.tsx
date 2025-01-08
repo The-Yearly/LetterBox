@@ -25,6 +25,10 @@ export default function Profile(props:any){
                     {fav.map(movie=><li key={"S"+movies[movie].id}><Link href={"/movies/"+movies[movie].id}><Image className={styles.MoviePoster} src={movies[movie].poster} alt="Movie" width={170} height={250}/></Link></li>)}
                 </ul>
             </div>
+            <div id={styles.Bio}>
+                <p id={styles.bioHeading}>About Me</p>
+                <p id={styles.profileBio}>{user[props.id].bio}</p>
+            </div>
             <ReviewsPage id={props.id} page="profile" no="2"/>
 
         </>

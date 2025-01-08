@@ -24,6 +24,7 @@
   position: fixed;
   border-radius: 20px;
   top:70px;
+  overflow: hidden;
   left: 960px;
   width: 570px;
   height:auto;

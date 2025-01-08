@@ -1,6 +1,7 @@
 export interface Users{
     id:number;
     name:string;
+    bio:string;
     username:string;
     movies_reviewed:number;
     movies_watched:number;
