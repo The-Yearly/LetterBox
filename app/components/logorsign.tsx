@@ -1,6 +1,7 @@
 'use client'
 import Image from "next/image"
 import { useState,useEffect } from "react"
+import profilePic from "@/app/assets/images/profile.png"
 import styles from "./components.module.css"
 import SignupPage from "./signupPage"
 import LoginPage from "./loginPage"
@@ -32,7 +33,7 @@ export default function Login(){
     }
     return(
         <>
-        <button onClick={changeModel}><Image id={styles.profile} src={"/assets/images/profile.png"} alt="Profile" width={60} height={60}/></button> 
+        <button onClick={changeModel}><Image id={styles.profile} src={profilePic} alt="Profile" width={60} height={60}/></button> 
         {model &&
         <div className={styles.modal}>
             <div className={styles.overlay}>

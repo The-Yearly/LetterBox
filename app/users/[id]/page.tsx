@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image"
-import userdata from "/home/theyearly/letterbox/app/assets/users.json"
+import userdata from "@/app/assets/users.json"
 import styles from "../userstyle.module.css"
 import {Users} from "@/app/assets/interfaces/users"
 import Profile from "@/app/users/components/profile"

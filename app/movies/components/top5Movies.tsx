@@ -1,5 +1,6 @@
 import moviedata from "@/app/assets/movies.json"
 import styles from "@/app/movies/styles/top5movies.module.css"
+import eyeIco from "@/app/assets/images/eye.png"
 import { Movie } from "@/app/assets/interfaces/movies"
 import like from "@/app/assets/images/likes.png"
 import Image from "next/image"
@@ -14,7 +15,7 @@ export default function TopFiveMovies(props:any){
                 {movies.map((movie)=>
                 <li key={movie.id}><Link href={"/movies/"+movie.id}><div className={styles.memberBox}><Image id={styles.Poster} alt={movie.id+"'s Poster"} src={movie.poster} width={400} height={400}/>
                 </div></Link>
-                <Image src={"/assets/images/eye.png"} id={styles.eyeIco} width={20} height={20} alt="Eye"/><p id={styles.viewCount}>{movie.views}</p>
+                <Image src={eyeIco} id={styles.eyeIco} width={20} height={20} alt="Eye"/><p id={styles.viewCount}>{movie.views}</p>
                 <Image src={like} width={20} height={20} id={styles.likeIco} alt="Eye"/><p id={styles.likeCount}>{movie.likes}</p>
                 </li>)}
             </ul>
