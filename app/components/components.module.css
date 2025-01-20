@@ -10,7 +10,7 @@
 #searchBar{
   position: fixed;
   top:25px;
-  width: 590px;
+  width: 33%;
   height:45px;
   left: 950px;
 }
