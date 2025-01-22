@@ -41,7 +41,6 @@ export default function NavBar(){
             <Link href={"/movies"}><p className={styles.navOptions} id={styles.Movies}>Movies</p></Link>
             <Link href={"/lists"}><p className={styles.navOptions} id={styles.List}>Lists</p></Link>
             <Link href={"/members"}><p className={styles.navOptions} id={styles.Members}>Members</p></Link>
-            <p className={styles.navOptions} id={styles.Journal}>Journals</p>
             <div id={styles.searchBar} onFocus={()=>setFocus(true)} onBlur={()=>setTimeout(()=> setFocus(false),200)} >
                 <input type="text" placeholder="Search" name="searchBar" value={searchValue} onChange={gotInput} id={styles.searchBarInput}/>
                 <div id={styles.searchResults} className={searchbarFocus?styles.showResults:styles.hideResults}>{filteredMovies?filteredMovies.map(movie=><Link key={movie.id} className={searchbarFocus?styles.showResults:styles.hideResults} href={"/movies/"+movie.id}><div className={styles.resultCard}><Image className={styles.resultPoster} width={100} height={100} alt="Search Result" src={movie.poster}/><p className={styles.resultName}>{movie.name}</p></div></Link>):""}</div>

@@ -15,6 +15,7 @@ import ReviewsPage from "../components/reviews"
 interface userid{id:number}
 export default function UserProfileI({params}:any){
     const users:Users[]=userdata
+    console.log(users)
     const userid:userid=use(params)
     const user=users[userid.id]
     const [following,setFollowing]=useState(false)

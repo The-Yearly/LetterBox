@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "mariadb": "^3.4.0",
     "mysql2": "^3.11.5",
     "next": "^15.1.0",
     "react": "^19.0.0",

@@ -1,12 +1,12 @@
 .a{
     position: absolute;
     top:1450px;
-    left: 0%;
+    left: -5%;
   }
   .b{
     position: absolute;
-    top:0px;
-    left: 0%;
+    top:30px;
+    left: -5%;
   }
 .topRow{
     position: absolute;

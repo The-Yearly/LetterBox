@@ -12,7 +12,7 @@
   top:25px;
   width: 33%;
   height:45px;
-  left: 950px;
+  left: 46%;
 }
 #searchBarInput{
   border-radius: 20px;
@@ -77,6 +77,7 @@
 
 #home_ico{
   position: absolute;
+  width: 16%;
   top: 10px;
   left:0px;
   
@@ -91,7 +92,7 @@
 }
 #Movies{
   position: absolute;
-  left:350px;
+  left:19%;
   top:20px;
 }
 #List:hover{
@@ -100,7 +101,7 @@
 }
 #List{
   position: absolute;
-  left:500px;
+  left:27%;
   top:20px;
 }
 #Members:hover{
@@ -109,7 +110,7 @@
 }
 #Members{
   position: absolute;
-  left:620px;
+  left:33.5%;
   top:20px;
 }
 #Journal:hover{
@@ -300,7 +301,7 @@ body.active_modal {
   font-size: 18px;
 }
 #loginButton{
-  position: absolute;
+  position: absolute; 
   top:320px;
   width: 80%;
   left: 10%;
@@ -308,11 +309,7 @@ body.active_modal {
   border-radius:30px;
   border: 2px solid rgb(214, 214, 214);
 }
-#line{
-  position: absolute;
-  width: 80%;
-  left: 10%;
-  bottom:150px;
-  background-color: rgb(214, 214, 214);
-  height: 1px;
+#loginsingup{
+  padding-bottom: 30px;
+  border-bottom: solid 1px rgb(214, 214, 214);
 }

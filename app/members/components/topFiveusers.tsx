@@ -17,12 +17,12 @@ export default async function TopFiveUsers(props:any){
                 <li key={user.id}><div className={styles.memberBox}><Link href={"/users/"+user.id}><Image id={styles.profileIcon} alt={user.id+"'s image"} src={user.image} width={100} height={100}/></Link>
                 <p className={styles.memberUserName}>{user.username}</p>
                 <p id={styles.reviewsandfilmsrated}>{user.movies_watched} Films {user.movies_reviewed} Reviews</p>
-                <ul className={styles.favMovies}>
-                    <li key={1}><Link href={"/movies/"+userMovie[user.favorites[0]].id}><Image className={styles.fav1} src={userMovie[user.favorites[0]].poster} width={300} height={300} alt="Image 1"/></Link></li>
-                    <li key={2}><Link href={"/movies/"+userMovie[user.favorites[1]].id}><Image className={styles.fav2} src={userMovie[user.favorites[1]].poster} width={300} height={300} alt="Image 2"/></Link></li>
-                    <li key={3}><Link href={"/movies/"+userMovie[user.favorites[2]].id}><Image className={styles.fav3} src={userMovie[user.favorites[2]].poster} width={300} height={300} alt="Image 3"/></Link></li>
-                    <li key={4}><Link href={"/movies/"+userMovie[user.favorites[3]].id}><Image className={styles.fav4} src={userMovie[user.favorites[3]].poster} width={300} height={300} alt="Image 4"/></Link></li>
-                </ul>
+                <div className={styles.favMovies}>
+                    <Link href={"/movies/"+userMovie[user.favorites[0]].id}><Image className={styles.fav1} src={userMovie[user.favorites[0]].poster} width={300} height={300} alt="Image 1"/></Link>
+                    <Link href={"/movies/"+userMovie[user.favorites[1]].id}><Image className={styles.fav2} src={userMovie[user.favorites[1]].poster} width={300} height={300} alt="Image 2"/></Link>
+                    <Link href={"/movies/"+userMovie[user.favorites[2]].id}><Image className={styles.fav3} src={userMovie[user.favorites[2]].poster} width={300} height={300} alt="Image 3"/></Link>
+                    <Link href={"/movies/"+userMovie[user.favorites[3]].id}><Image className={styles.fav4} src={userMovie[user.favorites[3]].poster} width={300} height={300} alt="Image 4"/></Link>
+                </div>
                 </div></li>)}
             </ul>
         </div>

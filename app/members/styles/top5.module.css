@@ -1,17 +1,17 @@
 .a{
   position: absolute;
   top:1020px;
-  left: 25%;
+  left: 20%;
 }
 .b{
   position: absolute;
   top:0px;
-  left: 25%;
+  left: 20%;
 }
 .popularThisWeek{
   position: absolute;
   top:700px;
-  left: 25%;
+  left: 20%;
   padding: 0;
   margin: 40px;
   list-style-type: none;
@@ -50,43 +50,38 @@
     font-size: 13px;
     color: white; 
   }
-  .fav1{
-    position: relative;
-    width: 40px;
-    height: 60px;
-    left: -10px;
-    
-  }
-  .fav2{
-    position: relative;
-    width: 40px;
-    height: 60px;
-    left: 10px;
-  }
-  .fav3{
-    position: relative;
-    width: 40px;
-    height: 60px;
-    left: 20px;
-  }
-  .fav4{
-    position: relative;
-    width: 40px;
-    height: 60px;
-    left:30px;
-  }
-  .favMovies{
-    position: relative;
-    top:-20px;
-    width: 210px;
-    left: -40px;
-    padding: 0;
-    margin: 40px;
-    list-style-type: none;
-    display: flex;
-  }
-  .favMovies li{
-    margin-right:-10px;}
+    .fav1{
+      position: absolute;
+      width: 40px;
+      height: 60px;
+      left: 0px;
+      
+    }
+    .fav2{
+      position: absolute;
+      width: 40px;
+      height: 60px;
+      left: 45px;
+    }
+    .fav3{
+      position: absolute;
+      width: 40px;
+      height: 60px;
+      left: 85px;
+    }
+    .fav4{
+      position: absolute;
+      width: 40px;
+      height: 60px;
+      left:130px;
+    }
+    .favMovies{
+      position: absolute;
+      bottom: 60px;
+      width: 150px;
+      height: 10px;
+    }
+
     #profileIcon{
         border-radius: 50%;
         width: 100%;
@@ -96,7 +91,7 @@
       }
       .memberBox{
         width: 165px;
-        height: 250px;
+        height: 300px;
       
       }
       .memberUserName{
