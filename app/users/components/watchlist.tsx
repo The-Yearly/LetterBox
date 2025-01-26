@@ -1,22 +1,28 @@
 import styles from "../styles/userMovies.module.css"
 import Image from "next/image"
-import allmovies from "@/app/assets/movies.json"
-import allusers from "@/app/assets/users.json"
 import Link from "next/link"
-import { Users } from "../../assets/interfaces/users"
-import { Movie } from "../../assets/interfaces/movies"
+import { User } from "@/app/assets/interfaces/user"
+import { Moviedb } from "@/app/assets/interfaces/moviesdb"
+import {useState,useEffect} from "react"
 export default function WatchList(props:any){
-    const users:Users[]=allusers
-    const movies:Movie[]=allmovies
-    const userMovies=users[props.id]["watchlist"]
+    const [User,setUsers]=useState<User[]|null>(null)
+    const [watch,setWatch]=useState<Moviedb[]|null>(null)
+    useEffect(()=>{const fetchdata=async()=>{
+        const usersres=await fetch("http://localhost:8000/users/"+props.id)
+        const watchres=await fetch("http://localhost:8000/users/watchlist/"+props.id)
+        setUsers(await usersres.json())
+        setWatch(await watchres.json())
+    }
+    fetchdata(),[]})
+    if(watch!=null && User!=null){
     return(
         <>
             <div id={styles.allMovies}>
-            <p id={styles.watchlistheading}>{users[props.id]["username"]+"'s  Watchlist "+"("+users[props.id]["liked"].length+")"}</p>
+            <p id={styles.watchlistheading}>{User[0].user_name+"'s  Watchlist "+"("+watch.length+")"}</p>
                 <ul id={styles.all_movies}>
-                    {userMovies.map(movie=><li key={movie}><Link href={"/movies/"+movies[movie].id}><Image className={styles.moviePoster} src={movies[movie].poster} alt="Movie Poster" width={150} height={150}/></Link></li>)}
+                {watch.map(movie=><li key={movie.movie_id}><Link href={"/movies/"+movie.movie_id}><Image className={styles.MoviePoster} src={movie.movie_poster} alt="Movie" width={170} height={250}/></Link></li>)}
                 </ul>
             </div>
         </>
-    )
+    )}
 } 

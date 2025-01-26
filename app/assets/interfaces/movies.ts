@@ -1,7 +1,7 @@
 import { Bio } from "./bio";
 import { Crew } from "./crew";
 import { MovieDetails } from "./moviedetails";
-export interface Movie{
+export interface A{
     id:number;
     name:string;
     banner:string

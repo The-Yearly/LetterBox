@@ -1,17 +1,42 @@
-import moviedets from "@/app/assets/movies.json"
 import styles from "../styles/castandcrew.module.css"
+import { Movies_Genres } from "@/app/assets/interfaces/movies_genres"
+import { Movies_Studio } from "@/app/assets/interfaces/movies_studios"
+import { Movies_Countrys } from "@/app/assets/interfaces/movies_countrys"
+import { Movies_Languages } from "@/app/assets/interfaces/movies_languages"
+import { Movies_Altitles } from "@/app/assets/interfaces/movies_altitles"
+import { useEffect, useState } from "react"
 export default function MovieDets(props:any){
-    const movie=moviedets[props.id]
-    const dets=movie.details
-    const genres=movie.genres
-    return(
-        <div id={styles.displayArea}>
-        <div className={styles.crewDets}>Studios : {dets.studios?dets.studios.map(det=><p key={det} className={styles.nameCard}>{det}</p>):""}</div>
-        <div className={styles.crewDets}>Country : {dets.country?dets.country.map(det=><p key={det} className={styles.nameCard}>{det}</p>):""}</div>
-        <div id={styles.crewDets}>Primary Language : {dets.primlanguage?dets.primlanguage.map(det=><p key={det} className={styles.nameCard}>{det}</p>):""}</div>
-        <div id={styles.crewDets}>Spoken Languages : {dets.spokenlanguages?dets.spokenlanguages.map(det=><p key={det} className={styles.nameCard}>{det}</p>):""}</div>
-        <div id={styles.crewDets}>Titles : {dets.alternativetitles?dets.alternativetitles.map(det=><p key={det} className={styles.nameCard}>{det}</p>):""}</div>
-        <div id={styles.crewDets}>Genres : {genres?genres.map(genre=><p key={genre} className={styles.nameCard}>{genre}</p>):""}</div>
-        </div>
+    const [genres,setGenre]=useState<Movies_Genres[]|null>(null)
+    const [studios,setStudios]=useState<Movies_Studio[]|null>(null)
+    const [countrys,setCountrys]=useState<Movies_Countrys[]|null>(null)
+    const [primlang,setPrimLang]=useState<Movies_Languages[]|null>(null)
+    const [langs,setLangs]=useState<Movies_Languages[]|null>(null)
+    const [alternativetitles,setTitles]=useState<Movies_Altitles[]|null>(null)
+    useEffect(()=>{const fetchdata=async()=>{
+        const genreres=await fetch("http://localhost:8000/movies/genres/"+props.id)
+        const studiosres=await fetch("http://localhost:8000/movies/studios/"+props.id)
+        const countryres=await fetch("http://localhost:8000/movies/countrys/"+props.id)
+        const primlangres=await fetch("http://localhost:8000/movies/languages/"+props.id+"/1")
+        const langres=await fetch("http://localhost:8000/movies/languages/"+props.id+"/10")
+        const titlesres=await fetch("http://localhost:8000/movies/altitles/"+props.id)
+        setStudios(await studiosres.json())
+        setCountrys(await countryres.json())
+        setGenre(await genreres.json())
+        setPrimLang(await primlangres.json())
+        setLangs(await langres.json())
+        setTitles(await titlesres.json())
+    }
+    fetchdata()},[])
+
+        return(
+            <div id={styles.displayArea}>
+            <div className={styles.crewDets}>Studios : {studios?studios.map(studio=><p key={studio.production_id} className={styles.nameCard}>{studio.production_name}</p>):""}</div>
+            <div className={styles.crewDets}>Country : {countrys?countrys.map(country=><p key={country.country_id} className={styles.nameCard}>{country.country_name}</p>):""}</div>
+            <div id={styles.crewDets}>Primary Language : {primlang?primlang.map(pl=><p key={pl.language_id} className={styles.nameCard}>{pl.language_name}</p>):""}</div>
+            <div id={styles.crewDets}>Spoken Languages : {langs?langs.map(lang=><p key={lang.language_id} className={styles.nameCard}>{lang.language_name}</p>):""}</div>
+            <div id={styles.crewDets}>Alternative Titles : {alternativetitles?alternativetitles.map(alternativetitle=><p key={alternativetitle.title_id} className={styles.nameCard}>{alternativetitle.title_name}</p>):""}</div>
+            <div id={styles.crewDets}>Genres : {genres?genres.map(genre=><p key={genre.genre_id} className={styles.nameCard}>{genre.genre_name}</p>):""}</div>
+            </div>
     )
+    
 }

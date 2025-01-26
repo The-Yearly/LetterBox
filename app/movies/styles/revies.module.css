@@ -1,7 +1,7 @@
 .userPage{
     position:relative;
     top:800px;
-    left: 700px;
+    left: 740px;
 }
 #reviewHeading{
     color: white;
@@ -11,7 +11,7 @@
     font-weight: 900;
 }
 .movieCard{
-    width: 700px;
+    width: 800px;
     border: 1px rgb(172, 171, 171) solid;
     height: auto;
     min-height: 300px;
@@ -23,7 +23,7 @@
 }
 .revUserImg{
     position: relative;
-    top:100px;
+    top:50px;
     padding-top: 0px;
     padding-left: 10px;
     width: 140px;
@@ -33,15 +33,16 @@
 .movieName{
     position: relative;
     bottom: 100px;
+    width: 610px;
     font-size:24px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bolder;
-    left: 230px;
+    left: 170px;
 }
 .movieReview{
     position: relative;
     bottom: 80px;
-    width: 510px;
+    width: 610px;
     display: flex;
     flex-wrap: wrap;
     font-size: 16px;

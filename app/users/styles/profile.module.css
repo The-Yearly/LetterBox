@@ -105,9 +105,10 @@
     position: relative;
     bottom: 160px;
     font-size:24px;
+    width: 510px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bolder;
-    left: 230px;
+    left: 170px;
 }
 .movieReview{
     position: relative;

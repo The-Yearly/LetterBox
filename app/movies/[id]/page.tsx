@@ -29,7 +29,6 @@ export default function MoviePage({params}:any){
     useEffect(()=>{const fetchdata=async()=>{
         const res=await fetch("http://localhost:8000/movies/"+movieid.id)
         setMovies(await res.json())
-        console.log("http://localhost:8000/movies/"+movieid.id)
     }
     fetchdata()
     },[]) 
@@ -40,8 +39,8 @@ export default function MoviePage({params}:any){
             <Image src={movie.movie_banner} alt="Movie Banner" width={500} height={500} id={styles.bannerImage}/>
             <Image src={movie.movie_poster} alt="Movie Poster" width={200} height={200} id={styles.moviePoster}/>
             <p id={styles.movieTitle}>{movie.movie_title}</p>
-            <p id={styles.movieHook}>ss</p>
-            <p id={styles.movieBio}>sss</p>
+            <p id={styles.movieHook}>{movie.desc_title}</p>
+            <p id={styles.movieBio}>{movie.desc}</p>
             <div id={styles.pageRouter}>
                 <button onClick={()=>{setPage(0)}} className={page==0?styles.highlight:styles.nohighlight} id={styles.movieCastTitle}>Cast</button>
                 <button onClick={()=>{setPage(1)}} className={page==1?styles.highlight:styles.nohighlight} id={styles.movieCrewTitle}>Crew</button>

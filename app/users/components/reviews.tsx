@@ -1,28 +1,28 @@
 import styles from "../styles/profile.module.css"
-import { Users } from "@/app/assets/interfaces/users"
-import { Reviews } from "@/app/assets/interfaces/reviews"
 import Link from "next/link"
 import Image from "next/image"
-import reviewsdata from "@/app/assets/reviews.json"
-import userdata from"@/app/assets/users.json"
-import moviesdata from "@/app/assets/movies.json"
-import { Movie } from "@/app/assets/interfaces/movies"
+import { movie_reviews_users } from "@/app/assets/interfaces/movies_reviews_users"
 import likeIco from "@/app/assets/images/likes.png"
-export default  function reviewsPage(props:any){
-    const user:Users=userdata[props.id];
-    let userreviews=user.reviews
-    const movies:Movie[]=moviesdata;
-    const reviews:Reviews[]=reviewsdata
-    return(
-        <div key={"s"} className={props.page=="profile"?styles.userPage:styles.reviewsPage} id={styles.reviews}>
-        <p id={styles.reviewHeading}>Reviews</p>
-            {userreviews.map(Review=> 
-            <div key={reviews[Review].id} className={styles.movieCard}>
-                <Link href={"/movies/"+movies[reviews[Review].movie_id].id}><Image className={styles.revMoviePoster} alt="Movie Poster" width={170} height={250} src={movies[reviews[Review].movie_id].poster}/></Link>
-                <p className={styles.movieName}>{movies[reviews[Review].movie_id].name}</p>
-                <p className={styles.movieReview}>{reviews[Review].review}</p>
-            </div>)}
-            <br/>
-        </div>
-    )
+import { useState,useEffect } from "react"
+export default function reviewsPage(props:any){
+    const[reviews,setReviews]=useState<movie_reviews_users[]|null>(null)
+    useEffect(()=>{const fetchdata=async ()=>{
+        const reviewsres=await fetch("http://localhost:8000/users/reviews/"+props.id)
+        setReviews(await reviewsres.json())
+    }
+    fetchdata(),[]})
+    if(reviews!=null){
+        return(
+            <div className={props.page=="profile"?styles.userPage:styles.reviewsPage} id={styles.reviews}>
+            <p id={styles.reviewHeading}>Reviews</p>
+                {reviews.map(review=> 
+                <div key={review.review_id} className={styles.movieCard}>
+                    <Link href={"/movies/"+review.movie_id}><Image className={styles.revMoviePoster} alt="Movie Poster" width={170} height={250} src={review.movie_poster}/></Link>
+                    <p className={styles.movieName}>{review.review_title}</p>
+                    <p className={styles.movieReview}>{review.review_content}</p>
+                </div>)}
+                <br/>
+            </div>
+        )
+    }
 }

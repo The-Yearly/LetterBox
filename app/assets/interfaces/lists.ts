@@ -1,8 +1,9 @@
 export interface Lists{
-    id:number;
-    authorid:number;
-    title:string;
-    bio:string;
-    films:number[];
-    likes:number;
+    list_id:number;
+    list_user_id:number;
+    list_title:string
+    user_name:string;
+    list_bio:string;
+    list_likes:number;
+    movies:string;
 }
