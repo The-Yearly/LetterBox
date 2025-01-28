@@ -6,6 +6,7 @@ import { User } from "@/app/assets/interfaces/user"
 import { Users_Following_Followers } from "@/app/assets/interfaces/users_following_followers"
 import { Moviedb } from "@/app/assets/interfaces/moviesdb"
 import {useState,use,useEffect} from "react"
+import { Users_List } from "@/app/assets/interfaces/users_list"
 import UserMovies from "@/app/users/components/usermovies"
 import LikedMovies from "../components/liked"
 import WatchList from "../components/watchlist"
@@ -22,6 +23,7 @@ export default function UserProfileI({params}:any){
     const [movies,setMovies]=useState<Moviedb[]|null>(null)
     const [User,setUsers]=useState<User[]|null>(null)
     const [page,changeContent]=useState(1)
+    const [lists,setLists]=useState<Users_List[]|null>(null)
     console.log(userid.id)
     useEffect(()=>{const fetchdata=async()=>{
         const usersres=await fetch("http://localhost:8000/users/"+userid.id)
@@ -32,6 +34,8 @@ export default function UserProfileI({params}:any){
         setFollowing(await followingres.json())
         const moviesres=await fetch("http://localhost:8000/users/movies/"+userid.id)
         setMovies(await moviesres.json())
+        const listres=await fetch("http://localhost:8000/users/list/"+userid.id)
+        setLists(await listres.json())
     }
     fetchdata()},[])
     if(User!=null){
@@ -65,11 +69,11 @@ export default function UserProfileI({params}:any){
                     <p id={styles.username}>{User[0].user_name}</p>
                     <button id={styles.followButton} className={isfollowing?styles.hide:styles.show} onClick={()=>setIsFollowing(true)}>Follow</button>
                     <div id={styles.stats}>
-                    <div id={styles.moviesSeen}><p id={styles.moviesSeenno}>{movies?.length}<br/><button onClick={()=>{changeContent(2)}}>Films</button></p></div>
-                    <div id={styles.moviesThisYear}><p id={styles.moviesThisYearno}>{movies?.length}<br/><button onClick={()=>{changeContent(2)}}>This Year</button></p></div>
-                    <div id={styles.moviesList}><p id={styles.moviesListp}>1<br/><button onClick={()=>changeContent(6)}>Lists</button></p></div>  
-                    <div id={styles.Following}><p id={styles.Followingp}>{follwing?.length}<br/><button onClick={()=>changeContent(8)}>Following</button></p></div>
-                    <div id={styles.Followers}><p id={styles.Followersp}>{followers?.length}<br/><button onClick={()=>changeContent(9)}>Followers</button></p></div>        
+                    <div id={styles.moviesSeen}><p id={styles.moviesSeenno}>{movies?movies.length:0}<br/><button onClick={()=>{changeContent(2)}}>Films</button></p></div>
+                    <div id={styles.moviesThisYear}><p id={styles.moviesThisYearno}>{movies?movies.length:0}<br/><button onClick={()=>{changeContent(2)}}>This Year</button></p></div>
+                    <div id={styles.moviesList}><p id={styles.moviesListp}>{lists?lists.length:0}<br/><button onClick={()=>changeContent(6)}>Lists</button></p></div>  
+                    <div id={styles.Following}><p id={styles.Followingp}>{follwing?follwing.length:0}<br/><button onClick={()=>changeContent(8)}>Following</button></p></div>
+                    <div id={styles.Followers}><p id={styles.Followersp}>{followers?followers.length:0}<br/><button onClick={()=>changeContent(9)}>Followers</button></p></div>        
                     </div>
                 </div>
                 <div id={styles.pageRouter}>

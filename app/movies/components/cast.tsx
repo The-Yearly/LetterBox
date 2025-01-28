@@ -1,8 +1,7 @@
-import { Movie } from "@/app/assets/interfaces/movies"
-import moviedata from "@/app/assets/movies.json"
 import { Movies_Actors } from "@/app/assets/interfaces/movies_actors"
 import styles from "../styles/castandcrew.module.css"
 import { useEffect, useState } from "react"
+import Link from "next/link";
 export  default function Cast(props:any){
     const [cast,setCast]=useState<Movies_Actors[] | null>(null);
     useEffect(()=>{
@@ -15,7 +14,7 @@ export  default function Cast(props:any){
     return(
         <>  {cast?
             <div id={styles.displayArea}>
-                {cast.map(cast=><p key={cast.actor_id} className={styles.nameCard}>{cast.actor_name}</p>)}
+                {cast.map(cast=><Link href={"http://localhost:3000/actors/"+cast.actor_id} key={cast.actor_id}><p className={styles.nameCard}>{cast.actor_name}</p></Link>)}
             </div>:<></>}
         </>
     )

@@ -5,4 +5,6 @@ export interface User{
     user_passwd:string;
     user_bio:string;
     user_userPic:string
+    followers_no:number;
+    following:number;
 }

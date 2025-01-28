@@ -5,6 +5,7 @@ import { Movies_Countrys } from "@/app/assets/interfaces/movies_countrys"
 import { Movies_Languages } from "@/app/assets/interfaces/movies_languages"
 import { Movies_Altitles } from "@/app/assets/interfaces/movies_altitles"
 import { useEffect, useState } from "react"
+import Link from "next/link"
 export default function MovieDets(props:any){
     const [genres,setGenre]=useState<Movies_Genres[]|null>(null)
     const [studios,setStudios]=useState<Movies_Studio[]|null>(null)
@@ -30,12 +31,12 @@ export default function MovieDets(props:any){
 
         return(
             <div id={styles.displayArea}>
-            <div className={styles.crewDets}>Studios : {studios?studios.map(studio=><p key={studio.production_id} className={styles.nameCard}>{studio.production_name}</p>):""}</div>
+            <div className={styles.crewDets}>Studios : {studios?studios.map(studio=><Link href={"/studio/"+studio.production_id }key={studio.production_id}><p className={styles.nameCard}>{studio.production_name}</p></Link>):""}</div>
             <div className={styles.crewDets}>Country : {countrys?countrys.map(country=><p key={country.country_id} className={styles.nameCard}>{country.country_name}</p>):""}</div>
             <div id={styles.crewDets}>Primary Language : {primlang?primlang.map(pl=><p key={pl.language_id} className={styles.nameCard}>{pl.language_name}</p>):""}</div>
             <div id={styles.crewDets}>Spoken Languages : {langs?langs.map(lang=><p key={lang.language_id} className={styles.nameCard}>{lang.language_name}</p>):""}</div>
             <div id={styles.crewDets}>Alternative Titles : {alternativetitles?alternativetitles.map(alternativetitle=><p key={alternativetitle.title_id} className={styles.nameCard}>{alternativetitle.title_name}</p>):""}</div>
-            <div id={styles.crewDets}>Genres : {genres?genres.map(genre=><p key={genre.genre_id} className={styles.nameCard}>{genre.genre_name}</p>):""}</div>
+            <div id={styles.crewDets}>Genres : {genres?genres.map(genre=><Link href={"/genres/"+genre.genre_id} key={genre.genre_id}><p className={styles.nameCard}>{genre.genre_name}</p></Link>):""}</div>
             </div>
     )
     

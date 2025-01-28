@@ -1,31 +1,30 @@
-import data from "@/app/assets/users.json"
 import styles from "../styles/top5.module.css"
 import Image from "next/image";
-import movies from "@/app/assets/movies.json"
 import Link from "next/link";
-import {Users} from "@/app/assets/interfaces/users"
-import { Movie } from "@/app/assets/interfaces/movies"
+import { Top5 } from "@/app/assets/interfaces/top5users";
+import grey from "@/app/assets/images/grey.png"
 export default async function TopFiveUsers(props:any){
-    const userMovie:Movie[]=movies
     let page=props.page
-    const users:Users[]=data.slice(0,5)
-    return(
-        <div className={page=="home"?styles.a:styles.b}>
-            <ul className={styles.topRow}>
-            <p id={styles.featuredMembers}>Featured Members</p>
-                {users.map((user)=>
-                <li key={user.id}><div className={styles.memberBox}><Link href={"/users/"+user.id}><Image id={styles.profileIcon} alt={user.id+"'s image"} src={user.image} width={100} height={100}/></Link>
-                <p className={styles.memberUserName}>{user.username}</p>
-                <p id={styles.reviewsandfilmsrated}>{user.movies_watched} Films {user.movies_reviewed} Reviews</p>
-                <div className={styles.favMovies}>
-                    <Link href={"/movies/"+userMovie[user.favorites[0]].id}><Image className={styles.fav1} src={userMovie[user.favorites[0]].poster} width={300} height={300} alt="Image 1"/></Link>
-                    <Link href={"/movies/"+userMovie[user.favorites[1]].id}><Image className={styles.fav2} src={userMovie[user.favorites[1]].poster} width={300} height={300} alt="Image 2"/></Link>
-                    <Link href={"/movies/"+userMovie[user.favorites[2]].id}><Image className={styles.fav3} src={userMovie[user.favorites[2]].poster} width={300} height={300} alt="Image 3"/></Link>
-                    <Link href={"/movies/"+userMovie[user.favorites[3]].id}><Image className={styles.fav4} src={userMovie[user.favorites[3]].poster} width={300} height={300} alt="Image 4"/></Link>
-                </div>
-                </div></li>)}
-            </ul>
-        </div>
-    )
-
+    const res=await fetch("http://localhost:8000/top5users")
+    const users:Top5[]=await res.json()
+    if(users!=null){
+        return(
+            <div className={page=="home"?styles.a:styles.b}>
+                <ul className={styles.topRow}>
+                <p id={styles.featuredMembers}>Featured Members</p>
+                    {users.map((user)=>
+                    <li key={user.user_id}><div className={styles.memberBox}><Link href={"/users/"+user.user_id}><Image id={styles.profileIcon} alt={user.user_id+"'s image"} src={user?user.user_userPic:grey} width={100} height={100}/></Link>
+                    <p className={styles.memberUserName}>{user.user_name}</p>
+                    <p id={styles.reviewsandfilmsrated}>{user.movies_watched_count} Films {user.reviews_count} Reviews</p>
+                    <div className={styles.favMovies}>
+                        <Link href={user.movie_id_1?"/movies/"+user.movie_id_1:"/"}><Image className={styles.fav1} src={user.poster_1?user.poster_1:grey} width={300} height={300} alt="Image 1"/></Link>
+                        <Link href={user.movie_id_2?"/movies/"+user.movie_id_2:"/"}><Image className={styles.fav2} src={user.poster_2?user.poster_2:grey} width={300} height={300} alt="Image 2"/></Link>
+                        <Link href={user.movie_id_3?"/movies/"+user.movie_id_3:"/"}><Image className={styles.fav3} src={user.poster_3?user.poster_3:grey} width={300} height={300} alt="Image 3"/></Link>
+                        <Link href={user.movie_id_4?"/movies/"+user.movie_id_4:"/"}><Image className={styles.fav4} src={user.poster_4?user.poster_4:grey} width={300} height={300} alt="Image 4"/></Link>
+                    </div>
+                    </div></li>)}
+                </ul>
+            </div>
+        )
+    }
 }

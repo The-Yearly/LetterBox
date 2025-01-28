@@ -1,6 +1,3 @@
-import { Moviedb } from "@/app/assets/interfaces/moviesdb"
-import { User } from "@/app/assets/interfaces/user"
-import List from "@/app/lists/[id]/page"
 import { useEffect,useState } from "react"
 import grey from "@/app/assets/images/grey.png"
 import Image from "next/image"

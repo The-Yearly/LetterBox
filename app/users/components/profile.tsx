@@ -1,16 +1,12 @@
 'use client'
-import userdata from "@/app/assets/users.json"
 import Image from "next/image"
 import styles from "../styles/profile.module.css"
 import { Moviedb } from "@/app/assets/interfaces/moviesdb"
-import { Users } from "../../assets/interfaces/users"
 import { User } from "@/app/assets/interfaces/user"
 import { useEffect,useState } from "react"
 import Link from "next/link"
 import ReviewsPage from "./reviews"
 export default function Profile(props:any){
-    const user:Users[]=userdata;
-    const reviews=user[props.id].reviews
     const [User,setUsers]=useState<User[]|null>(null)
     const [movies,setMovies]=useState<Moviedb[]|null>(null)
     const [favmovies,setFav]=useState<Moviedb[]|null>(null)

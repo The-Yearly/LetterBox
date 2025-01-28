@@ -264,6 +264,97 @@ app.get("/users/following/:id",(req,res)=>{
         res.json(rows);
     })
 })
+app.get("/actors/:id",(req,res)=>{
+    con.query("select * from movies left join movies_actors on movies_actors.movie_id=movies.movie_id where movies_actors.actor_id="+req.params.id,function(err,rows){
+        if(err) throw err;
+        res.json(rows);
+    })
+})
+app.get("/directors/:id",(req,res)=>{
+    con.query("select * from movies left join movies_directors on movies_directors.movie_id=movies.movie_id where movies_directors.dir_id="+req.params.id,function(err,rows){
+        if(err) throw err;
+        res.json(rows);
+    })
+})
+app.get("/producers/:id",(req,res)=>{
+    con.query("select * from movies left join movies_producers on movies_producers.movie_id=movies.movie_id where movies_producers.producer_id="+req.params.id,function(err,rows){
+        if(err) throw err;
+        res.json(rows);
+    })
+})
+app.get("/writers/:id",(req,res)=>{
+    con.query("select * from movies left join movies_writers on movies_writers.movie_id=movies.movie_id where movies_writers.writer_id="+req.params.id,function(err,rows){
+        if(err) throw err;
+        res.json(rows);
+    })
+})
+app.get("/editors/:id",(req,res)=>{
+    con.query("select * from movies left join movies_editors on movies_editors.movie_id=movies.movie_id where movies_editors.editor_id="+req.params.id,function(err,rows){
+        if(err) throw err;
+        res.json(rows);
+    })
+})
+app.get("/cinematography/:id",(req,res)=>{
+    con.query("select * from movies left join movies_cinematographys on movies_cinematographys.movie_id=movies.movie_id where movies_cinematographys.cinematography_id="+req.params.id,function(err,rows){
+        if(err) throw err;
+        res.json(rows);
+    })
+})
+app.get("/music/:id",(req,res)=>{
+    con.query("select * from movies left join movies_musics on movies_musics.movie_id=movies.movie_id where movies_musics.music_id="+req.params.id,function(err,rows){
+        if(err) throw err;
+        res.json(rows);
+    })
+})
+app.get("/producersdes/:id",(req,res)=>{
+    con.query("select * from movies left join movies_producers on movies_producers.movie_id=movies.movie_id where movies_producers.producer_id="+req.params.id,function(err,rows){
+        if(err) throw err;
+        res.json(rows);
+    })
+})
+app.get("/genres/:id",(req,res)=>{
+    con.query("select * FROM movies LEFT JOIN movies_genres ON movies_genres.movie_id = movies.movie_id left join genres ON genres.genre_id = movies_genres.genre_id WHERE genres.genre_id="+req.params.id,function(err,rows){
+        if(err) throw err;
+        res.json(rows);
+    })
+})
+app.get("/productions/:id",(req,res)=>{
+    con.query("select * FROM movies LEFT JOIN movies_productions ON movies_productions.movie_id = movies.movie_id left join productions ON productions.production_id = movies_productions.production_id WHERE productions.production_id="+req.params.id,function(err,rows){
+        if(err) throw err;
+        res.json(rows);
+    })
+})
+
+app.get("/top5users",(req,res)=>{
+    con.query(" SELECT u.user_name, u.user_id, u.user_userPic, u.follows_this_week, MAX(CASE WHEN rn = 1 THEN m.movie_id END) AS movie_id_1, MAX(CASE WHEN rn = 1 THEN m.movie_poster END) AS poster_1, MAX(CASE WHEN rn = 2 THEN m.movie_id END) AS movie_id_2, MAX(CASE WHEN rn = 2 THEN m.movie_poster END) AS poster_2, MAX(CASE WHEN rn = 3 THEN m.movie_id END) AS movie_id_3, MAX(CASE WHEN rn = 3 THEN m.movie_poster END) AS poster_3, MAX(CASE WHEN rn = 4 THEN m.movie_id END) AS movie_id_4, MAX(CASE WHEN rn = 4 THEN m.movie_poster END) AS poster_4, MAX(CASE WHEN rn = 5 THEN m.movie_id END) AS movie_id_5, MAX(CASE WHEN rn = 5 THEN m.movie_poster END) AS poster_5, (SELECT COUNT(*) FROM movies_watched_users mw WHERE mw.user_id = u.user_id) AS movies_watched_count, (SELECT COUNT(*) FROM movies_reviews_users mr WHERE mr.user_id = u.user_id) AS reviews_count FROM ( SELECT mf.user_id, mf.movie_id, ROW_NUMBER() OVER (PARTITION BY mf.user_id ORDER BY m.movie_views DESC) AS rn FROM movies_fav_users mf INNER JOIN movies m ON mf.movie_id = m.movie_id ) ranked_movies INNER JOIN users u ON ranked_movies.user_id = u.user_id LEFT JOIN movies m ON ranked_movies.movie_id = m.movie_id WHERE rn <= 5 GROUP BY u.user_id ORDER BY u.followers_no DESC LIMIT 5; ",function(err,rows){
+        if(err) throw err;
+        res.json(rows);
+    })
+})
+app.get("/popUsers",(req,res)=>{
+    con.query("SELECT u.user_name, u.user_id, u.user_userPic, u.follows_this_week, MAX(CASE WHEN rn = 1 THEN m.movie_id END) AS movie_id_1, MAX(CASE WHEN rn = 1 THEN m.movie_poster END) AS poster_1, MAX(CASE WHEN rn = 2 THEN m.movie_id END) AS movie_id_2, MAX(CASE WHEN rn = 2 THEN m.movie_poster END) AS poster_2, MAX(CASE WHEN rn = 3 THEN m.movie_id END) AS movie_id_3, MAX(CASE WHEN rn = 3 THEN m.movie_poster END) AS poster_3, MAX(CASE WHEN rn = 4 THEN m.movie_id END) AS movie_id_4, MAX(CASE WHEN rn = 4 THEN m.movie_poster END) AS poster_4, MAX(CASE WHEN rn = 5 THEN m.movie_id END) AS movie_id_5, MAX(CASE WHEN rn = 5 THEN m.movie_poster END) AS poster_5, (SELECT COUNT(*) FROM movies_watched_users mw WHERE mw.user_id = u.user_id) AS movies_watched_count, (SELECT COUNT(*) FROM movies_reviews_users mr WHERE mr.user_id = u.user_id) AS reviews_count FROM ( SELECT mf.user_id, mf.movie_id, ROW_NUMBER() OVER (PARTITION BY mf.user_id ORDER BY m.movie_views DESC) AS rn FROM movies_fav_users mf INNER JOIN movies m ON mf.movie_id = m.movie_id ) ranked_movies INNER JOIN users u ON ranked_movies.user_id = u.user_id LEFT JOIN movies m ON ranked_movies.movie_id = m.movie_id WHERE rn <= 5 GROUP BY u.user_id ORDER BY u.follows_this_week DESC LIMIT 5;",function(err,rows){
+        if(err) throw err;
+        res.json(rows);
+    })
+})
+app.get("/getUsers/:id",(req,res)=>{
+    con.query("select user_name,user_id,following,followers_no,user_userPic from users limit 5 offset "+req.params.id,function(err,rows){
+        if(err) throw err;
+        res.json(rows);
+    })
+})
+app.get("/toplists",(req,res)=>{
+    con.query("SELECT l.list_id, l.list_title, l.list_bio, l.list_likes, MAX(CASE WHEN ml.row_num = 1 THEN m.movie_poster END) AS poster_1, MAX(CASE WHEN ml.row_num = 2 THEN m.movie_poster END) AS poster_2, MAX(CASE WHEN ml.row_num = 3 THEN m.movie_poster END) AS poster_3, MAX(CASE WHEN ml.row_num = 4 THEN m.movie_poster END) AS poster_4, MAX(CASE WHEN ml.row_num = 5 THEN m.movie_poster END) AS poster_5 FROM lists l LEFT JOIN (SELECT ml.list_id, ml.movie_id, ROW_NUMBER() OVER (PARTITION BY ml.list_id ORDER BY m.movie_like DESC) AS row_num FROM movies_lists ml JOIN movies m ON ml.movie_id = m.movie_id ) ml ON l.list_id = ml.list_id LEFT JOIN movies m ON ml.movie_id = m.movie_id WHERE ml.row_num <= 5 GROUP BY l.list_id, l.list_title, l.list_bio, l.list_likes ORDER BY l.list_likes DESC limit 3;",function(err,rows){
+        if(err) throw err;
+        res.json(rows);
+    })
+})
+app.get("/lists/:id",(req,res)=>{
+    con.query("SELECT l.list_id, l.list_title, l.list_bio, l.list_likes, MAX(CASE WHEN ml.row_num = 1 THEN m.movie_poster END) AS poster_1, MAX(CASE WHEN ml.row_num = 2 THEN m.movie_poster END) AS poster_2, MAX(CASE WHEN ml.row_num = 3 THEN m.movie_poster END) AS poster_3, MAX(CASE WHEN ml.row_num = 4 THEN m.movie_poster END) AS poster_4, MAX(CASE WHEN ml.row_num = 5 THEN m.movie_poster END) AS poster_5 FROM lists l LEFT JOIN (SELECT ml.list_id, ml.movie_id, ROW_NUMBER() OVER (PARTITION BY ml.list_id ORDER BY m.movie_like DESC) AS row_num FROM movies_lists ml JOIN movies m ON ml.movie_id = m.movie_id ) ml ON l.list_id = ml.list_id LEFT JOIN movies m ON ml.movie_id = m.movie_id WHERE ml.row_num <= 5 GROUP BY l.list_id, l.list_title, l.list_bio, l.list_likes limit 5 offset "+req.params.id,function(err,rows){
+        if(err) throw err;
+        res.json(rows);
+    })
+})
 app.get("/test",(req,res)=>{
     res.json({message :"Hello World"});
 });
