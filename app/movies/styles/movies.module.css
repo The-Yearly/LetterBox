@@ -28,22 +28,72 @@
     padding-left: 10px;
     border-bottom:  1px solid rgb(172, 171, 171);;
 }
-
-#filter{
-    position:absolute;
-    border: 1px solid rgb(172, 171, 171);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
+#filterBox{ 
+    position: absolute;
+    z-index: 1;
     top:0px;
+    right: 100px;    
+}
+#filter{
+    border: 1px solid rgb(172, 171, 171);
+    border-radius: 10px;
     width: 80px;
-    right: 50px;
     height: 35px;
+}
+#genrefilter{
+    position: absolute;
+    top:0px;
+    border: 1px solid rgb(172, 171, 171);
+    border-radius: 10px;
+    width: 100px;
+    height: 35px;
+    left: 100px;
 }
 .showFilter{
     display: block;
 }
 .hideFilters{
     display: none;
+}
+#FilterlistBox{
+    position: absolute;
+    width: 100px;
+    font-family: "Albari";
+    background-color:rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    text-align: center;
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(32, 32, 32, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    height: auto;
+    right:-10px;
+    top: 30px;
+}
+#GenreBox{
+    position: absolute;
+    width: 100px;
+    font-family: "Albari";
+    background-color:rgba(61, 59, 59, 0.2);
+    backdrop-filter: blur(5px);
+    text-align: center;
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(32, 32, 32, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    height: auto;
+    right:-120px;
+    top: 30px;
+}
+#GenreBox li{
+    padding-bottom: 5px;
+}
+#GenreBox li:hover{
+    border-bottom: 2px solid white;
+    border-radius: 3px;
+}
+#FilterlistBox li{
+    padding-bottom: 5px;
+}
+#FilterlistBox li:hover{
+    border-bottom: 2px solid white;
+    border-radius: 3px;
 }

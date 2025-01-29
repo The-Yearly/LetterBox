@@ -1,11 +1,11 @@
-import styles from "@/app/movies/styles/movies.module.css"
+import styles from "@/app/actors/actor.module.css"
 import Image from "next/image"
 import Link from "next/link"
 import { Moviedb } from "@/app/assets/interfaces/moviesdb"
 export default async function Studios({params}:any){
-    let moviefetch=await fetch("http://localhost:8000/productions/"+params.id)
+    let st=await params
+    let moviefetch=await fetch("http://localhost:8000/productions/"+st.id)
     let movies:Moviedb[]=await moviefetch.json()
-    console.log(movies)
     return(
         <>
             <div id={styles.allMovies}>

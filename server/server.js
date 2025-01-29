@@ -109,6 +109,88 @@ app.get("/movies/actors/:id",(req,res)=>{
         })
     })
 })
+app.get("/actorsdets/:id",(req,res)=>{
+
+    con.connect(function(Err){
+        if(Err) console.log(Err);
+        let query="SELECT * FROM actors where actor_id = "+req.params.id;
+        con.query(query,function(err,rows){
+            if(err) throw err;
+            res.json(rows)
+        })
+    })
+})
+app.get("/directordets/:id",(req,res)=>{
+
+    con.connect(function(Err){
+        if(Err) console.log(Err);
+        let query="SELECT * FROM directors where dir_id = "+req.params.id;
+        con.query(query,function(err,rows){
+            if(err) throw err;
+            res.json(rows)
+        })
+    })
+})
+app.get("/cine/:id",(req,res)=>{
+    con.connect(function(Err){
+        if(Err) console.log(Err);
+        let query="SELECT * FROM cinematographys where cinematography_id  = "+req.params.id;
+        con.query(query,function(err,rows){
+            if(err) throw err;
+            res.json(rows)
+        })
+    })
+})
+app.get("/editordet/:id",(req,res)=>{
+    con.connect(function(Err){
+        if(Err) console.log(Err);
+        let query="SELECT * FROM editors where editor_id = "+req.params.id;
+        con.query(query,function(err,rows){
+            if(err) throw err;
+            res.json(rows)
+        })
+    })
+})
+app.get("/musicdets/:id",(req,res)=>{
+    con.connect(function(Err){
+        if(Err) console.log(Err);
+        let query="SELECT * FROM musics where music_id = "+req.params.id;
+        con.query(query,function(err,rows){
+            if(err) throw err;
+            res.json(rows)
+        })
+    })
+})
+app.get("/producerdets/:id",(req,res)=>{
+    con.connect(function(Err){
+        if(Err) console.log(Err);
+        let query="SELECT * FROM producers where producer_id = "+req.params.id;
+        con.query(query,function(err,rows){
+            if(err) throw err;
+            res.json(rows)
+        })
+    })
+})
+app.get("/proddesdets/:id",(req,res)=>{
+    con.connect(function(Err){
+        if(Err) console.log(Err);
+        let query="SELECT * FROM production_designs where production_design_id = "+req.params.id;
+        con.query(query,function(err,rows){
+            if(err) throw err;
+            res.json(rows)
+        })
+    })
+})
+app.get("/writersdets/:id",(req,res)=>{
+    con.connect(function(Err){
+        if(Err) console.log(Err);
+        let query="SELECT * FROM writers where writer_id = "+req.params.id;
+        con.query(query,function(err,rows){
+            if(err) throw err;
+            res.json(rows)
+        })
+    })
+})
 app.get("/movies/prodes/:id",(req,res)=>{
     console.log(req.params.id)
     con.connect(function(Err){
@@ -179,8 +261,27 @@ app.get("/movies/countrys/:id",(req,res)=>{
 app.get("/movies/languages/:id/:no",(req,res)=>{
     con.connect(function(Err){
         if(Err) console.log(Err);
-        console.log(req.params.id)
         con.query("select * from languages left join movies_languages on movies_languages.language_id=languages.language_id where movie_id="+req.params.id+" limit "+req.params.no,function(err,rows){
+            if(err) console.log(err)
+            res.json(rows)
+        })
+    })
+
+});
+app.get("/languages/movies/:id",(req,res)=>{
+    con.connect(function(Err){
+        if(Err) console.log(Err);
+        con.query("select * from movies left join movies_languages on movies_languages.movie_id=movies.movie_id where language_id="+req.params.id,function(err,rows){
+            if(err) console.log(err)
+            res.json(rows)
+        })
+    })
+
+});
+app.get("/languages",(req,res)=>{
+    con.connect(function(Err){
+        if(Err) console.log(Err);
+        con.query("select * from languages",function(err,rows){
             if(err) console.log(err)
             res.json(rows)
         })
@@ -318,6 +419,13 @@ app.get("/genres/:id",(req,res)=>{
         res.json(rows);
     })
 })
+app.get("/allgenres",(req,res)=>{
+    con.query("select * from genres",function(err,rows){
+        if(err) throw err;
+        res.json(rows);
+    })
+})
+
 app.get("/productions/:id",(req,res)=>{
     con.query("select * FROM movies LEFT JOIN movies_productions ON movies_productions.movie_id = movies.movie_id left join productions ON productions.production_id = movies_productions.production_id WHERE productions.production_id="+req.params.id,function(err,rows){
         if(err) throw err;
@@ -343,6 +451,7 @@ app.get("/getUsers/:id",(req,res)=>{
         res.json(rows);
     })
 })
+
 app.get("/toplists",(req,res)=>{
     con.query("SELECT l.list_id, l.list_title, l.list_bio, l.list_likes, MAX(CASE WHEN ml.row_num = 1 THEN m.movie_poster END) AS poster_1, MAX(CASE WHEN ml.row_num = 2 THEN m.movie_poster END) AS poster_2, MAX(CASE WHEN ml.row_num = 3 THEN m.movie_poster END) AS poster_3, MAX(CASE WHEN ml.row_num = 4 THEN m.movie_poster END) AS poster_4, MAX(CASE WHEN ml.row_num = 5 THEN m.movie_poster END) AS poster_5 FROM lists l LEFT JOIN (SELECT ml.list_id, ml.movie_id, ROW_NUMBER() OVER (PARTITION BY ml.list_id ORDER BY m.movie_like DESC) AS row_num FROM movies_lists ml JOIN movies m ON ml.movie_id = m.movie_id ) ml ON l.list_id = ml.list_id LEFT JOIN movies m ON ml.movie_id = m.movie_id WHERE ml.row_num <= 5 GROUP BY l.list_id, l.list_title, l.list_bio, l.list_likes ORDER BY l.list_likes DESC limit 3;",function(err,rows){
         if(err) throw err;

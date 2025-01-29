@@ -9,4 +9,5 @@ export interface Moviedb{
     movie_like_this_week:number;
     desc_title:string;
     desc:string
+    genre_name:string;
   }

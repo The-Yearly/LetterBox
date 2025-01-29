@@ -1,14 +1,21 @@
-import styles from "@/app/movies/styles/movies.module.css"
+import styles from "@/app/actors/actor.module.css"
 import Image from "next/image"
 import Link from "next/link"
 import { Moviedb } from "@/app/assets/interfaces/moviesdb"
-import { use } from "react"
+import { Cinematography } from "@/app/assets/interfaces/cinematography"
+import pic from "@/app/assets/images/profile.png"
 export default async function Cinematographers({params}:any){
-    let moviefetch=await fetch("http://localhost:8000/cinematography/"+params.id)
+    let cid=await params
+    let moviefetch=await fetch("http://localhost:8000/cinematography/"+cid.id)
+    let dirfetch=await fetch("http://localhost:8000/cine/"+cid.id)
     let movies:Moviedb[]=await moviefetch.json()
-    console.log(movies)
+    let cine:Cinematography[]=await dirfetch.json()
     return(
         <>
+            <div id={styles.userCard}>
+                <Image id={styles.profilePic} src={cine[0].cine_pic?cine[0].cine_pic:pic} alt="Profile Pic" height={400} width={300}/>
+                <p id={styles.username}>{cine[0].cinematography_name}</p>
+            </div>
             <div id={styles.allMovies}>
             <p id={styles.filmsheading}>{"Worked On"}</p>
                 <ul id={styles.all_movies}>

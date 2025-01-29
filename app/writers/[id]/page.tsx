@@ -1,14 +1,21 @@
-import styles from "@/app/movies/styles/movies.module.css"
+import styles from "@/app/actors/actor.module.css"
 import Image from "next/image"
+import pic from "@/app/assets/images/profile.png"
 import Link from "next/link"
 import { Moviedb } from "@/app/assets/interfaces/moviesdb"
-import { use } from "react"
-export default async function Writers({params}:any){
-    let moviefetch=await fetch("http://localhost:8000/writers/"+params.id)
+import { Writers } from "@/app/assets/interfaces/writers"
+export default async function Writer({params}:any){
+    let wri=await params
+    let moviefetch=await fetch("http://localhost:8000/writers/"+wri.id)
+    let writersres=await fetch("http://localhost:8000/writersdets/"+wri.id)
     let movies:Moviedb[]=await moviefetch.json()
-    console.log(movies)
+    let writer:Writers[]=await writersres.json()
     return(
         <>
+             <div id={styles.userCard}>
+                <Image id={styles.profilePic} src={writer[0].writer_pic?writer[0].writer_pic:pic} alt="Profile Pic" height={400} width={300}/>
+                <p id={styles.username}>{writer[0].writer_name}</p>
+            </div>
             <div id={styles.allMovies}>
             <p id={styles.filmsheading}>{"Worked On"}</p>
                 <ul id={styles.all_movies}>
