@@ -4,4 +4,6 @@ export interface Users_Following_Followers{
     follower_id:number;
     user_userPic:string;
     user_name:string;
+    followers_no: number;
+    following: number;
 }

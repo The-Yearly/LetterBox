@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Top5 } from "@/app/assets/interfaces/top5users";
 import Link from "next/link";
 import grey from "@/app/assets/images/grey.png"
+import pic from "@/app/assets/images/profile.png"
 export default async function PopularThisWeek(props:any){
     let page=props.page
     const res=await fetch("http://localhost:8000/popUsers")
@@ -12,7 +13,7 @@ export default async function PopularThisWeek(props:any){
             <ul className={styles.popularThisWeek}>
             <p id={styles.featuredMembers}>Popular This Week</p>
                 {users.map((user)=>
-                <li key={user.user_id}><div className={styles.memberBox}><Link href={"/users/"+user.user_id}><Image id={styles.profileIcon} alt={user.user_id+"'s image"} src={user.user_userPic} width={100} height={100}/></Link>
+                <li key={user.user_id}><div className={styles.memberBox}><Link href={"/users/"+user.user_id}><Image id={styles.profileIcon} alt={user.user_id+"'s image"} src={user.user_userPic?user.user_userPic:pic} width={100} height={100}/></Link>
                 <p className={styles.memberUserName}>{user.user_name}</p>
                 <p id={styles.reviewsandfilmsrated}>{user.movies_watched_count} Films {user.reviews_count} Reviews</p>
                 <ul className={styles.favMovies}>

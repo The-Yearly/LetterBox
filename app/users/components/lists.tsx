@@ -25,7 +25,7 @@ export default function UserList(props:any){
                             <Image className={styles.Poster} id={styles.m3} alt="Poster" src={index.poster_3?index.poster_3:grey} width={100} height={100}/>
                             <Image className={styles.Poster} id={styles.m4} alt="Poster" src={index.poster_4?index.poster_4:grey} width={100} height={100}/>
                             <Image className={styles.Poster} id={styles.m5} alt="Poster" src={index.poster_5?index.poster_5:grey} width={100} height={100}/>
-                            <Link href={"/lists/"+index.list_id} className={styles.listName}>{index.list_id}</Link>
+                            <Link href={"/lists/"+index.list_id} className={styles.listName}>{index.list_title}</Link>
                         </div>)}
                     </ul>
                 </div>

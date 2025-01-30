@@ -5,9 +5,19 @@ import profilePic from "@/app/assets/images/profile.png"
 import styles from "./components.module.css"
 import SignupPage from "./signupPage"
 import LoginPage from "./loginPage"
+import { User } from "../assets/interfaces/user"
 export default function Login(){
     const [model,useModel]=useState(false)
     const [login,useLogin]=useState(true)
+    const [userPic,setUserPic]=useState<User[]|null>(null)
+    const logged_id=localStorage.getItem("user_id")
+    useEffect(()=>{const fetchdata=async()=>{
+        if(logged_id!=null){
+            const userPicres=await fetch("http://localhost:8000/userPic/"+parseInt(logged_id))
+            setUserPic(await userPicres.json())
+        }
+    }
+    fetchdata()},[localStorage.getItem("user_id")])
     useEffect(()=>{
         var e1=document.getElementById(styles.loginheading);
         var e2=document.getElementById(styles.signupheading);
@@ -31,9 +41,11 @@ export default function Login(){
     function changeModel(){
         useModel(!model)
     }
+    console.log(logged_id)
+    if(userPic!=null){
     return(
         <>
-        <button onClick={changeModel}><Image id={styles.profile} src={profilePic} alt="Profile" width={60} height={60}/></button> 
+        <button onClick={changeModel}><Image id={styles.profile} src={userPic[0].user_userPic?userPic[0].user_userPic:profilePic} alt="Profile" width={60} height={60}/></button> 
         {model &&
         <div className={styles.modal}>
             <div className={styles.overlay}>
@@ -52,5 +64,5 @@ export default function Login(){
         }
         </>
     )
-
+}
 }

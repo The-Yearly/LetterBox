@@ -49,3 +49,24 @@
     font-family: 'Courier New', Courier, monospace;
     left: 170px;
 }
+#pageController{
+    position: relative;
+    width: 300px;
+    height: 90px;
+}
+#nextButton{
+    position: absolute;
+    left: 0px;
+    top:10px;
+}
+#prevButton{
+    position: absolute;
+    left: 100px;
+    top:10px;
+}
+.hide{
+    visibility: hidden;
+}
+.show{
+    visibility: visible;
+}

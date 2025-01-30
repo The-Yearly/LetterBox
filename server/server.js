@@ -1,7 +1,9 @@
 const express=require("express");
-let cors=require("cors");
+const cors=require("cors");
+const axios=require("axios")
 let app=express();
-    let mysql=require("mysql2");
+app.use(express.json())
+let mysql=require("mysql2");
 let con = mysql.createConnection({ host: "localhost",user: "theyearly",password: "Arduino1",database:"letterboxd",});
 app.use(cors());
 app.get("/movies",(req,res)=>{
@@ -347,8 +349,8 @@ app.get("/users/reviews/:id",(req,res)=>{
         res.json(rows);
     })
 })
-app.get("/movies/reviews/:id",(req,res)=>{
-    con.query("select reviews.*, users.name,users.user_userPic from reviews left join movies_reviews_users on reviews.review_id=movies_reviews_users.review_id left join users on users.user_id=movies_reviews_users.user_id  left join movies on movies.movie_id=movies_reviews_users.movie_id where movies.movie_id="+req.params.id,function(err,rows){
+app.get("/movies/reviews/:id/:off",(req,res)=>{
+    con.query("select reviews.*, users.name,users.user_userPic from reviews left join movies_reviews_users on reviews.review_id=movies_reviews_users.review_id left join users on users.user_id=movies_reviews_users.user_id  left join movies on movies.movie_id=movies_reviews_users.movie_id where movies.movie_id="+req.params.id+" limit 4 offset "+req.params.off,function(err,rows){
         if(err) throw err;
         res.json(rows);
     })
@@ -446,7 +448,7 @@ app.get("/popUsers",(req,res)=>{
     })
 })
 app.get("/getUsers/:id",(req,res)=>{
-    con.query("select user_name,user_id,following,followers_no,user_userPic from users limit 5 offset "+req.params.id,function(err,rows){
+    con.query("select user_name,user_id,following,followers_no,user_userPic from users limit 6 offset "+req.params.id,function(err,rows){
         if(err) throw err;
         res.json(rows);
     })
@@ -459,14 +461,113 @@ app.get("/toplists",(req,res)=>{
     })
 })
 app.get("/lists/:id",(req,res)=>{
-    con.query("SELECT l.list_id, l.list_title, l.list_bio, l.list_likes, MAX(CASE WHEN ml.row_num = 1 THEN m.movie_poster END) AS poster_1, MAX(CASE WHEN ml.row_num = 2 THEN m.movie_poster END) AS poster_2, MAX(CASE WHEN ml.row_num = 3 THEN m.movie_poster END) AS poster_3, MAX(CASE WHEN ml.row_num = 4 THEN m.movie_poster END) AS poster_4, MAX(CASE WHEN ml.row_num = 5 THEN m.movie_poster END) AS poster_5 FROM lists l LEFT JOIN (SELECT ml.list_id, ml.movie_id, ROW_NUMBER() OVER (PARTITION BY ml.list_id ORDER BY m.movie_like DESC) AS row_num FROM movies_lists ml JOIN movies m ON ml.movie_id = m.movie_id ) ml ON l.list_id = ml.list_id LEFT JOIN movies m ON ml.movie_id = m.movie_id WHERE ml.row_num <= 5 GROUP BY l.list_id, l.list_title, l.list_bio, l.list_likes limit 5 offset "+req.params.id,function(err,rows){
+    con.query("SELECT l.list_id, l.list_title, l.list_bio, l.list_likes, MAX(CASE WHEN ml.row_num = 1 THEN m.movie_poster END) AS poster_1, MAX(CASE WHEN ml.row_num = 2 THEN m.movie_poster END) AS poster_2, MAX(CASE WHEN ml.row_num = 3 THEN m.movie_poster END) AS poster_3, MAX(CASE WHEN ml.row_num = 4 THEN m.movie_poster END) AS poster_4, MAX(CASE WHEN ml.row_num = 5 THEN m.movie_poster END) AS poster_5 FROM lists l LEFT JOIN (SELECT ml.list_id, ml.movie_id, ROW_NUMBER() OVER (PARTITION BY ml.list_id ORDER BY m.movie_like DESC) AS row_num FROM movies_lists ml JOIN movies m ON ml.movie_id = m.movie_id ) ml ON l.list_id = ml.list_id LEFT JOIN movies m ON ml.movie_id = m.movie_id WHERE ml.row_num <= 5 GROUP BY l.list_id, l.list_title, l.list_bio, l.list_likes limit 6 offset "+req.params.id,function(err,rows){
         if(err) throw err;
         res.json(rows);
     })
 })
-app.get("/test",(req,res)=>{
-    res.json({message :"Hello World"});
+app.get("/userPic/:id",(req,res)=>{
+    con.query("select user_userPic from users where user_id = "+req.params.id,function(err,rows){
+        if(err) throw err;
+        res.json(rows);
+    })
+})
+app.post("/usernames",(req,res)=>{
+    let data=req.body;
+    if(data.user_name!=undefined){
+        con.query("select * from users where user_name ='"+data.user_name+"'",function(err,rows){
+            if(err) throw err;
+        if(rows.length==0){
+            con.query("insert into users(name,user_name,user_passwd,user_bio,user_userPic,follows_this_week,followers_no,following,email) values('','"+data.user_name+"', '"+data.user_passwd+"','','',0,0,0,'"+data.email+"')",function(err,rows){
+                if(err) throw err;
+            })
+            con.query("select user_id from users where user_name ='"+data.user_name+"'",function(err,rows){
+                if(err) throw err;
+                res.json({message:"Created Succesfully",id:rows})
+            })
+            
+        }
+        else{    
+            res.json({message:"User Name Taken"})}
+    })}
+})
+app.post("/login",(req,res)=>{
+    let data=req.body;
+    if(data.user_name!=undefined){
+        con.query("select * from users where user_name ='"+data.user_name+"'",function(err,rows){
+        if(err) throw err;
+        if(rows.length!=0){
+            if(data.user_passwd==rows[0].user_passwd){
+                con.query("select user_id from users where user_name ='"+data.user_name+"'",function(err,rows){
+                    if(err) throw err;
+                    res.json({message:"Logged In",id:rows})
+                })
+            }
+            else{
+                res.json({message:"Invalid Password"})
+            }
+        }
+        else{
+            res.json({message:"User Not Found"})
+        }
+        })}
+})
+app.get("/userPic/:id",(req,res)=>{
+    let data=req.data
+    if(data.following_id!=undefined){
+    con.query("select user_userPic from users where user_id = "+req.params.id,function(err,rows){
+        if(err) throw err;
+        res.json(rows);
+    })}
+})
+app.get("/isFollowing/:flid/:flerid",(req,res)=>{
+    con.query("select * from following_followers where following_id = "+req.params.flid+" and follower_id = "+req.params.flerid,function(err,rows){
+        if(err) throw err;
+        res.json(rows)
+    })
+})
+app.post("/follow",(req,res)=>{
+    data=req.body
+    console.log(data)
+    if(data.follower_id!=undefined){
+    con.query("insert into following_followers values("+data.follower_id+","+data.following_id+")",function(err,rows){
+        if(err) throw err;
+    })
+    con.query("update users set follows_this_week=follows_this_week+1 ,followers_no=followers_no+1 where user_id = "+data.following_id,function(err,rows){
+        if(err) throw err;
+    })
+    con.query("update users set following=following+1 where user_id = "+data.follower_id,function(err,rows){
+        if(err) throw err;
+    })
+    res.json({message:"Following"})
+}
+})
+app.post("/unfollow",(req,res)=>{
+    data=req.body
+    console.log(data)
+    if(data.follower_id!=undefined){
+    con.query("delete from following_followers where follower_id = "+data.follower_id+" and following_id ="+data.following_id,function(err,rows){
+        if(err) throw err;
+    })
+    con.query("update users set follows_this_week=follows_this_week-1 ,followers_no=followers_no-1 where user_id = "+data.following_id,function(err,rows){
+        if(err) throw err;
+    })
+    con.query("update users set following=following-1 where user_id = "+data.follower_id,function(err,rows){
+        if(err) throw err;
+    })
+    res.json({message:"UnFollowed"})
+}
+})
+app.get("test",(req,res)=>{ 
+    console.log(req.body)
+    res.json({message :req.body});
 });
+
 app.listen(8000,()=>{
     console.log("Server Is Starting ;)");
 });
+
+app.post("/api", (req, res) => {
+    console.log("Received:", req.name);
+    res.json({ message: "Success", data: req.body });
+  });

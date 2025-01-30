@@ -7,4 +7,5 @@ export interface User{
     user_userPic:string
     followers_no:number;
     following:number;
+    email:string;
 }

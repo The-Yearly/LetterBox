@@ -3,6 +3,7 @@ import { useState,useEffect } from "react"
 import styles from "../styles/follwers_following.module.css"
 import Image from "next/image"
 import Link from "next/link"
+import pic from "@/app/assets/images/profile.png"
 export default function FollowingPage(props:any){
     const [following,setFollowing]=useState<Users_Following_Followers[]|null>(null)
     useEffect(()=>{const fetchdata=async()=>{
@@ -21,8 +22,10 @@ export default function FollowingPage(props:any){
                     {following.map(flwing=>
                     <li key={flwing.following_id}>
                         <div className={styles.userCard}>
-                            <Link href={"/users/"+flwing.following_id}><Image className={styles.profilePic} src={flwing.user_userPic} alt="UserImage" width={70} height={70}/>
+                            <Link href={"/users/"+flwing.following_id}><Image className={styles.profilePic} src={flwing.user_userPic?flwing.user_userPic:pic} alt="UserImage" width={70} height={70}/>
                             <p className={styles.userName}>{flwing.user_name}</p></Link>
+                            <p className={styles.followers}>followers {flwing.followers_no}</p>
+                            <p className={styles.following}>following {flwing.following}</p>
                         </div>
                     </li>)}
                 </ul>

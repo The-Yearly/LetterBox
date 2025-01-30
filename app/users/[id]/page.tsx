@@ -14,6 +14,10 @@ import FollowersPage from "../components/followers"
 import FollowingPage from "../components/following"
 import UserList from "../components/lists"
 import ReviewsPage from "../components/reviews"
+import pic from "@/app/assets/images/profile.png"
+import axios from "axios"
+import { ToastContainer, toast } from 'react-toastify';
+import { Follow } from "@/app/assets/interfaces/follow"
 interface userid{id:number}
 export default function UserProfileI({params}:any){
     const userid:userid=use(params)
@@ -24,6 +28,8 @@ export default function UserProfileI({params}:any){
     const [User,setUsers]=useState<User[]|null>(null)
     const [page,changeContent]=useState(1)
     const [lists,setLists]=useState<Users_List[]|null>(null)
+    const [data,setData]=useState<Follow|null>(null)
+    const myid=localStorage.getItem("user_id")
     console.log(userid.id)
     useEffect(()=>{const fetchdata=async()=>{
         const usersres=await fetch("http://localhost:8000/users/"+userid.id)
@@ -36,8 +42,34 @@ export default function UserProfileI({params}:any){
         setMovies(await moviesres.json())
         const listres=await fetch("http://localhost:8000/users/list/"+userid.id)
         setLists(await listres.json())
+        const flres=await fetch("http://localhost:8000/isFollowing/"+userid.id+"/"+localStorage.getItem("user_id"))
+        const flr=await flres.json()
+        console.log(flr)
+        if(flr.length!=0){
+            console.log("s")
+            setIsFollowing(true)
+        }else{
+            setIsFollowing(false)
+        }
     }
-    fetchdata()},[])
+    fetchdata()},[isfollowing])
+    useEffect(()=>{const push=async()=>{
+        if(isfollowing==true){
+        const res=await axios.post("http://localhost:8000/follow",data)
+        toast(res.data.message)}
+        else if(isfollowing==false){
+            const res=await axios.post("http://localhost:8000/unfollow",data)
+        }
+    }
+    push()},[data])
+    function follow(){
+        setIsFollowing(true)
+        setData({follower_id:String(myid),following_id:String(userid.id)})
+    }
+    function unfollow(){
+        setIsFollowing(false)
+        setData({follower_id:String(myid),following_id:String(userid.id)})
+    }
     if(User!=null){
         function renderComponent(){
             switch(page){
@@ -65,9 +97,10 @@ export default function UserProfileI({params}:any){
         return(
             <>  
                 <div id={styles.userCard}>
-                    <Image id={styles.profilePic} src={User[0].user_userPic} alt="Profile Pic" height={400} width={300}/>
+                    <Image id={styles.profilePic} src={User[0].user_userPic?User[0].user_userPic:pic} alt="Profile Pic" height={400} width={300}/>
                     <p id={styles.username}>{User[0].user_name}</p>
-                    <button id={styles.followButton} className={isfollowing?styles.hide:styles.show} onClick={()=>setIsFollowing(true)}>Follow</button>
+                    <button id={styles.followButton} className={isfollowing?styles.hide:styles.show} onClick={follow}>Follow</button>
+                    <button id={styles.followButton} className={isfollowing?styles.show:styles.hide} onClick={unfollow}>UnFollow</button>
                     <div id={styles.stats}>
                     <div id={styles.moviesSeen}><p id={styles.moviesSeenno}>{movies?movies.length:0}<br/><button onClick={()=>{changeContent(2)}}>Films</button></p></div>
                     <div id={styles.moviesThisYear}><p id={styles.moviesThisYearno}>{movies?movies.length:0}<br/><button onClick={()=>{changeContent(2)}}>This Year</button></p></div>

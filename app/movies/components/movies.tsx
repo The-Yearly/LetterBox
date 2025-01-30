@@ -42,7 +42,7 @@ export default function AllMovies(){
                     <ul id={styles.FilterlistBox} >
                         <li onClick={()=>{setFilter(1)}}>Genres</li>
                         <li onClick={()=>{setFilter(2)}}>Languages</li>
-                        <li onClick={()=>{setFilter(0);setSelectedGenre(0);setSelectedLang(0)}}>clear</li>
+                        <li onClick={()=>{setFilter(0);setSelectedGenre(0);setSelectedLang(0)}}>Clear</li>
                     </ul>
                 </div>
                 <button id={styles.genrefilter} onClick={()=>{setShowGenreFilters(!showGenreFilter);}} className={filter==1?styles.showFilters:styles.hideFilters}>Genre</button>

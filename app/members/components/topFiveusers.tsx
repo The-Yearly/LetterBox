@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Top5 } from "@/app/assets/interfaces/top5users";
 import grey from "@/app/assets/images/grey.png"
+import pic from "@/app/assets/images/profile.png"
 export default async function TopFiveUsers(props:any){
     let page=props.page
     const res=await fetch("http://localhost:8000/top5users")
@@ -13,7 +14,7 @@ export default async function TopFiveUsers(props:any){
                 <ul className={styles.topRow}>
                 <p id={styles.featuredMembers}>Featured Members</p>
                     {users.map((user)=>
-                    <li key={user.user_id}><div className={styles.memberBox}><Link href={"/users/"+user.user_id}><Image id={styles.profileIcon} alt={user.user_id+"'s image"} src={user?user.user_userPic:grey} width={100} height={100}/></Link>
+                    <li key={user.user_id}><div className={styles.memberBox}><Link href={"/users/"+user.user_id}><Image id={styles.profileIcon} alt={user.user_id+"'s image"} src={user?user.user_userPic:pic} width={100} height={100}/></Link>
                     <p className={styles.memberUserName}>{user.user_name}</p>
                     <p id={styles.reviewsandfilmsrated}>{user.movies_watched_count} Films {user.reviews_count} Reviews</p>
                     <div className={styles.favMovies}>

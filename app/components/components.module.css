@@ -124,12 +124,12 @@
 }
 #profile:hover{
   border: 3px solid white;
-  border-radius: 50%;
 
 }
 #profile{
   position: absolute;
   right:15px;
+  border-radius: 50%;
   top:20px;
 }
 .MovieCard:hover{
