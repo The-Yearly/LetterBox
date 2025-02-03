@@ -15,6 +15,8 @@ export default function SignupPage(){
         if(res.data.message=="Created Succesfully"){
             localStorage.setItem("user_id",String(res.data.id[0].user_id))
             localStorage.setItem("user_name",String(data?.user_name))
+            toast(res.data.message)
+            window.location.reload()
         }
     }
     Senddata()},[data])

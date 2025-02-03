@@ -1,5 +1,5 @@
 export interface User{
-    user_id:number;
+    user_id:number|string;
     name:string;
     user_name:string;
     user_passwd:string;

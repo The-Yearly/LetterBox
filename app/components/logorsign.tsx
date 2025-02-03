@@ -6,6 +6,8 @@ import styles from "./components.module.css"
 import SignupPage from "./signupPage"
 import LoginPage from "./loginPage"
 import { User } from "../assets/interfaces/user"
+import Link from "next/link"
+
 export default function Login(){
     const [model,useModel]=useState(false)
     const [login,useLogin]=useState(true)
@@ -42,10 +44,11 @@ export default function Login(){
         useModel(!model)
     }
     console.log(logged_id)
-    if(userPic!=null){
+
+    if(userPic==null){
     return(
         <>
-        <button onClick={changeModel}><Image id={styles.profile} src={userPic[0].user_userPic?userPic[0].user_userPic:profilePic} alt="Profile" width={60} height={60}/></button> 
+        <button onClick={changeModel}><Image id={styles.profile} src={profilePic} alt="Profile" width={60} height={60}/></button> 
         {model &&
         <div className={styles.modal}>
             <div className={styles.overlay}>
@@ -64,5 +67,8 @@ export default function Login(){
         }
         </>
     )
+}
+else{
+    return(<><Link href={"/profile"}><Image id={styles.profile} src={userPic[0].user_userPic?userPic[0].user_userPic:profilePic} alt="Profile" width={60} height={60}/></Link></>)
 }
 }

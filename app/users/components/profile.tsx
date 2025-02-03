@@ -22,7 +22,6 @@ export default function Profile(props:any){
    
     },[])
     if(movies!=null && User!=null && favmovies!=null){
-        console.log(favmovies)
         return(
             <>  
                 <div id={styles.favorites}>

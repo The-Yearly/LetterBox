@@ -4,6 +4,7 @@ import Image from "next/image"
 import { movie_reviews_users } from "@/app/assets/interfaces/movies_reviews_users";
 import { useState,useEffect } from "react";
 import pic from "@/app/assets/images/profile.png"
+import UserReview from "./userReview";
 export default function MovieReviewsPage(props:any){
     const[reviews,setReviews]=useState<movie_reviews_users[]|null>(null)
     const[offset,setOffset]=useState(0)
@@ -16,6 +17,8 @@ export default function MovieReviewsPage(props:any){
     if(reviews!=null){
         revi=reviews.length
         return(
+        <>
+        <UserReview id={props.id}/>
         <div className={styles.userPage} id={styles.reviews}>
             <p id={styles.reviewHeading}>Reviews</p>
                 {reviews.slice(0,3).map(Review=> 
@@ -30,6 +33,7 @@ export default function MovieReviewsPage(props:any){
                     <button id={styles.prevButton} className={offset==0?styles.hide:styles.show} onClick={()=>setOffset(offset-3)}>Previous</button>
                 </div>
             </div>
+        </>
         )
 }
 }

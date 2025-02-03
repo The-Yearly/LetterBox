@@ -6,7 +6,7 @@ app.use(express.json())
 let mysql=require("mysql2");
 let con = mysql.createConnection({ host: "localhost",user: "theyearly",password: "Arduino1",database:"letterboxd",});
 app.use(cors());
-app.get("/movies",(req,res)=>{
+app.get("/movies", async (req,res)=>{
     con.connect(function(Err){
         if(Err) console.log(Err);
         con.query("select * from movies",function(err,rows){
@@ -18,7 +18,6 @@ app.get("/movies",(req,res)=>{
 app.get("/movies/:id",(req,res)=>{
     con.connect(function(Err){
         if(Err) console.log(Err);
-        console.log(req.params.id)
         con.query("select * from movies where movie_id ="+req.params.id,function(err,rows){
             if(err) console.log(err)
             res.json(rows)
@@ -211,7 +210,6 @@ app.get("/moviesearch/:name",(req,res)=>{
         let query="select * from movies where movie_title like '%"+req.params.name+"%'";
         con.query(query,function(err,rows){
             if(err) throw err;
-            console.log(rows)
             res.json(rows)
         })
        
@@ -233,8 +231,8 @@ app.get("/moviestop/:no",(req,res)=>{
     con.query(query,(err,rows)=>{
         if(err) console.log(err)
         res.json(rows)
-    })
-})
+    })})
+
 
 app.get("/movies/studios/:id",(req,res)=>{
     con.connect(function(Err){
@@ -316,6 +314,7 @@ app.get("/movies/altitles/:id",(req,res)=>{
 app.get("/users/:id",(req,res)=>{
     con.query("select * from users where user_id="+req.params.id,function(err,rows){
         if(err) throw err;
+        console.log(rows)
         res.json(rows);
     })
 })
@@ -455,16 +454,19 @@ app.get("/getUsers/:id",(req,res)=>{
 })
 
 app.get("/toplists",(req,res)=>{
+    con.connect(function(Err){
+    if(Err) throw Err
     con.query("SELECT l.list_id, l.list_title, l.list_bio, l.list_likes, MAX(CASE WHEN ml.row_num = 1 THEN m.movie_poster END) AS poster_1, MAX(CASE WHEN ml.row_num = 2 THEN m.movie_poster END) AS poster_2, MAX(CASE WHEN ml.row_num = 3 THEN m.movie_poster END) AS poster_3, MAX(CASE WHEN ml.row_num = 4 THEN m.movie_poster END) AS poster_4, MAX(CASE WHEN ml.row_num = 5 THEN m.movie_poster END) AS poster_5 FROM lists l LEFT JOIN (SELECT ml.list_id, ml.movie_id, ROW_NUMBER() OVER (PARTITION BY ml.list_id ORDER BY m.movie_like DESC) AS row_num FROM movies_lists ml JOIN movies m ON ml.movie_id = m.movie_id ) ml ON l.list_id = ml.list_id LEFT JOIN movies m ON ml.movie_id = m.movie_id WHERE ml.row_num <= 5 GROUP BY l.list_id, l.list_title, l.list_bio, l.list_likes ORDER BY l.list_likes DESC limit 3;",function(err,rows){
         if(err) throw err;
         res.json(rows);
-    })
-})
+    })})})
 app.get("/lists/:id",(req,res)=>{
+    con.connect(function(Err){
+        if(Err) throw Err
     con.query("SELECT l.list_id, l.list_title, l.list_bio, l.list_likes, MAX(CASE WHEN ml.row_num = 1 THEN m.movie_poster END) AS poster_1, MAX(CASE WHEN ml.row_num = 2 THEN m.movie_poster END) AS poster_2, MAX(CASE WHEN ml.row_num = 3 THEN m.movie_poster END) AS poster_3, MAX(CASE WHEN ml.row_num = 4 THEN m.movie_poster END) AS poster_4, MAX(CASE WHEN ml.row_num = 5 THEN m.movie_poster END) AS poster_5 FROM lists l LEFT JOIN (SELECT ml.list_id, ml.movie_id, ROW_NUMBER() OVER (PARTITION BY ml.list_id ORDER BY m.movie_like DESC) AS row_num FROM movies_lists ml JOIN movies m ON ml.movie_id = m.movie_id ) ml ON l.list_id = ml.list_id LEFT JOIN movies m ON ml.movie_id = m.movie_id WHERE ml.row_num <= 5 GROUP BY l.list_id, l.list_title, l.list_bio, l.list_likes limit 6 offset "+req.params.id,function(err,rows){
         if(err) throw err;
         res.json(rows);
-    })
+    })})
 })
 app.get("/userPic/:id",(req,res)=>{
     con.query("select user_userPic from users where user_id = "+req.params.id,function(err,rows){
@@ -528,23 +530,22 @@ app.get("/isFollowing/:flid/:flerid",(req,res)=>{
 })
 app.post("/follow",(req,res)=>{
     data=req.body
-    console.log(data)
     if(data.follower_id!=undefined){
-    con.query("insert into following_followers values("+data.follower_id+","+data.following_id+")",function(err,rows){
-        if(err) throw err;
-    })
-    con.query("update users set follows_this_week=follows_this_week+1 ,followers_no=followers_no+1 where user_id = "+data.following_id,function(err,rows){
-        if(err) throw err;
-    })
-    con.query("update users set following=following+1 where user_id = "+data.follower_id,function(err,rows){
-        if(err) throw err;
-    })
-    res.json({message:"Following"})
+        con.query("insert into following_followers values("+data.follower_id+","+data.following_id+")",function(err,rows){
+            if(err) throw err;
+        })
+        con.query("update users set follows_this_week=follows_this_week+1 ,followers_no=followers_no+1 where user_id = "+data.following_id,function(err,rows){
+            if(err) throw err;
+        })
+        con.query("update users set following=following+1 where user_id = "+data.follower_id,function(err,rows){
+            if(err) throw err;
+            res.json({message:"Following"})
+        })
+        
 }
 })
 app.post("/unfollow",(req,res)=>{
     data=req.body
-    console.log(data)
     if(data.follower_id!=undefined){
     con.query("delete from following_followers where follower_id = "+data.follower_id+" and following_id ="+data.following_id,function(err,rows){
         if(err) throw err;
@@ -554,12 +555,89 @@ app.post("/unfollow",(req,res)=>{
     })
     con.query("update users set following=following-1 where user_id = "+data.follower_id,function(err,rows){
         if(err) throw err;
+        res.json({message:"UnFollowed"})
     })
-    res.json({message:"UnFollowed"})
+    
 }
 })
+app.get("/movies/watched/:mid/:id",(req,res)=>{
+    con.connect(function(Err){
+    con.query("select * from movies_watched_users where movie_id="+req.params.mid+" and user_id = "+req.params.id,function(err,rows){
+        if(err) throw err;
+        watch=rows
+        con.query("select * from movies_fav_users where movie_id="+req.params.mid+" and user_id = "+req.params.id,function(err,fa){
+            if(err) throw err;
+            fav=fa
+            con.query("select * from movies_watchlist_users where movie_id="+req.params.mid+" and user_id = "+req.params.id,function(err,wl){
+                if(err) throw err;
+                wat=wl
+                console.log(fav)
+                res.json({watched:watch,favorite:fav,watchlist:wat})
+            })
+        })
+    })})
+})  
+app.post("/watchedmovie",(req,res)=>{
+    let data=req.body
+    console.log(data)
+    if(data.user_id!=undefined){
+        con.connect(function(Err){
+        con.query("insert into movies_watched_users values("+data.movie_id+","+data.user_id+")",function(err,rows){
+            if(err) throw err;
+            con.query("update movies set movie_views=movie_views+1,movie_views_this_week=movie_views_this_week+1 where movie_id ="+data.movie_id,function(err,rows){
+                res.json({message:"Movie Added To Watched"})
+            })
+            
+        })})}
+})
+app.post("/removewatchedmovie",(req,res)=>{
+    let data=req.body
+    if(data.user_id!=undefined){
+        con.query("delete from movies_watched_users where movie_id="+data.movie_id+" and user_id="+data.user_id,function(err,rows){
+            if(err) throw err;
+            con.query("update movies set movie_views=movie_views-1,movie_views_this_week=movie_views_this_week-1 where movie_id ="+data.movie_id,function(err,rows){
+                res.json({message:"Movie Added To Watched"})
+            })
+        })}
+})
+app.post("/favmovie",(req,res)=>{
+    let data=req.body
+    if(data.user_id!=undefined){
+        con.connect(function(Err){
+        con.query("insert into movies_fav_users values("+data.movie_id+","+data.user_id+")",function(err,rows){
+            if(err) throw err;
+            res.json({message:"Movie Added To Favorites"})
+        })})}
+})
+app.post("/removefavmovie",(req,res)=>{
+    let data=req.body
+    if(data.user_id!=undefined){
+        con.query("delete from movies_fav_users where movie_id="+data.movie_id+" and user_id="+data.user_id,function(err,rows){
+            if(err) throw err;
+            res.json({message:"Movie Removed From Favorites"})
+        })}
+})
+app.post("/updateUser",(req,res)=>{
+    let data=req.body
+    if(data.user_id!=undefined){
+        con.query("update users set name='"+data.name+"', user_bio = '"+data.user_bio+"',user_passwd ='"+data.user_passwd+"',email = '"+data.email+"',user_userPic ='"+data.user_userPic+"' where user_id="+data.user_id,function(err,rows){
+            if(err) throw err;
+            res.json({message:"Updated"})
+        })}
+})
+app.post("/postReview",(req,res)=>{
+    let data=req.body
+    if(data.user_id!=undefined){
+        con.query("insert into reviews(review_title,review_content,movie_id,user_id,review_rating,review_watchdate,review_likes) values('"+data.review_title+"','"+data.review_content+"',"+data.movie_id+","+data.user_id+",5,'2024/1/3',10)",function(err,rows){
+            if(err) throw err;
+            con.query("insert into movies_reviews_users(movie_id,user_id) values("+data.movie_id+","+data.user_id+")",function(err,rows){
+                if(err) throw err
+                res.json({message:"Review Posted"})
+            })
+        })}
+})
+
 app.get("test",(req,res)=>{ 
-    console.log(req.body)
     res.json({message :req.body});
 });
 
@@ -568,6 +646,5 @@ app.listen(8000,()=>{
 });
 
 app.post("/api", (req, res) => {
-    console.log("Received:", req.name);
     res.json({ message: "Success", data: req.body });
   });

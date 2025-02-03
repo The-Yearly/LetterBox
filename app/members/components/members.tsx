@@ -14,7 +14,7 @@ export default function AllMembers(){
         setUser(await res.json())
     }
     fetchdata(size)},[size])
-    console.log(size)
+    
     if(users!=null){
         userssize=users.length
     return(

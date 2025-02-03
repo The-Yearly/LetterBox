@@ -16,11 +16,22 @@ export default function AllMovies(){
     const [selectedGenre,setSelectedGenre]=useState(0)
     const [langs,setLangs]=useState<Language[]|null>(null)
     const [selectedLang,setSelectedLang]=useState(0)
-    useEffect(()=>{const fetchdata=async(selectedGenre:number,selectedLang:number)=>{
-        if(selectedGenre==0 && selectedLang==0){
-        let moviefetch=await fetch("http://localhost:8000/movies")
-        setMovie(await moviefetch.json())}
-        else if(selectedGenre!=0 && selectedLang==0){
+    useEffect(() => {
+        
+            fetch("http://localhost:8000/movies") .then(
+               response => response.json() .then(
+                data => setMovie(data)
+               )
+            )
+            
+            
+    
+    }, [])
+    
+    useEffect(()=>{
+        const fetchdata=async(selectedGenre:number,selectedLang:number)=>{
+
+         if(selectedGenre!=0 && selectedLang==0){
             let moviefetch=await fetch("http://localhost:8000/genres/"+selectedGenre)
             setMovie(await moviefetch.json())
         }
@@ -33,7 +44,9 @@ export default function AllMovies(){
         setGenres(await genres.json())
         setLangs(await langres.json())
     }
+
     fetchdata(selectedGenre,selectedLang)},[selectedGenre,selectedLang])
+    
     function Filter(){
         return(
             <div id={styles.filterBox}>

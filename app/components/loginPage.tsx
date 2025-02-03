@@ -14,6 +14,8 @@ export default function LoginPage(){
         if(res.data.message=="Logged In"){
             localStorage.setItem("user_id",String(res.data.id[0].user_id))
             localStorage.setItem("user_name",String(data?.user_name))
+            toast(res.data.message)
+            window.location.reload()
         }
     }
     fetchdata()},[data])
