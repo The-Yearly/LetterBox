@@ -4,7 +4,19 @@ const axios=require("axios")
 let app=express();
 app.use(express.json())
 let mysql=require("mysql2");
-let con = mysql.createConnection({ host: "localhost",user: "theyearly",password: "Arduino1",database:"letterboxd",});
+const cred={ host: "backend_database",user: "root",password: "Arduino1",database:"letterboxd"}
+let con;
+function connectMaria(){
+    con = mysql.createConnection(cred);
+    con.connect(function(Err){
+        if(Err){
+            setTimeout(connectMaria,5000)
+        }else{
+            console.log("Connected With Maria ;)")
+        }
+    })
+};
+connectMaria()
 app.use(cors());
 app.get("/movies", async (req,res)=>{
     con.connect(function(Err){
@@ -637,11 +649,12 @@ app.post("/postReview",(req,res)=>{
         })}
 })
 
-app.get("test",(req,res)=>{ 
+app.get("/test",(req,res)=>{ 
     res.json({message :req.body});
 });
 
-app.listen(8000,()=>{
+const port = process.env.PORT || 8000;
+app.listen(port,()=>{
     console.log("Server Is Starting ;)");
 });
 

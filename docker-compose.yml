@@ -1,0 +1,17 @@
+services:
+    frontend_app:
+      build:
+        dockerfile: frontend.Dockerfile
+      ports:
+        - "3000:3000"
+    backend_app:
+        build:
+            dockerfile: backend.Dockerfile
+            context: server/  
+        ports: 
+           - "8000:8000"
+    backend_database:
+        build: 
+            dockerfile: db.Dockerfile
+        environment:
+            MYSQL_ROOT_PASSWORD: "Arduino1"    

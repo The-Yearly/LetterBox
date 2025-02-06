@@ -16,24 +16,25 @@ export default function Profile(props:any){
         const favres=await fetch("http://localhost:8000/users/fav/"+props.id)
         setUsers(await usersres.json())
         setFav(await favres.json())
+        console.log(favmovies)
         setMovies(await moviesres.json())
     }
     fetchdata()
-   
-    },[])
+    },[props.id])
     if(movies!=null && User!=null && favmovies!=null){
+        console.log(favmovies)
         return(
             <>  
                 <div id={styles.favorites}>
                 <p id={styles.favHeading}>Favorites</p>
                     <ul id={styles.favMovies}>
-                    {favmovies.map(movie=><li key={movies[movie.movie_id].movie_id}><Link href={"/movies/"+movies[movie.movie_id].movie_id}><Image className={styles.MoviePoster} src={movie.movie_poster} alt="Movie" width={170} height={250}/></Link></li>)}
+                    {favmovies.map(movie=><li key={movie.movie_id}><Link href={"/movies/"+movie.movie_id}><Image className={styles.MoviePoster} src={movie.movie_poster} alt="Movie" width={170} height={250}/></Link></li>)}
                     </ul>
                 </div>
                 <div className={styles.recentActivity}>
                 <p id={styles.recentHeading}>Recent Activity</p>
                     <ul id={styles.recentActivityList}>
-                        {favmovies.map(movie=><li key={movies[movie.movie_id].movie_id}><Link href={"/movies/"+movies[movie.movie_id].movie_id}><Image className={styles.MoviePoster} src={movie.movie_poster} alt="Movie" width={170} height={250}/></Link></li>)}
+                        {favmovies.map(movie=><li key={movie.movie_id}><Link href={"/movies/"+movie.movie_id}><Image className={styles.MoviePoster} src={movie.movie_poster} alt="Movie" width={170} height={250}/></Link></li>)}
                     </ul>
                 </div>
                 <div id={styles.Bio}>
@@ -43,4 +44,4 @@ export default function Profile(props:any){
                 <ReviewsPage id={props.id} page="profile" no="2"/>
             </>
         )
-}}
+}}  

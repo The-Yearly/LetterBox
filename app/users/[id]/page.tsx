@@ -31,13 +31,10 @@ export default function UserProfileI({params}:any){
     const [data,setData]=useState<Follow|null>(null)
     const myid=localStorage.getItem("user_id")
     useEffect(()=>{const fetchdata=async()=>{
+        console.log("Hello")
         const usersres=await fetch("http://localhost:8000/users/"+userid.id)
         const user=await usersres.json()
         setUsers(user)
-        const flwersres=await fetch("http://localhost:8000/users/followers/"+userid.id)
-        setFollowers(await flwersres.json())
-        const followingres=await fetch("http://localhost:8000/users/following/"+userid.id)
-        setFollowing(await followingres.json())
         const moviesres=await fetch("http://localhost:8000/users/movies/"+userid.id)
         setMovies(await moviesres.json())
         const listres=await fetch("http://localhost:8000/users/list/"+userid.id)
@@ -51,7 +48,7 @@ export default function UserProfileI({params}:any){
         }
     }
     fetchdata()
-    })
+    },[userid.id])
     useEffect(()=>{const push=async()=>{
         if(isfollowing==true){
         const res=await axios.post("http://localhost:8000/follow",data)
@@ -63,12 +60,12 @@ export default function UserProfileI({params}:any){
     }
     push()},[data])
     function follow(){
-        setIsFollowing(true)
         setData({follower_id:String(myid),following_id:String(userid.id)})
+        setIsFollowing(true)
     }
     function unfollow(){
-        setIsFollowing(false)
         setData({follower_id:String(myid),following_id:String(userid.id)})
+        setIsFollowing(false)
     }
         function renderComponent(){
             switch(page){

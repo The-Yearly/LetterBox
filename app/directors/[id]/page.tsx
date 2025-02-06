@@ -6,8 +6,8 @@ import { Director} from "@/app/assets/interfaces/director_id"
 import pic from "@/app/assets/images/profile.png"
 export default async function Directors({params}:any){
     let did=params
-    let moviefetch=await fetch("http://localhost:8000/directors/"+did.id)
-    let dirfetch=await fetch("http://localhost:8000/directordets/"+ did.id)
+    let moviefetch=await fetch("http://backend_app:8000/directors/"+did.id)
+    let dirfetch=await fetch("http://backend_app:8000/directordets/"+ did.id)
     let movies:Moviedb[]=await moviefetch.json()
     let director:Director[]=await dirfetch.json()
     return(

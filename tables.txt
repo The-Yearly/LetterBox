@@ -12,10 +12,10 @@ CREATE TABLE movies (
 );
 
 
-create table directors(dir_id int not null auto_increment primary key,dir_name varchar(1000))
+create table directors(dir_id int not null auto_increment primary key,dir_name varchar(1000),dir_pic varchar(200))
 create table movies_directors(movie_id int,dir_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade, foreign key(dir_id) references directors(dir_id) on delete set null )
 
-create table producers(producer_id not null auto_increment primary key,producer_name int)
+create table producers(producer_id int not null auto_increment primary key,producer_name int,prod_pic varchar(200))
 CREATE TABLE movies_producers (
     movie_id INT,
     producer_id INT,
@@ -27,22 +27,22 @@ CREATE TABLE movies_producers (
 create table writers(writer_id int not null auto_increment primary key,writer_name varchar(1000))
 create table movies_writers(movie_id int,writer_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade, foreign key(writer_id) references writers(writer_id) on delete set null )
 
-create table actors(actor_id int not null auto_increment primary key,actor_name varchar(1000))
+create table actors(actor_id int not null auto_increment primary key,actor_name varchar(1000),actor_pic varchar(200))
 create table movies_actors(movie_id int,actor_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade,foreign key(actor_id) references actors(actor_id) on delete set null)
 
 create table productions(production_id int not null auto_increment primary key,production_name varchar(1000))
 create table movies_productions(movie_id int,production_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade, foreign key(production_id) references productions(production_id) on delete set null )
 
-create table cinematographys(cinematography_id int not null auto_increment primary key,cinematography_name varchar(1000))
+create table cinematographys(cinematography_id int not null auto_increment primary key,cinematography_name varchar(1000),cine_pic varchar(200))
 create table movies_cinematographys(movie_id int,cinematography_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade, foreign key(cinematography_id) references cinematographys(cinematography_id) on delete set null )
 
-create table editors(editor_id int not null auto_increment primary key,editor_name varchar(1000))
+create table editors(editor_id int not null auto_increment primary key,editor_name varchar(1000),edi_pic varchar(200))
 create table movies_editors(movie_id int,editor_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade, foreign key(editor_id) references editors(editor_id) on delete set null )
 
-create table musics(music_id int not null auto_increment primary key,music_name varchar(1000))
+create table musics(music_id int not null auto_increment primary key,music_name varchar(1000),music_pic varchar(200))
 create table movies_musics(movie_id int,music_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade, foreign key(music_id) references musics(music_id) on delete set null )
 
-create table production_designs(production_design_id int not null auto_increment primary key,production_design_name varchar(1000))
+create table production_designs(production_design_id int not null auto_increment primary key,production_design_name varchar(1000),proddes_pic varchar(200))
 create table movies_production_designs(movie_id int,production_design_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade, foreign key(production_design_id) references production_designs(production_design_id) on delete set null )
 
 create table languages(language_id int not null auto_increment primary key,language_name varchar(1000))
@@ -76,14 +76,15 @@ VALUES ("500 Days of Summer", "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWK
 
 INSERT INTO movies(movie_title, movie_poster, movie_banner, movie_like, movie_like_this_week, movie_views, movie_views_this_week, desc_title, descr)
 VALUES ("Now You See Me", "https://images-cdn.ubuy.co.in/635f6aafd6e4121a81607274-posters-usa-now-you-see-me-movie.jpg", "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisqVH5M5JZnrDmoq-8DnkIL8B7kWpGVObh87OucxobjjHGe5DO3UYkOvoQY5P2I-TbUQNG74p1H870z8fn8rT9J03i8z15QTi0OgcEzZviX-6jWELHX9AnFo3znS3R7H3ysa6rniFK69c/s640/now-you-see-me-wallpaper-7films.jpg", 1230, 1230, 1334, 1334, "Now You See Me: Masters of Illusion and Deception", "A thrilling heist film where a group of talented illusionists pull off daring bank robberies during their live performances, leaving law enforcement and audiences alike questioning what's real and what's trickery.");
-insert into producers(producer_name) values ('David Benioff'),('D.B. Weiss'),('Carolyn Strauss'),('Frank Doelger'),('Mark Gordon'),('Guymon Casady'),('Christian Colson'),('Scott Rudin'),('Albert S. Ruddy'),('Phil Lord'),('Christopher Miller'),('Avi Arad'),('Amy Pascal'),('Christina Steinberg'),('Mark Waters'),('Jessica Tuchinsky'),('Mason Novick'),('Steven J. Wolfe'),('Roberto Orci'),('Alex Kurtzman'),('Bobby Cohen'),('Scott Rudin'),('Dana Brunetti'),('Michael De Luca'),('Ceán Chaffin'),('Peter Chernin'),('Jenno Topping'),('James Mangold'),('Nora Grossman'),('Ido Ostrowsky'),('Teddy Schwarzman'),('Arne Schmidt'),('Lawrence Bender')
+
+
 INSERT INTO movies(movie_title, movie_poster, movie_banner, movie_like, movie_like_this_week, movie_views, movie_views_this_week, desc_title, descr)
 VALUES ("The Social Network", "https://image.tmdb.org/t/p/original/n0ybibhJtQ5icDqTp8eRytcIHJx.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIS8khrfNkPOudNQkxVlULk8MPfKsyMouvKA&s", 1130, 1130, 1124, 1124, "The Social Network: The Birth of Facebook and the Cost of Ambition", "A compelling drama that chronicles the rise of Facebook and the tumultuous journey of its creator, Mark Zuckerberg, revealing the personal and legal battles that shaped the world’s most influential social media platform.");
 
 INSERT INTO movies(movie_title, movie_poster, movie_banner, movie_like, movie_like_this_week, movie_views, movie_views_this_week, desc_title, descr)
 VALUES ("Ford v Ferrari", "https://lumiere-a.akamaihd.net/v1/images/image_a39a0e25.jpeg?region=0%2C0%2C800%2C1200", "https://media.licdn.com/dms/image/v2/D4D12AQGrkXO6EQt7gg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1664723998086?e=1740614400&v=beta&t=qgX_oCKHobkuVy8RQu_fdkHkyXgztBL_g-ymRA0tWw8", 1000, 1000, 1024, 1024, "Ford v Ferrari: The Battle for Speed and Glory", "A high-octane drama about the fierce rivalry between Ford and Ferrari, as an unlikely partnership between a maverick American car designer and a British driver aims to dethrone Ferrari at the 24 Hours of Le Mans race, defying all odds.");
 
-
+ 
 INSERT INTO movies (
     movie_title, 
     movie_poster, 
@@ -205,7 +206,7 @@ insert into productions(production_name) values
 
 insert into movies_productions values (1, 1) ,(2, 2) ,(3, 3) ,(4, 4) ,(4,5) ,(5, 6) ,(6, 7) ,(7, 4) ,(7, 8) ,(8, 9) ,(8, 10) ,(9, 11) ,(9, 12),(10, 13) ,(11, 14);
 
-insert into countrys(production_name) values
+insert into countrys(country_name) values
 ('United States'),('United Kingdom')
 
 
@@ -286,7 +287,7 @@ VALUES
     ('das', 'rr', 10, 2, 2, '2024-10-27', 0);
 
 
-create table movies_reviews_users(movie_id int,review_id int,user_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade,foreign key(review_id) references reviews(review_id)  on delete cascade, foreign key(user_id) references users(user_id) on delete set null )
+create table movies_reviews_users(movie_id int,review_id int primary key auto_increment,user_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade,foreign key(review_id) references reviews(review_id)  on delete cascade, foreign key(user_id) references users(user_id) on delete set null )
 
 insert into movies_reviews_users values
 (1,1,1),

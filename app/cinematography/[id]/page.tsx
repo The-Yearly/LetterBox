@@ -6,8 +6,8 @@ import { Cinematography } from "@/app/assets/interfaces/cinematography"
 import pic from "@/app/assets/images/profile.png"
 export default async function Cinematographers({params}:any){
     let cid=await params
-    let moviefetch=await fetch("http://localhost:8000/cinematography/"+cid.id)
-    let dirfetch=await fetch("http://localhost:8000/cine/"+cid.id)
+    let moviefetch=await fetch("http://backend_app:8000/cinematography/"+cid.id)
+    let dirfetch=await fetch("http://backend_app:8000/cine/"+cid.id)
     let movies:Moviedb[]=await moviefetch.json()
     let cine:Cinematography[]=await dirfetch.json()
     return(

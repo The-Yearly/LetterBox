@@ -13,7 +13,7 @@ export default function UserMovies(props:any){
         setUser(await userres.json())
         setMovies(await moviesres.json())
     }
-    fetchdata()},[])
+    fetchdata()},[props.id])
     if(movies!=null && user!=null){
         return(
             <>

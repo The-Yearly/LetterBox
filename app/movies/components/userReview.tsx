@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react"
 import { Movie_Review_User_Post} from "@/app/assets/interfaces/movie_review_userpost"
 import styles from "../styles/userReview.module.css"
-import { A } from "@/app/assets/interfaces/movies"
+
 import { toast, ToastContainer } from "react-toastify"
 import axios from "axios"
 export default function UserReview(props:any){

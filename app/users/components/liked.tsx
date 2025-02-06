@@ -15,7 +15,7 @@ export default function LikedMovies(props:any){
         setLiked(await likedres.json())
     }
     fetchdata()
-    },[])
+    },[props.id])
     if(liked!=null && user!=null){
         console.log(user)
         return(

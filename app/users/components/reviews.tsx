@@ -10,7 +10,7 @@ export default function reviewsPage(props:any){
         const reviewsres=await fetch("http://localhost:8000/users/reviews/"+props.id)
         setReviews(await reviewsres.json())
     }
-    fetchdata(),[]})
+    fetchdata()},[props.id])
     if(reviews!=null){
         return(
             <div className={props.page=="profile"?styles.userPage:styles.reviewsPage} id={styles.reviews}>

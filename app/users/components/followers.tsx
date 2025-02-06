@@ -10,7 +10,7 @@ export default function FollowersPage(props:any){
         const flwersres=await fetch("http://localhost:8000/users/followers/"+props.id)
         setFollowers(await flwersres.json())
     }
-    fetchdata()},[])
+    fetchdata()},[props.id])
     console.log(followers)
     if(followers!=null){
         return(

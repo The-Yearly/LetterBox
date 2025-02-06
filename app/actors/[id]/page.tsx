@@ -6,8 +6,8 @@ import pic from "@/app/assets/images/profile.png"
 import { Actors } from "@/app/assets/interfaces/actors"
 export default async function Actor({params}:any){
     let aid=await params
-    let moviefetch=await fetch("http://localhost:8000/actors/"+ aid.id)
-    let actorfetch=await fetch("http://localhost:8000/actorsdets/"+ aid.id)
+    let moviefetch=await fetch("http://backend_app:8000/actors/"+ aid.id)
+    let actorfetch=await fetch("http://backend_app:8000/actorsdets/"+ aid.id)
     let movies:Moviedb[]=await moviefetch.json()
     let actor:Actors[]=await actorfetch.json()
     return(

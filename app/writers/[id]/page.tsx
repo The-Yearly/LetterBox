@@ -6,8 +6,8 @@ import { Moviedb } from "@/app/assets/interfaces/moviesdb"
 import { Writers } from "@/app/assets/interfaces/writers"
 export default async function Writer({params}:any){
     let wri=await params
-    let moviefetch=await fetch("http://localhost:8000/writers/"+wri.id)
-    let writersres=await fetch("http://localhost:8000/writersdets/"+wri.id)
+    let moviefetch=await fetch("http://backend_app:8000/writers/"+wri.id)
+    let writersres=await fetch("http://backend_app:8000/writersdets/"+wri.id)
     let movies:Moviedb[]=await moviefetch.json()
     let writer:Writers[]=await writersres.json()
     return(

@@ -6,9 +6,9 @@ import pic from "@/app/assets/images/profile.png"
 import { Proddes } from "@/app/assets/interfaces/productiondes"
 export default async function ProducerDes({params}:any){
     let pid=await params
-    let moviefetch=await fetch("http://localhost:8000/producersdes/"+pid.id)
+    let moviefetch=await fetch("http://backend_app:8000/producersdes/"+pid.id)
     let movies:Moviedb[]=await moviefetch.json()
-    let prodres=await fetch("http://localhost:8000/proddesdets/"+pid.id)
+    let prodres=await fetch("http://backend_app:8000/proddesdets/"+pid.id)
     let prod:Proddes[]=await prodres.json()
 
     return(

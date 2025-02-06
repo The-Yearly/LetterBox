@@ -11,9 +11,9 @@ export default function WatchList(props:any){
         const usersres=await fetch("http://localhost:8000/users/"+props.id)
         const watchres=await fetch("http://localhost:8000/users/watchlist/"+props.id)
         setUsers(await usersres.json())
-        setWatch(await watchres.json())
+        setWatch(await watchres.json()) 
     }
-    fetchdata(),[]})
+    fetchdata()},[props.id])
     if(watch!=null && User!=null){
     return(
         <>

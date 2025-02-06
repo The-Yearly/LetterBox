@@ -11,7 +11,7 @@ export default function UserList(props:any){
         setLists(await listres.json())
     }
     listfetchdata()
-    },[])
+    },[props.id])
     if(lists!=null){
         return(
             <>

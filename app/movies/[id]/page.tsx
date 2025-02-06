@@ -40,7 +40,6 @@ export default function MoviePage({params}:any){
         setMovies(await res.json())
         const wat=await fetch("http://localhost:8000/movies/watched/"+movieid.id+"/"+localStorage.getItem("user_id"))
         let w=await wat.json()
-        console.log(w)
         if(w.watched.length!=0){
             setWatched(true)
         }else{

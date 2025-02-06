@@ -115,7 +115,7 @@ export default function Edit(){
                         <p id={styles.emailp}>Email:</p>
                         <input id={styles.Email} value={email} onChange={gotEmail} placeholder="Email"/>
                         <p id={styles.biop}>Bio:</p>
-                        <textarea id={styles.Bio} defaultValue={bio} placeholder="About Me..."/>
+                        <textarea id={styles.Bio} defaultValue={bio} onChange={gotBio} placeholder="About Me..."/>
                         <button id={styles.save} onClick={save}>Save</button>
                     </div>                 
                     </div>

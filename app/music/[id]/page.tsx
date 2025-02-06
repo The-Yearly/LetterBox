@@ -6,9 +6,9 @@ import { Musics } from "@/app/assets/interfaces/music"
 import pic from "@/app/assets/images/profile.png"
 export default async function Music({params}:any){
     let mid=await params
-    let moviefetch=await fetch("http://localhost:8000/music/"+mid.id)
+    let moviefetch=await fetch("http://backend_app:8000/music/"+mid.id)
     let movies:Moviedb[]=await moviefetch.json()
-    let musicres=await fetch("http://localhost:8000/musicdets/"+mid.id)
+    let musicres=await fetch("http://backend_app:8000/musicdets/"+mid.id)
     let music:Musics[]=await musicres.json()
     return(
         <>

@@ -1,0 +1,412 @@
+CREATE TABLE movies (
+        movie_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        movie_title VARCHAR(125),
+        movie_poster VARCHAR(300),
+        movie_banner VARCHAR(300),
+        movie_views INT,
+        movie_like INT,
+        movie_views_this_week INT,
+        movie_like_this_week INT,
+        desc_title VARCHAR(100),
+        descr VARCHAR(1000)
+    );
+
+    CREATE TABLE users (
+        user_id INT(11) AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(1000) NOT NULL,
+        user_name VARCHAR(1000) NOT NULL UNIQUE,
+        user_passwd VARCHAR(1000) NOT NULL,
+        user_bio VARCHAR(3000) NULL,
+        user_userPic VARCHAR(1000) NULL DEFAULT "",
+        follows_this_week INT(11) NULL,
+        followers_no INT(11) NOT NULL,
+        following INT(11) NULL,
+        email varchar(1000) NULL DEFAULT ''
+    );
+
+    create table actors(actor_id int not null auto_increment primary key,actor_name varchar(1000),actor_pic varchar(1000));
+
+
+    insert into movies(movie_title,movie_poster,movie_banner,movie_like,movie_like_this_week,movie_views,movie_views_this_week,desc_title,descr) values ("Game Of Thrones","https://m.media-amazon.com/images/M/MV5BMTNhMDJmNmYtNDQ5OS00ODdlLWE0ZDAtZTgyYTIwNDY3OTU3XkEyXkFqcGc@._V1_.jpg","https://pyxis.nymag.com/v1/imgs/4d1/dcf/a33209cb40d7dbd980ba6cdceddc56b0f6-got-poster-s8-2.rsocial.w1200.jpg",3000,3000,1000,1000,"Winter Is Coming: The Battle for the Iron Throne","A land torn by war, betrayal, and power struggles—where only the strongest survive and the ruthless reign supreme.")
+
+    INSERT INTO movies(movie_title, movie_poster, movie_banner, movie_like, movie_like_this_week, movie_views, movie_views_this_week, desc_title, descr)
+    VALUES ("Steve Jobs", "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11491197_p_v8_as.jpg", "https://aambar.wordpress.com/wp-content/uploads/2015/12/steve-jobs-movie-poster-header.png", 40000, 40000, 9999, 9999, "Winter Is Coming: The Battle for the Iron Throne", "A land torn by war, betrayal, and power struggles—where only the strongest survive and the ruthless reign supreme.");
+
+    INSERT INTO movies(movie_title, movie_poster, movie_banner, movie_like, movie_like_this_week, movie_views, movie_views_this_week, desc_title, descr)
+    VALUES ("Godfather", "https://m.media-amazon.com/images/M/MV5BYTJkNGQyZDgtZDQ0NC00MDM0LWEzZWQtYzUzZDEwMDljZWNjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", "https://communist.red/wp-content/uploads/2022/08/godfather.png", 3333, 3333, 8888, 8888, "The Godfather: A Legacy of Power and Betrayal", "A masterful tale of family, crime, and loyalty, where the Corleone family navigates a dangerous world of organized crime, revenge, and moral dilemmas—shaping the fate of a dynasty in the process.");
+
+    INSERT INTO movies(movie_title, movie_poster, movie_banner, movie_like, movie_like_this_week, movie_views, movie_views_this_week, desc_title, descr)
+    VALUES ("Spider-Man: Into the Spider-Verse", "https://resizing.flixster.com/xVd9PLVkH69dU3Yo9XLSjdMeu1M=/206x305/v2/https://resizing.flixster.com/_l50Ahm00b-RO9Ao2s3AyMjUWiU=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2ExYTZmMWFkLWViZWItNDNhMS1iZTEwLTcxODk1YTk3NWFhMy53ZWJw", "https://media.aintitcool.com/media/uploads/2018/big_eyes/spider-verse-banner-review.jpg", 3333, 3333, 8888, 8888, "Into the Spider-Verse: A Multiverse of Heroes", "A groundbreaking animated adventure where multiple versions of Spider-Man from alternate realities come together to face an unprecedented threat, redefining the boundaries of heroism and identity.");
+
+    INSERT INTO movies(movie_title, movie_poster, movie_banner, movie_like, movie_like_this_week, movie_views, movie_views_this_week, desc_title, descr)
+    VALUES ("500 Days of Summer", "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p193428_p_v8_bb.jpg", "https://miro.medium.com/v2/format:webp/1*Soa8CUMJCRsgAA36RPnHNQ@2x.jpeg", 3333, 3333, 8888, 8888, "500 Days of Summer: Love, Loss, and Reality", "A nonlinear exploration of love, heartbreak, and self-discovery, as one man reflects on his relationship with a woman who doesn’t believe in true love, challenging expectations and emotions along the way.");
+
+
+    INSERT INTO movies(movie_title, movie_poster, movie_banner, movie_like, movie_like_this_week, movie_views, movie_views_this_week, desc_title, descr)
+    VALUES ("Now You See Me", "https://images-cdn.ubuy.co.in/635f6aafd6e4121a81607274-posters-usa-now-you-see-me-movie.jpg", "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisqVH5M5JZnrDmoq-8DnkIL8B7kWpGVObh87OucxobjjHGe5DO3UYkOvoQY5P2I-TbUQNG74p1H870z8fn8rT9J03i8z15QTi0OgcEzZviX-6jWELHX9AnFo3znS3R7H3ysa6rniFK69c/s640/now-you-see-me-wallpaper-7films.jpg", 1230, 1230, 1334, 1334, "Now You See Me: Masters of Illusion and Deception", "A thrilling heist film where a group of talented illusionists pull off daring bank robberies during their live performances, leaving law enforcement and audiences alike questioning what's real and what's trickery.");
+
+
+    INSERT INTO movies(movie_title, movie_poster, movie_banner, movie_like, movie_like_this_week, movie_views, movie_views_this_week, desc_title, descr)
+    VALUES ("The Social Network", "https://image.tmdb.org/t/p/original/n0ybibhJtQ5icDqTp8eRytcIHJx.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIS8khrfNkPOudNQkxVlULk8MPfKsyMouvKA&s", 1130, 1130, 1124, 1124, "The Social Network: The Birth of Facebook and the Cost of Ambition", "A compelling drama that chronicles the rise of Facebook and the tumultuous journey of its creator, Mark Zuckerberg, revealing the personal and legal battles that shaped the world’s most influential social media platform.");
+
+    INSERT INTO movies(movie_title, movie_poster, movie_banner, movie_like, movie_like_this_week, movie_views, movie_views_this_week, desc_title, descr)
+    VALUES ("Ford v Ferrari", "https://lumiere-a.akamaihd.net/v1/images/image_a39a0e25.jpeg?region=0%2C0%2C800%2C1200", "https://media.licdn.com/dms/image/v2/D4D12AQGrkXO6EQt7gg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1664723998086?e=1740614400&v=beta&t=qgX_oCKHobkuVy8RQu_fdkHkyXgztBL_g-ymRA0tWw8", 1000, 1000, 1024, 1024, "Ford v Ferrari: The Battle for Speed and Glory", "A high-octane drama about the fierce rivalry between Ford and Ferrari, as an unlikely partnership between a maverick American car designer and a British driver aims to dethrone Ferrari at the 24 Hours of Le Mans race, defying all odds.");
+
+    
+    INSERT INTO movies (
+        movie_title, 
+        movie_poster, 
+        movie_banner, 
+        movie_like, 
+        movie_like_this_week, 
+        movie_views, 
+        movie_views_this_week, 
+        desc_title, 
+        descr
+    ) VALUES (
+        "The Imitation Game", 
+        "https://resizing.flixster.com/ArU-IMVHwwAnVBm05Sv8a0UmSrs=/206x305/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10771057_p_v13_as.jpg", 
+        "https://images.squarespace-cdn.com/content/v1/5db9d91c380e6346d8a028ee/00e75f3d-34ed-4051-9ef6-b87ccad301ed/Untitled+design+%287%29.png?format=2500w", 
+        1200, 
+        1200, 
+        1424, 
+        1424, 
+        "The Imitation Game: Breaking Codes, Changing History", 
+        "A gripping biographical drama that tells the story of Alan Turing, the brilliant mathematician who cracked the Enigma code during World War II, while facing personal and societal challenges that would define his legacy."
+    );
+
+    INSERT INTO movies (
+        movie_title, 
+        movie_poster, 
+        movie_banner, 
+        movie_like, 
+        movie_like_this_week, 
+        movie_views, 
+        movie_views_this_week, 
+        desc_title, 
+        descr
+    ) VALUES (
+        "RoboCop", 
+        "https://m.media-amazon.com/images/S/pv-target-images/5a697e3a0b26f8130c24252f54ded2858a482c841d64307f50095e553b8ad07b.jpg", 
+        "https://mir-s3-cdn-cf.behance.net/project_modules/1400/887f8f69054287.5b730a1885355.jpg", 
+        1500, 
+        1500, 
+        1800, 
+        1800, 
+        "RoboCop: Justice in a Dystopian Future", 
+        "Set in a crime-ridden Detroit, a critically wounded cop is transformed into RoboCop, a powerful cyborg enforcer. As he battles crime and corruption, he struggles to retain his humanity in a world where technology and corporate greed dominate."
+    );
+
+    INSERT INTO movies (
+        movie_title, 
+        movie_poster, 
+        movie_banner, 
+        movie_like, 
+        movie_like_this_week, 
+        movie_views, 
+        movie_views_this_week, 
+        desc_title, 
+        descr
+    ) VALUES (
+        "Pulp Fiction", 
+        "https://images-na.ssl-images-amazon.com/images/I/51pDDDB9uCL._SX300_SY300_QL70_FMwebp_.jpg", 
+        "https://images.squarespace-cdn.com/content/v1/6117360e2f0be106838fc4e6/dc7ce957-8501-4da4-b3fa-2d1151ff38aa/Pulp-Fiction.jpg?format=2500w", 
+        1800, 
+        1800, 
+        1900, 
+        1900, 
+        "Pulp Fiction: A Tangle of Crime, Fate, and Redemption", 
+        "A genre-defying tale of intersecting lives and twisted stories in the criminal underworld, *Pulp Fiction* weaves together dark humor, unforgettable characters, and nonlinear storytelling to create a cinematic masterpiece."
+    );
+
+
+
+    insert into actors(actor_name) values('Sean Bean'),('Michelle Fairley'),('Kit Harington'),('Sophie Turner'),('Maisie Williams'),('Isaac Hempstead Wright'),('Richard Madden'),('Art Parkinson'),('Peter Dinklage'),('Lena Headey'),('Nikolaj Coster-Waldau'),('Charles Dance'),('Emilia Clarke'),('Iain Glen'),('Mark Addy'),('Stephen Dillane'),('Kerry Ingram'),('Gethin Anthony'),('Marlon Brando'),('Al Pacino'),('James Caan'),('Robert Duvall'),('Diane Keaton'),('Talia Shire'),('John Cazale'),('Sterling Hayden'),('Richard Conte'),('Abe Vigoda'),('Shameik Moore'),('Jake Johnson'),('Hailee Steinfeld'),('Mahershala Ali'),('Brian Tyree Henry'),('Lily Tomlin'),('Lauren Vélez'),('John Mulaney'),('Kimiko Glenn'),('Nicolas Cage'),('Liev Schreiber'),('Joseph Gordon-Levitt'),('Zooey Deschanel'),('Geoffrey Arend'),('Chloë Grace Moretz'),('Matthew Gray Gubler'),('Clark Gregg'),('Patricia Belcher'),('Rachel Boston'),('Jesse Eisenberg'),('Mark Ruffalo'),('Woody Harrelson'),('Isla Fisher'),('Dave Franco'),('Mélanie Laurent'),('Morgan Freeman'),('Michael Caine'),('Common'),('Andrew Garfield'),('Justin Timberlake'),('Rooney Mara'),('Armie Hammer'),('Josh Pence'),('Brenda Song'),('Dakota Johnson'),('David Selby'),('John Getz'),('Matt Damon'),('Christian Bale'),('Jon Bernthal'),('Caitriona Balfe'),('Noah Jupe'),('Tracy Letts'),('Josh Lucas'),('Ray McKinnon'),('Bob McCabe'),('Remo Girone'),('Benedict Cumberbatch'),('Keira Knightley'),('Matthew Goode'),('Rory Kinnear'),('Mark Strong'),('Allen Leech'),('Matthew Beard'),('Tom Holmes'),('Matthew McFadden'),('Peter Weller'),('Nancy Allen'),("Dan O'Herlihy"),('Ronny Cox'),('Kurtwood Smith'),('Miguel Ferrer'),('Felton Perry'),('Ray Wise'),('Paul McCrane'),('Ronnie Claire Edwards'),('John Travolta'),('Uma Thurman'),('Samuel L. Jackson'),('Bruce Willis'),('Ving Rhames'),('Harvey Keitel'),('Tim Roth'),('Amanda Plummer'),('Maria de Medeiros'),('Christopher Walken')
+
+    insert into movies_actors values(1, 1) ,(1, 2) ,(1, 3) ,(1, 4) ,(1, 5) ,(1, 6) ,(1, 7) ,(1, 8) ,(1, 9) ,(1, 10) ,(1, 11) ,(1, 12) ,(1, 13) ,(1, 14) ,(1, 15) ,(1, 16) ,(1, 17) ,(1, 18) ,(2, 1) ,(2, 2) ,(2, 3) ,(2, 4) ,(2, 5) ,(2, 6) ,(2, 7) ,(2, 8) ,(2, 9) ,(2, 10) ,(2, 11) ,(2, 12) ,(2, 13) ,(2, 14) ,(2, 15) ,(2, 16) ,(2, 17) ,(2, 18) ,(3, 19) ,(3, 20) ,(3, 21) ,(3, 22) ,(3, 23) ,(3, 24) ,(3, 25) ,(3, 26) ,(3, 27) ,(3, 28) ,(4, 29) ,(4, 30) ,(4, 31) ,(4, 32) ,(4, 33) ,(4, 34) ,(4, 35) ,(4, 36) ,(4, 37) ,(4, 38) ,(4, 39) ,(5, 40) ,(5, 41) ,(5, 42) ,(5, 43) ,(5, 44) ,(5, 45) ,(5, 46) ,(5, 47) ,(6, 48) ,(6, 49) ,(6, 50) ,(6, 51) ,(6, 52) ,(6, 53) ,(6, 54) ,(6, 55) ,(6, 56) ,(7, 48) ,(7, 57) ,(7, 58) ,(7, 59) ,(7, 60) ,(7, 61) ,(7, 62) ,(7, 63) ,(7, 64) ,(7, 65) ,(8, 66) ,(8, 67) ,(8, 68) ,(8, 69) ,(8, 70) ,(8, 71) ,(8, 72) ,(8, 73) ,(8, 74) ,(8, 75) ,(9, 76) ,(9, 77) ,(9, 78) ,(9, 79) ,(9, 12) ,(9, 80) ,(9, 81) ,(9, 82) ,(9, 83) ,(9, 84) ,(10, 85) ,(10, 86) ,(10, 87) ,(10, 88) ,(10, 89) ,(10, 90) ,(10, 91) ,(10, 92) ,(10, 93) ,(10, 94) ,(11, 95) ,(11, 96) ,(11, 97) ,(11, 98) ,(11, 99) ,(11, 100) ,(11, 101) ,(11, 102) ,(11, 103) ,(11, 104)
+
+
+
+    create table directors(dir_id int not null auto_increment primary key,dir_name varchar(1000),dir_pic varchar(1000))
+    create table movies_directors(movie_id int,dir_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade, foreign key(dir_id) references directors(dir_id) on delete set null )
+
+    insert into directors(dir_name) values
+    ('Alan Taylor'),('David Nutter'),('Miguel Sapochnik'),('Mark Mylod'),('Danny Boyle'),('Francis Ford Coppola'),('Bob Persichetti'),('Peter Ramsey'),('Rodney Rothman'),('Marc Webb'),('Louis Leterrier'),('David Fincher'),('James Mangold'),('Morten Tyldum'),('Paul Verhoeven'),('Quentin Tarantino'),
+
+
+    insert into movies_directors values (1, 1) ,(1, 2) ,(1, 3) ,(1, 4) ,(2, 5) ,(3, 6) ,(4, 7) ,(4, 8) ,(4, 9) ,(5, 10) ,(6, 11) ,(7, 12) ,(8, 13) ,(9, 14) ,(10, 15) ,(11, 16);
+
+    create table writers(writer_id int not null auto_increment primary key,writer_name varchar(1000),writer_pic varchar(2000))
+    create table movies_writers(movie_id int,writer_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade, foreign key(writer_id) references writers(writer_id) on delete set null )
+
+    insert into writers(writer_name) values
+    ('David Benioff'),('D.B. Weiss'),('Bryan Cogman'),('George R.R. Martin'),('Aaron Sorkin'),('Mario Puzo'),('Francis Ford Coppola'),('Phil Lord'),('Rodney Rothman'),('Scott Neustadter'),('Michael H. Weber'),('Ed Solomon'),('Boaz Yakin'),('Edward Ricourt'),('Aaron Sorkin'),('Jez Butterworth'),('John-Henry Butterworth'),('Jason Keller'),('Graham Moore'),('Edward Neumeier'),('Michael Miner'),('Quentin Tarantino'),('Roger Avary')
+
+    insert into movies_writers values
+    (1, 1) ,(1, 2) ,(1, 3) ,(1, 4) ,(2, 15) ,(3, 6) ,(3, 7) ,(4, 8) ,(4, 9) ,(5, 10) ,(5, 11) ,(6, 12) ,(6, 13) ,(6, 14) ,(7, 15) ,(8, 16) ,(8, 17) ,(8, 18) ,(9, 19) ,(10, 20) ,(10, 21) ,(11, 22) ,(11, 23)
+
+    INSERT INTO users (user_id, name, user_name, user_passwd, user_bio, user_userPic, follows_this_week, followers_no, following, email) VALUES
+    (1, 'Yohan', 'theyearly', '1234', 'Alexandra T. Rivers is a visionary artist and environmentalist based in the quaint town of Pinehaven. With a passion for blending traditional oil painting techniques with modern digital art, Alexandra’s works often depict surreal landscapes inspired by her adventures in the uncharted wilderness of Velmont Peaks.', 'https://media.licdn.com/dms/image/v2/D5603AQHBycfjLdwtaw/profile-displayphoto-shrink_200_200/0/1730208655682?e=1744243200&v=beta&t=e88G--b3rx8j_Bj710okgp4Qs3OS_2NytD6gUQ97__Q', 7, 2, 1, NULL),
+    (2, 'AbhinavD', 'ValikavuReviews', '1234', 'Julian V. Thornfield is an inventor and self-proclaimed architect of wonder from the bustling city of Azure Heights. Known for his eccentric gadgets, Julian’s inventions often straddle the line between genius and chaos, with his best-known creation being the WhisperClock, a device that predicts weather through poetic murmurs.', 'https://media.licdn.com/dms/image/v2/D4D03AQFCJscTJICjhg/profile-displayphoto-shrink_200_200/0/1724338346611?e=1740009600&v=beta&t=SDui0jn_6uLs_WVD2Qx1cc8sOQIuS3XJdQIbJ5EhIKc', 7, 1, 3, NULL),
+    (3, 'Parthiv', 'ParthivM', '1234', 'Elara J. Nightshade is a cryptozoologist and folklore expert from the enigmatic village of Hollowmere. Fascinated by the unknown, Elara has spent over a decade exploring ancient ruins, deciphering forgotten myths, and tracking elusive creatures like the legendary Starshadow Lynx.', 'https://media.licdn.com/dms/image/v2/D5603AQF50t-OCqrRIw/profile-displayphoto-shrink_200_200/0/1714211573130?e=1740009600&v=beta&t=h23qAfum4pb1UUTn26WSZi0S7Hk4XllW4iTDF_RvT2Y', 8, 2, 9, NULL),
+    (4, 'Vasudev B', 'Vaszzu', '1234', 'Cassius D. Hawthorne is a celebrated chef and restaurateur, known for his avant-garde culinary creations at his flagship restaurant, Ember & Ash.', 'https://media.licdn.com/dms/image/v2/D5603AQEmzEQf46WTdw/profile-displayphoto-shrink_200_200/0/1721812415334?e=1740009600&v=beta&t=k-YDEdd3FdY69EK_4i_kOhBsLtlWo-np5l1CLgvbFJM', 5, 1, 6, NULL),
+    (5, 'Harisankar', 'SankaramReveiws', '1234', 'Lyra F. Solbright is an intergalactic cartographer and starship engineer who operates out of the cosmic outpost of Andaris Station.', 'https://media.licdn.com/dms/image/v2/D5603AQEbbEHN_hL6Sw/profile-displayphoto-shrink_200_200/0/1709067461897?e=1740009600&v=beta&t=5zC7Je93jzhaPFIZV6k457Wmk2gfShsfy_bf7eYrTkU', 4, 1, 1, NULL),
+    (6, 'Vignesh', 'SheshamTalks', '1234', 'Sienna L. Waverly is a marine archaeologist and treasure hunter from the windswept shores of Tempest Bay.', 'https://media.licdn.com/dms/image/v2/D5603AQHcyab86FoGaQ/profile-displayphoto-shrink_200_200/0/1721415374754?e=1740614400&v=beta&t=9hWBlElIJYCyEkvY7NKnQuBASuP3Ff_BnBorXI1VrUQ', 4, 3, 0, NULL),
+    (7, 'Sai', 'KishenTalks', '1234', 'Sienna L. Waverly is a marine archaeologist and treasure hunter from the windswept shores of Tempest Bay.', 'https://media.licdn.com/dms/image/v2/D4E03AQEaALSVNwj_og/profile-displayphoto-shrink_200_200/0/1719895144845?e=1740614400&v=beta&t=1NKr76aAAGeAyT3KH-tjQ2rEN7TKIS_aLZjXi1PXR3o', 2, 2, 0, NULL),
+    (8, 'Deon', 'KannurVibes', '1234', 'Damon E. Ashcroft is a private investigator and former journalist operating in the neon-lit city of Lumenspire.', 'https://media.licdn.com/dms/image/v2/D4D03AQGi_Asa2wXj5A/profile-displayphoto-shrink_200_200/0/1727203411675?e=1740614400&v=beta&t=Nn0vf35H6WMnVi0apns1VKlZur2sodXSL6uWwI0w12Q', 3, 4, 0, NULL),
+    (9, 'Geevarghese', 'Sajan"s_reviews', '1234', 'Vivienne A. Starling is a celebrated botanist and author from the verdant hills of Briarwood Glen.', 'https://media.licdn.com/dms/image/v2/D5603AQFrk2cd9steZQ/profile-displayphoto-shrink_200_200/0/1711989092469?e=1740614400&v=beta&t=kjTvSNbbnZG8q4rmUfMkuKUrT5Gx24ni6_eQ5yPS3Uo', 0, 2, 0, NULL),
+    (10, 'Sidharth', 'Sidhu', '1234', 'Ezra J. Holloway is a rogue historian and artifact trader hailing from the mysterious city of Obsidian Spire.', 'https://media.licdn.com/dms/image/v2/D5603AQEBcNyBnuuy4g/profile-displayphoto-shrink_200_200/0/1726308144625?e=1740614400&v=beta&t=KflxFNWPTsSMr-mojClcjf_ki8CsZM4njvNrOcN-w2c', -1, 2, 0, NULL),
+    (11, '', 'Yohan', 'Arduino1', 'k', NULL, 1, 1, 0, NULL);
+
+
+    create table productions(production_id int not null auto_increment primary key,production_name varchar(1000))
+    create table movies_productions(movie_id int,production_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade, foreign key(production_id) references productions(production_id) on delete set null )
+
+    insert into productions(production_name) values
+    ('HBO'),('Universal Pictures'),('Paramount Pictures'),('Sony PicturesAnimation'),('Columbia Pictures'),('Fox Searchlight Pictures'),('Summit Entertainment'),('Relativity Media'),('20th Century Fox'),('Chernin Entertainment'),('Black Bear Pictures'),('Bristol Automotive'),('Orion Pictures'),('Miramax')
+
+
+    insert into movies_productions values (1, 1) ,(2, 2) ,(3, 3) ,(4, 4) ,(4,5) ,(5, 6) ,(6, 7) ,(7, 4) ,(7, 8) ,(8, 9) ,(8, 10) ,(9, 11) ,(9, 12),(10, 13) ,(11, 14);
+
+
+    create table reviews(review_id int primary key not null auto_increment,review_title varchar(100) not null,review_content varchar(2000) not null,user_id int not null,movie_id int not null,review_rating int not null,review_watchdate date not null,review_likes int not null,foreign key(user_id) references users(user_id),foreign key(movie_id) references movies)
+
+    INSERT INTO reviews (review_title, review_content, user_id, movie_id, review_rating, review_watchdate, review_likes)
+    VALUES
+        ('Game of Thrones: A Thrilling Tapestry of Power, Betrayal, and Intrigue', 'Game of Thrones is a masterful blend of complex characters, unpredictable plot twists, and stunning visuals. It weaves a tale of power, loyalty, and betrayal, keeping viewers on the edge of their seats. While its final season sparked debate, the series remains a monumental achievement in storytelling.', 1, 1, 3, '2024-10-27', 0),
+        ('The Godfather: A Timeless Masterpiece of Crime and Family', 'Francis Ford Coppola’s The Godfather (1972) is a cinematic landmark that redefined the crime genre. Adapted from Mario Puzo’s novel, it masterfully explores power, loyalty, and family through the Corleone Mafia dynasty. Marlon Brando delivers an iconic performance as Don Vito Corleone, balancing menace with humanity, while Al Pacino’s transformation as Michael Corleone—from reluctant outsider to ruthless leader—is both gripping and tragic. Coppola’s direction, Gordon Willis’s moody cinematography, and Nino Rota’s haunting score create an unforgettable experience. The script, rich in tension and sharp dialogue, elevates the story beyond a gangster saga into a profound exploration of morality and ambition. A true masterpiece, The Godfather remains an essential watch and a towering achievement in film history.', 1, 3, 3, '2024-08-23', 0),
+        ('Steve Jobs: A Riveting Glimpse into Genius and Complexity', 'Steve Jobs delivers a compelling portrayal of the visionary behind Apple. With sharp dialogue and a unique structure, the film unfolds across three iconic product launches, offering an intimate look at Jobs'' brilliance, flaws, and relationships. Michael Fassbender''s stellar performance captures the intensity and complexity of Jobs, while the supporting cast adds depth to the narrative. Directed by Danny Boyle and written by Aaron Sorkin, the movie masterfully blends drama and insight, making it a must-watch for tech enthusiasts and those fascinated by the human side of innovation.', 1, 2, 2, '2024-10-27', 0),
+        ('das', 'rr', 2, 4, 3, '2024-10-27', 0),
+        ('das', 'rr', 2, 5, 3, '2024-08-23', 0),
+        ('das', 'rr', 2, 7, 2, '2024-10-27', 0),
+        ('das', 'rr', 3, 8, 3, '2024-10-27', 0),
+        ('das', 'rr', 3, 9, 3, '2024-08-23', 0),
+        ('das', 'rr', 3, 4, 2, '2024-10-27', 0),
+        ('das', 'rr', 4, 5, 3, '2024-10-27', 0),
+        ('das', 'rr', 4, 6, 3, '2024-08-23', 0),
+        ('das', 'rr', 4, 7, 2, '2024-10-27', 0),
+        ('das', 'rr', 5, 5, 3, '2024-10-27', 0),
+        ('das', 'rr', 5, 8, 3, '2024-08-23', 0),
+        ('das', 'rr', 5, 9, 2, '2024-10-27', 0),
+        ('das', 'rr', 5, 10, 3, '2024-10-27', 0),
+        ('das', 'rr', 6, 3, 3, '2024-08-23', 0),
+        ('das', 'rr', 6, 2, 2, '2024-10-27', 0),
+        ('das', 'rr', 6, 1, 3, '2024-10-27', 0),
+        ('das', 'rr', 7, 3, 3, '2024-08-23', 0),
+        ('das', 'rr', 7, 2, 2, '2024-10-27', 0),
+        ('das', 'rr', 7, 1, 3, '2024-10-27', 0),
+        ('das', 'rr', 8, 3, 3, '2024-08-23', 0),
+        ('das', 'rr', 8, 2, 2, '2024-10-27', 0),
+        ('das', 'rr', 8, 1, 3, '2024-10-27', 0),
+        ('das', 'rr', 9, 3, 3, '2024-08-23', 0),
+        ('das', 'rr', 9, 2, 2, '2024-10-27', 0),
+        ('das', 'rr', 9, 1, 3, '2024-10-27', 0),
+        ('das', 'rr', 10, 3, 3, '2024-08-23', 0),
+        ('das', 'rr', 10, 2, 2, '2024-10-27', 0);
+
+    create table movies_reviews_users(movie_id int,review_id int primary key auto_increment,user_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade,foreign key(review_id) references reviews(review_id)  on delete cascade, foreign key(user_id) references users(user_id) on delete set null )
+
+    insert into movies_reviews_users values
+    (1,1,1),
+    (3,2,1),
+    (2,3,1),
+    (4,4,2),
+    (5,5,2),
+    (7,6,2),
+    (8,7,3),
+    (9,8,3),
+    (4,9,3),
+    (5,10,4),
+    (6,11,4),
+    (7,12,4),
+    (5,13,5),
+    (8,14,5),
+    (9,15,5),
+    (10,16,6),
+    (3,17,6),
+    (2,18,6),
+    (1,19,7),
+    (3,20,7),
+    (2,21,7),
+    (1,22,8),
+    (3,23,8),
+    (2,24,8),
+    (1,25,9),
+    (3,26,9),
+    (2,27,9),
+    (2,28,10),
+    (2,29,10)
+
+
+
+    create table cinematographys(cinematography_id int not null auto_increment primary key,cinematography_name varchar(1000),cine_pic varchar(1000))
+    create table movies_cinematographys(movie_id int,cinematography_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade, foreign key(cinematography_id) references cinematographys(cinematography_id) on delete set null )
+    insert into cinematographys(cinematography_name) values
+    ('Fabian Wagner'),('Jonathan Freeman'),('Alwin H. Küchler'),('Gordon Willis'),('nill'),('Eric Steelberg'),('Larry Fong'),('Jeff Cronenweth'),('Phedon Papamichael'),('Óscar Faura'),('Jost Vacano'),('Andrzej Sekula')
+
+    insert into movies_cinematographys values
+    (1, 1) ,(1, 2) ,(2, 3) ,(3, 4) ,(4, 5) ,(5, 6) ,(6, 7) ,(7, 8) ,(8, 9) ,(9, 10) ,(10, 11) ,(11, 12) 
+
+    create table editors(editor_id int not null auto_increment primary key,editor_name varchar(1000),edi_pic varchar(1000))
+    insert into editors(editor_name) values
+    ('Katie Weiland'),('Tim Porter'),('Crispin Green'),('Elliot Graham'),('William Reynolds'),('Peter Zinner'),('William Reynolds'),('Peter Zinner'),('Alan Edward Bell'),('Robert Leighton'),('Vincent Tabaillon'),('Angus Wall'),('Kirk Baxter'),('Andrew Buckland'),('Michael McCusker'),('William Goldenberg'),('Frank J. Urioste'),('Andrzej Sekula')
+
+    create table movies_editors(movie_id int,editor_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade, foreign key(editor_id) references editors(editor_id) on delete set null )
+    INSERT INTO movies_editors (movie_id, editor_id) VALUES
+    (1, 1),
+    (1, 2),
+    (1, 3),
+    (2, 4),
+    (3, 7),
+    (3, 8),
+    (4, 7),
+    (4, 8),
+    (5, 9),
+    (6, 10),
+    (6, 11),
+    (7, 12),
+    (7, 13),
+    (8, 14),
+    (8, 15),
+    (9, 16),
+    (10, 17),
+    (11, 18);
+
+
+    create table producers(producer_id int not null auto_increment primary key,producer_name varchar(1000),prod_pic varchar(1000))
+    CREATE TABLE movies_producers (
+        movie_id INT,
+        producer_id INT,
+        FOREIGN KEY (movie_id) REFERENCES movies(movie_id) ON DELETE CASCADE,
+        FOREIGN KEY (producer_id) REFERENCES producers(producer_id) ON DELETE SET NULL
+    );
+
+    insert into producers(producer_name) values ('David Benioff'),('D.B. Weiss'),('Carolyn Strauss'),('Frank Doelger'),('Mark Gordon'),('Guymon Casady'),('Christian Colson'),('Scott Rudin'),('Albert S. Ruddy'),('Phil Lord'),('Christopher Miller'),('Avi Arad'),('Amy Pascal'),('Christina Steinberg'),('Mark Waters'),('Jessica Tuchinsky'),('Mason Novick'),('Steven J. Wolfe'),('Roberto Orci'),('Alex Kurtzman'),('Bobby Cohen'),('Scott Rudin'),('Dana Brunetti'),('Michael De Luca'),('Ceán Chaffin'),('Peter Chernin'),('Jenno Topping'),('James Mangold'),('Nora Grossman'),('Ido Ostrowsky'),('Teddy Schwarzman'),('Arne Schmidt'),('Lawrence Bender')
+    insert into movies_producers values
+    (1, 1) ,(1, 2) ,(1, 3) ,(1, 4) ,(2, 5) ,(2, 6) ,(2, 7) ,(2, 22) ,(3, 9) ,(4, 10) ,(4, 11) ,(4, 12) ,(4, 13) ,(4, 14) ,(5, 15) ,(5, 16) ,(5, 17) ,(5, 18) ,(6, 19) ,(6, 20) ,(6, 21) ,(7, 22) ,(7, 23) ,(7, 24) ,(7, 25) ,(8, 26) ,(8, 27) ,(8, 28) ,(9, 29) ,(9, 30) ,(9, 31) ,(10, 32) ,(11, 33)
+
+
+    create table musics(music_id int not null auto_increment primary key,music_name varchar(1000),music_pic varchar(1000))
+create table movies_musics(movie_id int,music_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade, foreign key(music_id) references musics(music_id) on delete set null )
+
+
+insert into musics(music_name) values
+('Ramin Djawadi'),('Daniel Pemberton'),('Nino Rota'),('Daniel Pemberton'),('Andrea von Foerster'),('Trent Reznor'),('Atticus Ross'),('Marco Beltrami'),('Buck Sanders'),('Alexandre Desplat'),('Basil Poledouris'),('Karyn Rachtman')
+insert into movies_musics values
+(1, 1) ,(2, 4) ,(3, 3) ,(4, 4) ,(5, 5) ,(6, 6) ,(6, 7) ,(7, 8) ,(7, 9) ,(8, 10) ,(9, 11) ,(10, 12)
+
+create table production_designs(production_design_id int not null auto_increment primary key,production_design_name varchar(1000),proddes_pic varchar(1000))
+create table movies_production_designs(movie_id int,production_design_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade, foreign key(production_design_id) references production_designs(production_design_id) on delete set null )
+insert into production_designs(production_design_name) values
+('Gemma Jackson'),('Deborah Riley'),('Guy Hendrix Dyas'),('Dean Tavoularis'),('Justin K. Thompson'),('Laura Fox'),('Peter Wenham'),('Donald Graham Burt'),('François Audouy'),('Maria Djurkovic'),('William Sandell'),('David Wasco');
+
+ insert into movies_production_designs values
+(1, 1) ,(1, 2) ,(2, 3) ,(3, 4) ,(4, 5) ,(5, 6) ,(6, 7) ,(7, 8) ,(8, 9) ,(9, 10) ,(10, 11) ,(11, 12)
+
+create table genres(genre_id int not null auto_increment primary key,genre_name varchar(1000))
+create table movies_genres(movie_id int,genre_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade, foreign key(genre_id) references genres(genre_id) on delete set null )
+insert into genres(genre_name) values
+('Drama'),('Fantasy'),('Adventure'),('Biography'),('Crime'),('Animation'),('Action'),('Romance'),('Comedy'),('Thriller'),('Mystery')
+
+ insert into movies_genres values
+(1, 1) ,(1, 2) ,(1, 3) ,(2, 4) ,(2, 1) ,(3, 5) ,(3, 1) ,(4, 6) ,(4, 7) ,(4, 3) ,(5, 8) ,(5, 9) ,(5, 1) ,(6, 10) ,(6, 11) ,(6, 5) ,(7, 4) ,(7, 1) ,(8, 7) ,(8, 4) ,(8, 1) ,(9, 4) ,(9, 1) ,(9, 10) ,(10, 4) ,(10, 1) ,(10, 10) ,(11, 5) ,(11, 1)
+
+
+
+create table alternate_title(title_id int not null auto_increment primary key,title_name varchar(1000))
+create table movies_altitles(movie_id int,title_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade, foreign key(title_id) references alternate_title(title_id) on delete set null )
+
+
+INSERT INTO alternate_title(title_id, title_name) VALUES
+(1, 'Game of Thrones'),
+(2, 'Steve Jobs'),
+(3, 'The Godfather'),
+(4, 'Spider-Man: Into the Spider-Verse'),
+(5, '(500) Days of Summer'),
+(6, 'Now You See Me'),
+(7, 'The Facebook Movie'),
+(8, 'Le Mans ''66'),
+(9, 'The Imitation Game'),
+(10, 'Robocop'),
+(11, 'Pulp Fiction: The Golden Palm Winner');
+
+
+create table countrys(country_id int not null auto_increment primary key,country_name varchar(1000))
+
+
+create table movies_countrys(movie_id int,country_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade, foreign key(country_id) references countrys(country_id) on delete set null )
+
+insert into countrys(country_name) values
+('United States'),('United Kingdom')
+
+
+ insert into movies_countrys values
+(1, 1) ,(2, 1) ,(2, 2) ,(3, 1) ,(4, 1) ,(5, 1) ,(6, 1) ,(7, 1) ,(8, 1) ,(9, 2) ,(9, 1) ,(10, 1) ,(11, 1) ,
+
+create table following_followers(follower_id int not null ,following_id int not null)
+insert into following_followers values(2,1),(3,1),(1,2),(3,2),(4,3),(5,3),(2,4),(3,4),(2,5),(3,5),(2,6),(3,6),(4,6),(2,7),(3,7),(4,7),(2,8),(3,8),(4,8),(2,9),(3,9),(4,9),(2,10),(3,10),(4,10)
+
+create table languages(language_id int not null auto_increment primary key,language_name varchar(1000))
+create table movies_languages(movie_id int,language_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade, foreign key(language_id) references languages(language_id) on delete set null )
+
+insert into languages(language_name) values
+('English'),('Dothraki'),('High Valyrian')
+
+insert into movies_languages values (1, 1) ,(2, 1) ,(3, 1) ,(4, 1) ,(5, 1) ,(6, 1) ,(7, 1) ,(8, 1) ,(9, 1) ,(10, 1);
+
+
+create table movies_otherlanguages(movie_id int,language_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade, foreign key(language_id) references languages(language_id) on delete set null )
+insert into movies_otherlanguages values (1, 1) ,(1, 2) ,(1, 3) ,(2, 1) ,(3, 1) ,(4, 1) ,(5, 1) ,(6, 1) ,(7, 1) ,(8, 1) ,(9, 1) ,(10, 1);
+
+create table movies_fav_users(movie_id int,user_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade, foreign key(user_id) references users(user_id) on delete set null)
+insert into movies_fav_users values
+(1,1),(2,1),(3,1),(4,1),(2,2),(3,2),(6,2),(4,2),(5,3),(4,3),(2,3),(3,3),(1,4),(2,4),(4,4),(3,4),(1,5),(2,5),(3,5),(4,5),(1,6),(2,6),s(3,6),(4,6),(1,7),(2,7),(3,7),(4,7),(1,8),(2,8),(3,8),(4,8),(1,9),(2,9),(3,9),(4,9),(1,10),(2,10),(3,10),(4,10)
+
+ create table lists(list_id int auto_increment primary key,list_user_id int not null,list_title varchar(500) not null,list_bio varchar(1000) not null,list_likes int not null);
+
+
+insert into lists(list_user_id,list_title,list_bio,list_likes) values
+(1,'List 1','List 1 is Good',100),
+(2,'List 2','The world around us is a constant source of inspiration, filled with vibrant colors, intricate patterns, and endless possibilities. From the gentle rustling of leaves in the wind to the boundless expanse of a starry sky, nature reminds us of the beauty in simplicity and the power of resilience. In our everyday lives, moments of joy can be found in the smallest details—a smile shared with a stranger, the aroma of fresh coffee, or the warmth of sunlight streaming through a window. Life, with all its complexities, is a tapestry woven with experiences that shape us, teach us, and help us grow.',100),
+(3,'List 3','List 3 is Good',100),
+(4,'List 4','List 1 is Good',100),
+(5,'List 5','List 2 is Good',100),
+(6,'List 6','List 3 is Good',100),
+(7,'List 7','List 1 is Good',100),
+(8,'List 8','List 2 is Good',100),
+(9,'List 9','List 3 is Good',100),
+(10,'List 10','List 3 is Good',100)
+
+CREATE TABLE movies_lists (
+    list_id INT,
+    movie_id INT,
+    FOREIGN KEY (movie_id) REFERENCES movies(movie_id) ON DELETE SET NULL,
+    FOREIGN KEY (list_id) REFERENCES lists(list_id) ON DELETE CASCADE
+);
+
+insert into movies_lists values
+(1,1),(1,2),(1,3),(1,4),(1,5),(1,6),(1,7),(1,8),(1,9),(1,10),(2,6),(2,1),(2,7),(2,9),(2,4),(2,8),(2,3),(2,10),(2,5),(3,7),(3,5),(3,10),(3,1),(3,9),(3,2),(3,4),(3,8),(4,10),(4,9),(4,6),(4,3),(4,8),(4,1),(4,4),(4,5),(4,7),(4,2),(5,10),(5,1),(5,6),(5,9),(5,2),(5,8),(5,5),(5,7),(5,4),(6,4),(6,9),(6,3),(6,8),(6,7),(6,5),(6,10),(6,6),(7,6),(7,2),(7,3),(7,4),(7,7),(7,9),(7,10),(7,8),(7,1),(7,5),(8,2),(8,3),(8,9),(8,8),(8,1),(8,5),(8,6),(8,7),(8,4),(8,10),(9,5),(9,1),(9,6),(9,4),(9,2),(9,3),(9,8),(9,10),(9,7),(9,9),(10,5),(10,1),(10,6),(10,4),(10,2),(10,3),(10,8),(10,10),(10,7),(10,9)
+
+create table movies_liked_users(movie_id int,user_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade, foreign key(user_id) references users(user_id) on delete set null)
+
+INSERT INTO movies_liked_users (movie_id, user_id) VALUES
+(1, 1), (2, 1), (3, 1), (4, 1),
+(1, 2), (2, 2), (3, 2), (4, 2),
+(1, 3), (2, 3), (3, 3), (4, 3),
+(1, 4), (2, 4), (3, 4), (4, 4),
+(1, 5), (2, 5), (3, 5), (4, 5),
+(1, 6), (2, 6), (4, 6), (5, 6),
+(1, 7), (2, 7), (4, 7), (5, 7),
+(1, 8), (2, 8), (4, 8), (5, 8),
+(1, 9), (2, 9);
+
+
+create table movies_watched_users(movie_id int,user_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade, foreign key(user_id) references users(user_id) on delete set null)
+
+insert into movies_watched_users values
+(1,1),(2,1),(3,1),(4,1),(1,2),(2,2),(3,2),(4,2),(1,3),(2,3),(3,3),(4,3),(1,4),(2,4),(3,4),(4,4),(1,5),(2,5),(3,5),(4,5),(1,6),(2,6),(4,6),(5,6),(1,7),(2,7),(4,7),(5,7),(1,8),(2,8),(4,8),(5,8),(1,9),(2,9),(4,9),(5,9),(1,10),(2,10),(4,10),(5,10)
+
+create table movies_watchlist_users(movie_id int,user_id int,foreign key(movie_id) references movies(movie_id)  on delete cascade, foreign key(user_id) references users(user_id) on delete set null)
+insert into movies_watchlist_users values
+(6,1),(5,1),(7,1),(11,1),(9,1),(10,1),(6,2),(5,2),(7,2),(11,2),(9,2),(10,2),(6,3),(5,3),(7,3),(11,3),(9,3),(10,3),(4,3),(2,3),(3,3),(6,4),(5,4),(7,4),(11,4),(9,4),(10,4),(6,5),(5,5),(7,5),(11,5),(9,5),(10,5),(6,6),(5,6),(7,6),(11,6),(9,6),(10,6),(6,7),(5,7),(7,7),(11,7),(9,7),(10,7),(6,8),(5,8),(7,8),(11,8),(9,8),(10,8),(6,9),(5,9),(7,9),(11,9),(9,9),(10,9),(6,10),(5,10),(7,10),(11,10),(9,10),(10,10)
+

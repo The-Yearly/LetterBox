@@ -12,7 +12,7 @@ export default function FollowingPage(props:any){
         setFollowing(await followingres.json())
         
     }
-    fetchdata()},[])
+    fetchdata()},[props.id])
     console.log(following)
     if(following!=null){
         return(

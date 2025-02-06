@@ -6,7 +6,7 @@ import like from "@/app/assets/images/likes.png"
 import Image from "next/image"
 import Link from "next/link"
 export default async function TopFiveMovies(props:any){
-    const res=await fetch("http://localhost:8000/moviestop/"+5)
+    const res=await fetch("http://backend_app:8000/moviestop/"+5)
     const movies:Moviedb[]=await res.json()
     let page=props.page
     return(
