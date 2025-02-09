@@ -70,10 +70,11 @@ export default function UserProfileI(){
         if (!User) {
             return <p style={{ textAlign: "center", fontSize: "20px" }}>Loading...</p>
         }       
+        if(User[0]!=undefined){
         return(
             <>  
                 <div id={styles.userCard}>
-                    
+                    <Image id={styles.profilePic} src={User[0].user_userPic?User[0].user_userPic:pic} alt="Profile Pic" height={400} width={300}/>
                     <p id={styles.username}>{User[0].user_name}</p>
                     <div id={styles.stats}>
                     <div id={styles.moviesSeen}><p id={styles.moviesSeenno}>{movies?movies.length:0}<br/><button onClick={()=>{changeContent(2)}}>Films</button></p></div>
@@ -100,5 +101,5 @@ export default function UserProfileI(){
                     <Edit/>
                    
             </>
-        )
+        )}
     }
