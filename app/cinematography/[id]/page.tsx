@@ -7,8 +7,8 @@ import pic from "@/app/assets/images/profile.png"
 interface idi{id:number}
 export default async function Cinematographers({params}:{params:Promise<idi>}){
     const cid=await params
-    const moviefetch=await fetch("http://localhost:8000/cinematography/"+cid.id)
-    const dirfetch=await fetch("http://localhost:8000/cine/"+cid.id)
+    const moviefetch=await fetch("https://letter-box-steel.vercel.app/cinematography/"+cid.id)
+    const dirfetch=await fetch("https://letter-box-steel.vercel.app/cine/"+cid.id)
     const movies:Moviedb[]=await moviefetch.json()
     const cine:Cinematography[]=await dirfetch.json()
     return(

@@ -6,9 +6,9 @@ import pic from "@/app/assets/images/profile.png"
 import { Producer} from "@/app/assets/interfaces/producer"
 export default async function Producers({params}:{params:Promise<{id:number}>}){
     const prid=await params
-    const moviefetch=await fetch("http://localhost:8000/producers/"+prid.id)
+    const moviefetch=await fetch("https://letter-box-steel.vercel.app/producers/"+prid.id)
     const movies:Moviedb[]=await moviefetch.json()
-    const prodres=await fetch("http://localhost:8000/producerdets/"+prid.id)
+    const prodres=await fetch("https://letter-box-steel.vercel.app/producerdets/"+prid.id)
     const prod:Producer[]=await prodres.json()
     return(
         <>

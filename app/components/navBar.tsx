@@ -19,7 +19,7 @@ export default function NavBar(){
     }
     useEffect(()=>{const te=async()=>{
         if(searchValue!=""){
-            const res=await fetch("http://localhost:8000/moviesearch/"+searchValue)
+            const res=await fetch("https://letter-box-steel.vercel.app/moviesearch/"+searchValue)
             setFiltered(await res.json())
             changeValue(searchValue)
         }

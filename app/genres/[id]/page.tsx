@@ -5,7 +5,7 @@ import { Moviedb } from "@/app/assets/interfaces/moviesdb"
 interface idi{id:number}
 export default async function Genres({params}:{params:Promise<idi>}){
     const gen=await params
-    const moviefetch=await fetch("http://localhost:8000/genres/"+gen.id)
+    const moviefetch=await fetch("https://letter-box-steel.vercel.app/genres/"+gen.id)
     const movies:Moviedb[]=await moviefetch.json()
     return(
         <>

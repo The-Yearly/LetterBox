@@ -29,15 +29,15 @@ export default function UserProfileI({params}:{params:Promise<{id:number}>}){
     const logged_id=localStorage.getItem("user_id")
     const myid=localStorage.getItem("user_id")
     useEffect(()=>{const fetchdata=async()=>{
-        const usersres=await fetch("http://localhost:8000/users/"+uid)
+        const usersres=await fetch("https://letter-box-steel.vercel.app/users/"+uid)
         const user=await usersres.json()
         setUsers(user)
-        const moviesres=await fetch("http://localhost:8000/users/movies/"+uid)
+        const moviesres=await fetch("https://letter-box-steel.vercel.app/users/movies/"+uid)
         setMovies(await moviesres.json())
-        const listres=await fetch("http://localhost:8000/users/list/"+uid)
+        const listres=await fetch("https://letter-box-steel.vercel.app/users/list/"+uid)
         setLists(await listres.json())
         if(logged_id!=null){
-        const flres=await fetch("http://localhost:8000/isFollowing/"+uid+"/"+logged_id)
+        const flres=await fetch("https://letter-box-steel.vercel.app/isFollowing/"+uid+"/"+logged_id)
         const flr=await flres.json()
         if(flr.length!=0){
             setIsFollowing(true)
@@ -50,10 +50,10 @@ export default function UserProfileI({params}:{params:Promise<{id:number}>}){
     useEffect(()=>{const push=async()=>{
         if(logged_id!=null){
         if(isfollowing==true){
-        const res=await axios.post("http://localhost:8000/follow",data)
+        const res=await axios.post("https://letter-box-steel.vercel.app/follow",data)
         toast(await res.data.message)}
         else if(isfollowing==false){
-            const res=await axios.post("http://localhost:8000/unfollow",data)
+            const res=await axios.post("https://letter-box-steel.vercel.app/unfollow",data)
             toast(await res.data.message)
         }}
     }

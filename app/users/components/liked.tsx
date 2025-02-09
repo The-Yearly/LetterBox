@@ -9,8 +9,8 @@ export default function LikedMovies(props:{id:number}){
     console.log(props.id)
     const [liked,setLiked]=useState<Moviedb[]|null>(null)
     useEffect(()=>{const fetchdata=async()=>{
-        const usersres=await fetch("http://localhost:8000/users/"+props.id)
-        const likedres=await fetch("http://localhost:8000/users/liked/"+props.id)
+        const usersres=await fetch("https://letter-box-steel.vercel.app/users/"+props.id)
+        const likedres=await fetch("https://letter-box-steel.vercel.app/users/liked/"+props.id)
         setUser(await usersres.json())
         setLiked(await likedres.json())
     }

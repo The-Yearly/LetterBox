@@ -7,7 +7,7 @@ import { Users_List } from "@/app/assets/interfaces/users_list"
 export default function UserList(props:{id:number}){ 
     const [lists,setLists]=useState<Users_List[]|null>(null)
     useEffect(()=>{const listfetchdata=async()=>{
-        const listres=await fetch("http://localhost:8000/users/list/"+props.id)
+        const listres=await fetch("https://letter-box-steel.vercel.app/users/list/"+props.id)
         setLists(await listres.json())
     }
     listfetchdata()

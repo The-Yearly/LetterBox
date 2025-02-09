@@ -7,7 +7,7 @@ import pic from "@/app/assets/images/profile.png"
 export default function FollowersPage(props:{id:number}){
     const [followers,setFollowers]=useState<Users_Following_Followers[]|null>(null)
     useEffect(()=>{const fetchdata=async()=>{
-        const flwersres=await fetch("http://localhost:8000/users/followers/"+props.id)
+        const flwersres=await fetch("https://letter-box-steel.vercel.app/users/followers/"+props.id)
         setFollowers(await flwersres.json())
     }
     fetchdata()},[props.id])

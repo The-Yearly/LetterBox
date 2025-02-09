@@ -40,10 +40,10 @@ export default function MoviePage({params}:{params:Promise<{id:number}>}){
     }
     getId()},[])
     useEffect(()=>{const fetchdata=async()=>{
-        console.log("http://localhost:8000/movies/"+mid)
-        const res=await fetch("http://localhost:8000/movies/"+mid)
+        console.log("https://letter-box-steel.vercel.app/movies/"+mid)
+        const res=await fetch("https://letter-box-steel.vercel.app/movies/"+mid)
         setMovies(await res.json())
-        const wat=await fetch("http://localhost:8000/movies/watched/"+mid+"/"+localStorage.getItem("user_id"))
+        const wat=await fetch("https://letter-box-steel.vercel.app/movies/watched/"+mid+"/"+localStorage.getItem("user_id"))
         const w=await wat.json()
         if(w.watched.length!=0){
             setWatched(true)
@@ -61,11 +61,11 @@ export default function MoviePage({params}:{params:Promise<{id:number}>}){
     useEffect(()=>{const fetchdata=async()=>{
         if(logged_id!=null){
         if(watched==true){
-            const res=await axios.post("http://localhost:8000/watchedmovie",data)
+            const res=await axios.post("https://letter-box-steel.vercel.app/watchedmovie",data)
             toast(res.data.message)
             
         }else{
-            const res=await axios.post("http://localhost:8000/removewatchedmovie",data)
+            const res=await axios.post("https://letter-box-steel.vercel.app/removewatchedmovie",data)
             toast(res.data.message)
         }}
     }
@@ -73,10 +73,10 @@ export default function MoviePage({params}:{params:Promise<{id:number}>}){
     useEffect(()=>{const fetchdata=async()=>{
         if(logged_id!=null){
         if(fav==true){
-            const res=await axios.post("http://localhost:8000/favmovie",favdata)
+            const res=await axios.post("https://letter-box-steel.vercel.app/favmovie",favdata)
             toast(res.data.message)
         }else{
-            const res=await axios.post("http://localhost:8000/removefavmovie",favdata)
+            const res=await axios.post("https://letter-box-steel.vercel.app/removefavmovie",favdata)
             toast(res.data.message)
         }}
     }

@@ -29,12 +29,12 @@ export default function UserProfileI(){
     }
     setId()},[])
     useEffect(()=>{const fetchdata=async()=>{
-        const usersres=await fetch("http://localhost:8000/users/"+userId)
+        const usersres=await fetch("https://letter-box-steel.vercel.app/users/"+userId)
         const user=await usersres.json()
         setUsers(user)
-        const moviesres=await fetch("http://localhost:8000/users/movies/"+userId)
+        const moviesres=await fetch("https://letter-box-steel.vercel.app/users/movies/"+userId)
         setMovies(await moviesres.json())
-        const listres=await fetch("http://localhost:8000/users/list/"+userId)
+        const listres=await fetch("https://letter-box-steel.vercel.app/users/list/"+userId)
         setLists(await listres.json())
     }
     fetchdata()
@@ -73,7 +73,7 @@ export default function UserProfileI(){
         return(
             <>  
                 <div id={styles.userCard}>
-                    <Image id={styles.profilePic} src={User[0].user_userPic?User[0].user_userPic:pic} alt="Profile Pic" height={400} width={300}/>
+                    
                     <p id={styles.username}>{User[0].user_name}</p>
                     <div id={styles.stats}>
                     <div id={styles.moviesSeen}><p id={styles.moviesSeenno}>{movies?movies.length:0}<br/><button onClick={()=>{changeContent(2)}}>Films</button></p></div>

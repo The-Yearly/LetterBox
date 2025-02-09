@@ -6,7 +6,7 @@ export  default function Cast(props:{id:number}){
     const [cast,setCast]=useState<Movies_Actors[] | null>(null);
     useEffect(()=>{
         const fetchdata=async()=>{
-            const res=await fetch("http://localhost:8000/movies/actors/"+props.id)
+            const res=await fetch("https://letter-box-steel.vercel.app/movies/actors/"+props.id)
             setCast(await res.json())   
         }
         fetchdata();

@@ -7,7 +7,7 @@ import Image from "next/image"
 import Link from "next/link"
 interface pg{page:string|undefined}
 export default async function TopFiveMovies(props:pg){
-    const res=await fetch("http://localhost:8000/moviestop/"+5)
+    const res=await fetch("https://letter-box-steel.vercel.app/moviestop/"+5)
     const movies:Moviedb[]=await res.json()
     const page=props.page
     return(

@@ -19,7 +19,7 @@ export default function BigThreeImages(){
 
       })
       useEffect(()=>{const fetchdata=async()=>{
-        const res=await fetch("http://localhost:8000/moviestop/3");
+        const res=await fetch("https://letter-box-steel.vercel.app/moviestop/3");
         setTopThree(await res.json())
       }
       fetchdata()},[])

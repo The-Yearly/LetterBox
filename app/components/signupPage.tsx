@@ -10,7 +10,7 @@ export default function SignupPage(){
     const [userName,setUserName]=useState("")
     const [passWord,setPassword]=useState("")
     useEffect(()=>{const Senddata=async()=>{
-        const res=await axios.post("http://localhost:8000/usernames",data)
+        const res=await axios.post("https://letter-box-steel.vercel.app/usernames",data)
         toast(await res.data.message)
         if(res.data.message=="Created Succesfully"){
             localStorage.setItem("user_id",String(res.data.id[0].user_id))

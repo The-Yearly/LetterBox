@@ -12,7 +12,7 @@ export default function UserReview(props:{id:number}){
     const[data,setData]=useState<Movie_Review_User_Post|null>(null)
     useEffect(()=>{const push=async()=>{
         if(data!=null){
-            const res=await axios.post("http://localhost:8000/postReview",data)
+            const res=await axios.post("https://letter-box-steel.vercel.app/postReview",data)
             toast(res.data.message)
             window.location.reload()
         }

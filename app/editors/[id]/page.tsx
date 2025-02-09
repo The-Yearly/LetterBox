@@ -7,8 +7,8 @@ import  pic from "@/app/assets/images/profile.png"
 interface idi{id:number}
 export default async function Editor({params}:{params:Promise<idi>}){
     const edi=await params
-    const moviefetch=await fetch("http://localhost:8000/editors/"+edi.id)
-    const editorfetch=await fetch("http://localhost:8000/editordet/"+edi.id)
+    const moviefetch=await fetch("https://letter-box-steel.vercel.app/editors/"+edi.id)
+    const editorfetch=await fetch("https://letter-box-steel.vercel.app/editordet/"+edi.id)
     const movies:Moviedb[]=await moviefetch.json()
     const editors:Editors[]=await editorfetch.json()
     return(

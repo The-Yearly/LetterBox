@@ -10,7 +10,7 @@ export default function TopFiveLists(props:pg){
     const page=props.page
     const [lists,setLists]=useState<Users_List[]|null>(null)
     useEffect(()=>{const fetchdata=async()=>{
-        const res=await fetch("http://localhost:8000/toplists")
+        const res=await fetch("https://letter-box-steel.vercel.app/toplists")
         setLists(await res.json())
     }
     fetchdata()},[])

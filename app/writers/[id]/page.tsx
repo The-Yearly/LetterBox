@@ -6,8 +6,8 @@ import { Moviedb } from "@/app/assets/interfaces/moviesdb"
 import { Writers } from "@/app/assets/interfaces/writers"
 export default async function Writer({params}:{params:Promise<{id:number}>}){
     const wri=await params
-    const moviefetch=await fetch("http://backend_app:8000/writers/"+wri.id)
-    const writersres=await fetch("http://backend_app:8000/writersdets/"+wri.id)
+    const moviefetch=await fetch("https://letter-box-steel.vercel.app/writers/"+wri.id)
+    const writersres=await fetch("https://letter-box-steel.vercel.app//writersdets/"+wri.id)
     const movies:Moviedb[]=await moviefetch.json()
     const writer:Writers[]=await writersres.json()
     return(

@@ -7,9 +7,9 @@ import pic from "@/app/assets/images/profile.png"
 interface idi{id:number} 
 export default async function Music({params}:{params:Promise<idi>}){
     const mid=await params
-    const moviefetch=await fetch("http://localhost:8000/music/"+mid.id)
+    const moviefetch=await fetch("https://letter-box-steel.vercel.app/music/"+mid.id)
     const movies:Moviedb[]=await moviefetch.json()
-    const musicres=await fetch("http://localhost:8000/musicdets/"+mid.id)
+    const musicres=await fetch("https://letter-box-steel.vercel.app/musicdets/"+mid.id)
     const music:Musics[]=await musicres.json()
     return(
         <>

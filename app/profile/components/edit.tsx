@@ -23,7 +23,7 @@ export default function Edit(){
         }
         })
     useEffect(()=>{const fetchdata=async()=>{
-        const usersres=await fetch("http://localhost:8000/users/"+logged_id)
+        const usersres=await fetch("https://letter-box-steel.vercel.app/users/"+logged_id)
         setUser(await usersres.json())  
     }
     fetchdata()},[])
@@ -38,7 +38,7 @@ export default function Edit(){
     setData()},[user])
     useEffect(()=>{const sendnewData=async()=>{
         if(newdata!=null){
-            const res=await axios.post("http://localhost:8000/updateUser",newdata)
+            const res=await axios.post("https://letter-box-steel.vercel.app/updateUser",newdata)
             const message=res.data.message
             if(message=="Updated"){
                toast(message)

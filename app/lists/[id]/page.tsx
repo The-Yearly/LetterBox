@@ -11,8 +11,8 @@ export default function List(){
     const [list,setList]=useState<Lists[]|null>(null)
     const [movies,setMovies]=useState<Moviedb[]|null>(null)
     useEffect(()=>{const fetchdata=async()=>{
-        const listmres=await fetch("http://localhost:8000/list/"+listid.id)
-        const moviesres=await fetch("http://localhost:8000/list/movies/"+listid.id)
+        const listmres=await fetch("https://letter-box-steel.vercel.app/list/"+listid.id)
+        const moviesres=await fetch("https://letter-box-steel.vercel.app/list/movies/"+listid.id)
         setList(await listmres.json())
         setMovies(await moviesres.json())
     }

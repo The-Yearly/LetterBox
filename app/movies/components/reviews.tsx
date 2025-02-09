@@ -9,7 +9,7 @@ export default function MovieReviewsPage(props:{id:number}){
     const[reviews,setReviews]=useState<movie_reviews_users[]|null>(null)
     const[offset,setOffset]=useState(0)
     useEffect(()=>{const fetchdata=async()=>{
-        const revres=await fetch("http://localhost:8000/movies/reviews/"+props.id+"/"+offset)
+        const revres=await fetch("https://letter-box-steel.vercel.app/movies/reviews/"+props.id+"/"+offset)
         setReviews(await revres.json())
     }
     fetchdata()},[offset])

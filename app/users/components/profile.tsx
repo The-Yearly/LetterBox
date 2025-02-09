@@ -11,9 +11,9 @@ export default function Profile(props:{id:number}){
     const [movies,setMovies]=useState<Moviedb[]|null>(null)
     const [favmovies,setFav]=useState<Moviedb[]|null>(null)
     useEffect(()=>{const fetchdata=async()=>{
-        const usersres=await fetch("http://localhost:8000/users/"+props.id)
-        const moviesres=await fetch("http://localhost:8000/movies")
-        const favres=await fetch("http://localhost:8000/users/fav/"+props.id)
+        const usersres=await fetch("https://letter-box-steel.vercel.app/users/"+props.id)
+        const moviesres=await fetch("https://letter-box-steel.vercel.app/movies")
+        const favres=await fetch("https://letter-box-steel.vercel.app/users/fav/"+props.id)
         setUsers(await usersres.json())
         setFav(await favres.json())
         console.log(favmovies)

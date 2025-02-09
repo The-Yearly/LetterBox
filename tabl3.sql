@@ -1,4 +1,4 @@
-/*M!999999\- enable the sandbox mode */ 
+/*M!999999\- enable the sandbox mode */
 -- MariaDB dump 10.19-11.6.2-MariaDB, for Linux (x86_64)
 --
 -- Host: localhost    Database: letterboxd
@@ -1960,10 +1960,10 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(1000) NOT NULL,
-  `user_name` varchar(1000) NOT NULL,
-  `user_passwd` varchar(1000) NOT NULL,
-  `user_bio` varchar(3000) DEFAULT NULL,
+  `name` varchar(100) NOT NULL,
+  `user_name` varchar(100) NOT NULL,
+  `user_passwd` varchar(100) NOT NULL,
+  `user_bio` varchar(1500) DEFAULT NULL,
   `user_userPic` varchar(1000) DEFAULT NULL,
   `follows_this_week` int(11) DEFAULT NULL,
   `followers_no` int(11) NOT NULL,

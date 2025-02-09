@@ -17,7 +17,7 @@ export default function AllMovies(){
     const [langs,setLangs]=useState<Language[]|null>(null)
     const [selectedLang,setSelectedLang]=useState(0)
     useEffect(() => {
-        fetch("http://localhost:8000/movies") .then(
+        fetch("https://letter-box-steel.vercel.app/movies") .then(
             response => response.json() .then(
             data => setMovie(data)
             )
@@ -28,15 +28,15 @@ export default function AllMovies(){
         const fetchdata=async(selectedGenre:number,selectedLang:number)=>{
 
          if(selectedGenre!=0 && selectedLang==0){
-            const moviefetch=await fetch("http://localhost:8000/genres/"+selectedGenre)
+            const moviefetch=await fetch("https://letter-box-steel.vercel.app/genres/"+selectedGenre)
             setMovie(await moviefetch.json())
         }
         else if(selectedLang!=0 && selectedGenre==0){
-            const moviefetch=await fetch("http://localhost:8000/languages/movies/"+selectedLang)
+            const moviefetch=await fetch("https://letter-box-steel.vercel.app/languages/movies/"+selectedLang)
             setMovie(await moviefetch.json())
         }
-        const genres=await fetch("http://localhost:8000/allgenres")
-        const langres=await fetch("http://localhost:8000/languages")
+        const genres=await fetch("https://letter-box-steel.vercel.app/allgenres")
+        const langres=await fetch("https://letter-box-steel.vercel.app/languages")
         setGenres(await genres.json())
         setLangs(await langres.json())
     }

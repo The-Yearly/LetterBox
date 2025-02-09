@@ -10,7 +10,7 @@ export default function AllMembers(){
     const [size,changeSize]=useState(0)
     let userssize=0;
     useEffect(()=>{const fetchdata=async(size:number)=>{
-        const res=await fetch("http://localhost:8000/getUsers/"+size)
+        const res=await fetch("https://letter-box-steel.vercel.app/getUsers/"+size)
         setUser(await res.json())
     }
     fetchdata(size)},[size])

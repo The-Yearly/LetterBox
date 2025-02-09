@@ -7,7 +7,7 @@ import pic from "@/app/assets/images/profile.png"
 interface pg{page:string|undefined}
 export default async function TopFiveUsers(props:pg){
     const page=props.page
-    const res=await fetch("http://localhost:8000/top5users")
+    const res=await fetch("https://letter-box-steel.vercel.app/top5users")
     const users:Top5[]=await res.json()
     if(users!=null){
         return(

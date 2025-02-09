@@ -6,7 +6,7 @@ import { useEffect,useState } from "react"
 export default function ReviewsPage(props:{id:number;page:string}){
     const[reviews,setReviews]=useState<movie_reviews_users[]|null>(null)
     useEffect(()=>{const fetchdata=async ()=>{
-        const reviewsres=await fetch("http://localhost:8000/users/reviews/"+props.id)
+        const reviewsres=await fetch("https://letter-box-steel.vercel.app/users/reviews/"+props.id)
         setReviews(await reviewsres.json())
     }
     fetchdata()},[props.id])

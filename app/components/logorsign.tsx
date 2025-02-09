@@ -19,7 +19,7 @@ export default function Login(){
     getId()},[])
     useEffect(()=>{const fetchdata=async()=>{
         if(logged_id!=null){
-            const userPicres=await fetch("http://localhost:8000/userPic/"+parseInt(logged_id))
+            const userPicres=await fetch("https://letter-box-steel.vercel.app/userPic/"+parseInt(logged_id))
             setUserPic(await userPicres.json())
         }
     }

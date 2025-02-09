@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Moviedb } from "@/app/assets/interfaces/moviesdb"
 export default async function Studios({params}:{params:Promise<{id:number}>}){
     const st=await params
-    const moviefetch=await fetch("http://localhost:8000/productions/"+st.id)
+    const moviefetch=await fetch("https://letter-box-steel.vercel.app/productions/"+st.id)
     const movies:Moviedb[]=await moviefetch.json()
     return(
         <>

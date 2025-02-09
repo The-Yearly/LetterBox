@@ -10,7 +10,7 @@ export default function AllLists(){
     const [lists,setList]=useState<Users_List[]|null>(null)
     let listle=0
     useEffect(()=>{const fetchdata=async(size:number)=>{
-       const res=await fetch("http://localhost:8000/lists/"+size) 
+       const res=await fetch("https://letter-box-steel.vercel.app/lists/"+size) 
        setList(await res.json())
     }
     fetchdata(size)},[size])

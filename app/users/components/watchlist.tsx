@@ -8,8 +8,8 @@ export default function WatchList(props:{id:number}){
     const [User,setUsers]=useState<User[]|null>(null)
     const [watch,setWatch]=useState<Moviedb[]|null>(null)
     useEffect(()=>{const fetchdata=async()=>{
-        const usersres=await fetch("http://localhost:8000/users/"+props.id)
-        const watchres=await fetch("http://localhost:8000/users/watchlist/"+props.id)
+        const usersres=await fetch("https://letter-box-steel.vercel.app/users/"+props.id)
+        const watchres=await fetch("https://letter-box-steel.vercel.app/users/watchlist/"+props.id)
         setUsers(await usersres.json())
         setWatch(await watchres.json()) 
     }

@@ -8,8 +8,8 @@ export default function UserMovies(props:{id:number}){
     const[user,setUser]=useState<User[]|null>(null)
     const [movies,setMovies]=useState<Moviedb[]|null>(null)
     useEffect(()=>{const fetchdata=async()=>{
-        const userres=await fetch("http://localhost:8000/users/"+props.id)
-        const moviesres=await fetch("http://localhost:8000/users/movies/"+props.id)
+        const userres=await fetch("https://letter-box-steel.vercel.app/users/"+props.id)
+        const moviesres=await fetch("https://letter-box-steel.vercel.app/users/movies/"+props.id)
         setUser(await userres.json())
         setMovies(await moviesres.json())
     }

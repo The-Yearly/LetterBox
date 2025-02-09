@@ -9,7 +9,7 @@ export default function LoginPage(){
     const [userName,setUserName]=useState("")
     const [passWord,setPassword]=useState("")
     useEffect(()=>{const fetchdata=async()=>{
-        const res= await axios.post("http://localhost:8000/login",data)
+        const res= await axios.post("https://letter-box-steel.vercel.app/login",data)
         if(res.data.message=="Logged In"){
             localStorage.setItem("user_id",String(res.data.id[0].user_id))
             localStorage.setItem("user_name",String(data?.user_name))

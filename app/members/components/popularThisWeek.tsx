@@ -5,7 +5,7 @@ import Link from "next/link";
 import grey from "@/app/assets/images/grey.png"
 import pic from "@/app/assets/images/profile.png"
 export default async function PopularThisWeek(){
-    const res=await fetch("http://localhost:8000/popUsers")
+    const res=await fetch("https://letter-box-steel.vercel.app/popUsers")
     const users:Top5[]=await res.json()
     return(
         <>
