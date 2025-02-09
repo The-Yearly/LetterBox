@@ -7,8 +7,8 @@ import { Actors } from "@/app/assets/interfaces/actors"
 interface idi{id:number} 
 export default async function Actor({params}:{params:Promise<idi>}){
     const aid=await params
-    const moviefetch=await fetch("http://localhost:8000/actors/"+ aid.id)
-    const actorfetch=await fetch("http://localhost:8000/actorsdets/"+ aid.id)
+    const moviefetch=await fetch("https://letter-box-nine.vercel.app/actors/"+ aid.id)
+    const actorfetch=await fetch("https://letter-box-nine.vercel.app/actorsdets/"+ aid.id)
     const movies:Moviedb[]=await moviefetch.json()
     const actor:Actors[]=await actorfetch.json()
     return(
