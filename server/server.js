@@ -4,7 +4,15 @@ const axios=require("axios")
 let app=express();
 app.use(express.json())
 let mysql=require("mysql2");
-const cred={ host: "localhost",user: "theyearly",password: "Arduino1",database:"letterboxd"}
+/*
+const cred={ host: "localhost",user: "theyearly",password: "Arduino1",database:"letterboxd"}*/
+const cred = {
+    host: "letterboxd-theyearlone-7596.k.aivencloud.com",
+    user: "avnadmin",
+    password: "AVNS_V64uo1ki7VnX7FsujhQ",
+    database: "letterboxd",
+    port: 24073,
+  };
 let con;
 function connectMaria(){
     con = mysql.createConnection(cred);
