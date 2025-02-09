@@ -3,7 +3,7 @@ import AllMovies from "./components/movies";
 export default function Movies(){   
     return(
     <>  
-        <TopFiveMovies/>
+        <TopFiveMovies page={"movies"}/>
         <AllMovies/>
     </>
     )

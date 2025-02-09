@@ -20,21 +20,21 @@ export default function SignupPage(){
         }
     }
     Senddata()},[data])
-    function gotEmail(event:any){
+    function gotEmail(event:React.ChangeEvent<HTMLInputElement>){
         if(event.target.value.length!=0){
             setEmail(event.target.value)
         }else{
             setEmail("")
         }
     }
-    function gotUserName(event:any){
+    function gotUserName(event:React.ChangeEvent<HTMLInputElement>){
         if(event.target.value.length!=0){
             setUserName(event.target.value)
         }else{
             setUserName("")
         }
     }
-    function gotPassword(event:any){
+    function gotPassword(event:React.ChangeEvent<HTMLInputElement>){
         if(event.target.value.length!=0){
             setPassword(event.target.value)
         }else{
@@ -47,7 +47,7 @@ export default function SignupPage(){
                 if(userName!=""){
                     if(passWord!=""){
                         console.log("Done")
-                        let d={user_name:userName,name:"",user_userPic:"",email:email,user_passwd:passWord,user_bio:"",user_id:0,followers_no:0,following:0}
+                        const d={user_name:userName,name:"",user_userPic:"",email:email,user_passwd:passWord,user_bio:"",user_id:0,followers_no:0,following:0}
                         setData(d)
                         
                     }else{

@@ -5,8 +5,9 @@ import Image from "next/image"
 import grey from "@/app/assets/images/grey.png"
 import Link from "next/link"
 import { useEffect, useState } from "react"
-export default function TopFiveLists(props:any){
-    let page=props.page
+interface pg{page:string|undefined}
+export default function TopFiveLists(props:pg){
+    const page=props.page
     const [lists,setLists]=useState<Users_List[]|null>(null)
     useEffect(()=>{const fetchdata=async()=>{
         const res=await fetch("http://localhost:8000/toplists")

@@ -4,9 +4,8 @@ import { Top5 } from "@/app/assets/interfaces/top5users";
 import Link from "next/link";
 import grey from "@/app/assets/images/grey.png"
 import pic from "@/app/assets/images/profile.png"
-export default async function PopularThisWeek(props:any){
-    let page=props.page
-    const res=await fetch("http://backend_app:8000/popUsers")
+export default async function PopularThisWeek(){
+    const res=await fetch("http://localhost:8000/popUsers")
     const users:Top5[]=await res.json()
     return(
         <>

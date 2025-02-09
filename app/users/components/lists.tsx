@@ -4,7 +4,7 @@ import Image from "next/image"
 import styles from "../styles/lists.module.css"
 import Link from "next/link"
 import { Users_List } from "@/app/assets/interfaces/users_list"
-export default function UserList(props:any){ 
+export default function UserList(props:{id:number}){ 
     const [lists,setLists]=useState<Users_List[]|null>(null)
     useEffect(()=>{const listfetchdata=async()=>{
         const listres=await fetch("http://localhost:8000/users/list/"+props.id)

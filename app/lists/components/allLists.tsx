@@ -5,7 +5,6 @@ import styles from "../styles/alllists.module.css"
 import Link from "next/link"
 import grey from "@/app/assets/images/grey.png"
 import { useEffect, useState } from "react"
-import { list } from "postcss"
 export default function AllLists(){
     const [size,changeSize]=useState(0)
     const [lists,setList]=useState<Users_List[]|null>(null)

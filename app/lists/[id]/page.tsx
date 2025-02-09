@@ -4,11 +4,10 @@ import { Moviedb } from "@/app/assets/interfaces/moviesdb";
 import { Lists } from "@/app/assets/interfaces/lists";
 import { useEffect,useState } from "react";
 import Link from "next/link";
-import { use } from "react";
 import Image from "next/image"
-interface Listid{id:number}
-export default function List({params}:any){
-    const listid:Listid=use(params)
+import { useParams } from "next/navigation";
+export default function List(){
+    const listid=useParams()
     const [list,setList]=useState<Lists[]|null>(null)
     const [movies,setMovies]=useState<Moviedb[]|null>(null)
     useEffect(()=>{const fetchdata=async()=>{
@@ -17,7 +16,7 @@ export default function List({params}:any){
         setList(await listmres.json())
         setMovies(await moviesres.json())
     }
-    fetchdata()},[])
+    fetchdata()},[listid.id])
     console.log(listid.id)
     if(list!=null && movies!=null){
         return(

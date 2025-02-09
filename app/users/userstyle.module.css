@@ -204,3 +204,13 @@
 .show{
     display: block;
 }
+#logOut{
+    position: absolute;
+    top:64px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    left:250px;
+    border: rgb(230, 230, 230) 1px solid;
+    padding: 5px;
+    border-radius: 5px;
+}

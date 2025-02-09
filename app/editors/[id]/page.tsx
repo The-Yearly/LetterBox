@@ -4,12 +4,13 @@ import { Editors } from "@/app/assets/interfaces/editors"
 import Link from "next/link"
 import { Moviedb } from "@/app/assets/interfaces/moviesdb"
 import  pic from "@/app/assets/images/profile.png"
-export default async function Editor({params}:any){
-    let edi=await params
-    let moviefetch=await fetch("http://backend_app:8000/editors/"+edi.id)
-    let editorfetch=await fetch("http://backend_app:8000/editordet/"+edi.id)
-    let movies:Moviedb[]=await moviefetch.json()
-    let editors:Editors[]=await editorfetch.json()
+interface idi{id:number}
+export default async function Editor({params}:{params:Promise<idi>}){
+    const edi=await params
+    const moviefetch=await fetch("http://localhost:8000/editors/"+edi.id)
+    const editorfetch=await fetch("http://localhost:8000/editordet/"+edi.id)
+    const movies:Moviedb[]=await moviefetch.json()
+    const editors:Editors[]=await editorfetch.json()
     return(
         <>
             <div id={styles.userCard}>

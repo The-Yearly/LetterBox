@@ -4,7 +4,7 @@ const axios=require("axios")
 let app=express();
 app.use(express.json())
 let mysql=require("mysql2");
-const cred={ host: "backend_database",user: "root",password: "Arduino1",database:"letterboxd"}
+const cred={ host: "localhost",user: "theyearly",password: "Arduino1",database:"letterboxd"}
 let con;
 function connectMaria(){
     con = mysql.createConnection(cred);

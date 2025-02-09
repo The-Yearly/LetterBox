@@ -6,7 +6,7 @@ import { Movies_Languages } from "@/app/assets/interfaces/movies_languages"
 import { Movies_Altitles } from "@/app/assets/interfaces/movies_altitles"
 import { useEffect, useState } from "react"
 import Link from "next/link"
-export default function MovieDets(props:any){
+export default function MovieDets(props:{id:number}){
     const [genres,setGenre]=useState<Movies_Genres[]|null>(null)
     const [studios,setStudios]=useState<Movies_Studio[]|null>(null)
     const [countrys,setCountrys]=useState<Movies_Countrys[]|null>(null)

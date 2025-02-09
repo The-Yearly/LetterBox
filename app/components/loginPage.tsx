@@ -10,7 +10,6 @@ export default function LoginPage(){
     const [passWord,setPassword]=useState("")
     useEffect(()=>{const fetchdata=async()=>{
         const res= await axios.post("http://localhost:8000/login",data)
-        toast(res.data.message)
         if(res.data.message=="Logged In"){
             localStorage.setItem("user_id",String(res.data.id[0].user_id))
             localStorage.setItem("user_name",String(data?.user_name))
@@ -19,14 +18,14 @@ export default function LoginPage(){
         }
     }
     fetchdata()},[data])
-    function gotUser(event:any){
+    function gotUser(event:React.ChangeEvent<HTMLInputElement>){
         if(event.target.value!=""){
             setUserName(event.target.value)
         }else{
             setUserName("")
         }
     }
-    function gotPasswd(event:any){
+    function gotPasswd(event:React.ChangeEvent<HTMLInputElement>){
         if(event.target.value!=""){
             setPassword(event.target.value)
         }else{

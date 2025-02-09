@@ -10,7 +10,7 @@ export default function NavBar(){
     const [searchValue,changeValue]=useState("")
     const [filteredMovies,setFiltered]=useState<Moviedb[] |null>(null)
     const [searchbarFocus,setFocus]=useState(false)
-    function gotInput(event:any){
+    function gotInput(event:React.ChangeEvent<HTMLInputElement>){
         if(event.target.value.length!=0){
             changeValue(event.target.value)
         }else{

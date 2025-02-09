@@ -4,12 +4,13 @@ import styles from "../actor.module.css"
 import { Moviedb } from "@/app/assets/interfaces/moviesdb"
 import pic from "@/app/assets/images/profile.png"
 import { Actors } from "@/app/assets/interfaces/actors"
-export default async function Actor({params}:any){
-    let aid=await params
-    let moviefetch=await fetch("http://backend_app:8000/actors/"+ aid.id)
-    let actorfetch=await fetch("http://backend_app:8000/actorsdets/"+ aid.id)
-    let movies:Moviedb[]=await moviefetch.json()
-    let actor:Actors[]=await actorfetch.json()
+interface idi{id:number} 
+export default async function Actor({params}:{params:Promise<idi>}){
+    const aid=await params
+    const moviefetch=await fetch("http://localhost:8000/actors/"+ aid.id)
+    const actorfetch=await fetch("http://localhost:8000/actorsdets/"+ aid.id)
+    const movies:Moviedb[]=await moviefetch.json()
+    const actor:Actors[]=await actorfetch.json()
     return(
         <>
             <div id={styles.userCard}>

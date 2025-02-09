@@ -4,7 +4,7 @@ import styles from "../styles/follwers_following.module.css"
 import Image from "next/image"
 import Link from "next/link"
 import pic from "@/app/assets/images/profile.png"
-export default function FollowingPage(props:any){
+export default function FollowingPage(props:{id:number}){
     const [following,setFollowing]=useState<Users_Following_Followers[]|null>(null)
     useEffect(()=>{const fetchdata=async()=>{
         const followingres=await fetch("http://localhost:8000/users/following/"+props.id)

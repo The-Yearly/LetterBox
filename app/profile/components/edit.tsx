@@ -1,12 +1,12 @@
 'use client'
-import { useState,useEffect } from "react"
+import React, { useState,useEffect } from "react"
 import styles from "./componets.module.css"
 import { editUser } from "@/app/assets/interfaces/editUser"
 import { toast, ToastContainer } from "react-toastify"
 import { User } from "@/app/assets/interfaces/user"
 import axios from "axios"
 export default function Edit(){
-    const [model,useModel]=useState(false)
+    const [model,setModel]=useState(false)
     const[user,setUser]=useState<User[]|null>(null)
     const[name,setName]=useState("")
     const[pasword,setPassword]=useState("")
@@ -16,8 +16,6 @@ export default function Edit(){
     const [pic,setPic]=useState("")
     const [newdata,setnewData]=useState<editUser|null>(null)
     useEffect(()=>{
-        var e1=document.getElementById(styles.loginheading);
-        var e2=document.getElementById(styles.signupheading);
         if(model){
             document.body.classList.add(styles.active_modal)
         }else{
@@ -51,37 +49,37 @@ export default function Edit(){
     sendnewData()
 },[newdata])
     function changeModel(){
-        useModel(!model)
+        setModel(!model)
     }
-    function gotName(event:any){ 
+    function gotName(event:React.ChangeEvent<HTMLInputElement>){ 
         if(event.target.value!=""){
             setName(event.target.value)
         }else{
             setName("")
         }
     }
-    function gotPass(event:any){ 
+    function gotPass(event:React.ChangeEvent<HTMLInputElement>){ 
         if(event.target.value!=""){
             setPassword(event.target.value)
         }else{
             setPassword("")
         }
     }
-    function gotPic(event:any){ 
+    function gotPic(event:React.ChangeEvent<HTMLInputElement>){ 
         if(event.target.value!=""){
             setPic(event.target.value)
         }else{
             setPic("")
         }
     }
-    function gotBio(event:any){
+    function gotBio(event:React.ChangeEvent<HTMLTextAreaElement>){
         if(event.target.value!=""){
             setBio(event.target.value)
         }else{
             setBio("")
         }
     }
-    function gotEmail(event:any){
+    function gotEmail(event:React.ChangeEvent<HTMLInputElement>){
         if(event.target.value!=""){
             setEmail(event.target.value)
         }else{

@@ -2,9 +2,11 @@ import styles from "@/app/actors/actor.module.css"
 import Image from "next/image"
 import Link from "next/link"
 import { Moviedb } from "@/app/assets/interfaces/moviesdb"
-export default async function Genres({params}:any){
-    let moviefetch=await fetch("http://backend_app:8000/genres/"+params.id)
-    let movies:Moviedb[]=await moviefetch.json()
+interface idi{id:number}
+export default async function Genres({params}:{params:Promise<idi>}){
+    const gen=await params
+    const moviefetch=await fetch("http://localhost:8000/genres/"+gen.id)
+    const movies:Moviedb[]=await moviefetch.json()
     return(
         <>
             <div id={styles.allMovies}>

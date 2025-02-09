@@ -4,9 +4,10 @@ import Link from "next/link";
 import { Top5 } from "@/app/assets/interfaces/top5users";
 import grey from "@/app/assets/images/grey.png"
 import pic from "@/app/assets/images/profile.png"
-export default async function TopFiveUsers(props:any){
-    let page=props.page
-    const res=await fetch("http://backend_app:8000/top5users")
+interface pg{page:string|undefined}
+export default async function TopFiveUsers(props:pg){
+    const page=props.page
+    const res=await fetch("http://localhost:8000/top5users")
     const users:Top5[]=await res.json()
     if(users!=null){
         return(

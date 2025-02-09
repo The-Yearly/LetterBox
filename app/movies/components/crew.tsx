@@ -8,7 +8,7 @@ import { Movie_Prouction_Design } from "@/app/assets/interfaces/movies_productio
 import styles from "../styles/castandcrew.module.css"
 import { useEffect,useState } from "react";
 import Link from "next/link";
-export default function CrewPage(props:any){
+export default function CrewPage(props:{id:number}){
     const [dirData,setDirs]=useState<Movie_Directors[]|null>(null)
     const [producerData,setProducer]=useState<Movie_Producer[]|null>(null)
     const [writerData,setWriter]=useState<Movies_Writers[]|null>(null)

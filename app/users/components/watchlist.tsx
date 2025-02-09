@@ -4,7 +4,7 @@ import Link from "next/link"
 import { User } from "@/app/assets/interfaces/user"
 import { Moviedb } from "@/app/assets/interfaces/moviesdb"
 import {useState,useEffect} from "react"
-export default function WatchList(props:any){
+export default function WatchList(props:{id:number}){
     const [User,setUsers]=useState<User[]|null>(null)
     const [watch,setWatch]=useState<Moviedb[]|null>(null)
     useEffect(()=>{const fetchdata=async()=>{

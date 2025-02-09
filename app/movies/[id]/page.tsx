@@ -12,12 +12,12 @@ import { movies_users } from "@/app/assets/interfaces/movies_user";
 import eye from "@/app/assets/images/eye.png"
 import axios from "axios";
 import { toast,ToastContainer } from "react-toastify";
-interface Movieid{id:number}
-export default function MoviePage({params}:any){
+export default function MoviePage({params}:{params:Promise<{id:number}>}){
     const [moviedata,setMovies]=useState<Moviedb[]|null>(null)
-    const logged_id=localStorage.getItem("user_id")
+    const[logged_id,setloggedId]=useState<string|null>(null)
     const [watched,setWatched]=useState(false)
-    const movieid:Movieid=use(params)
+    const movieid=use(params)       
+    const mid=movieid.id
     const [page,setPage]=useState(0)
     const [fav,setFav]=useState(false)
     const [data,setData]=useState<movies_users|null>(null)
@@ -25,21 +25,26 @@ export default function MoviePage({params}:any){
     function renderPage(){
         switch (page){
             case 0:
-                return <Cast id={movieid.id}/>
+                return <Cast id={mid}/>
             case 1:
-                return <CrewPage id={movieid.id}/>
+                return <CrewPage id={mid}/>
             case 2:
-                return <MovieDets id={movieid.id}/>
+                return <MovieDets id={mid}/>
             case 3:
-                return <MovieReviewsPage id={movieid.id}/>
+                return <MovieReviewsPage id={mid}/>
         }
         
     }
+    useEffect(()=>{const getId=async()=>{
+        setloggedId(localStorage.getItem("user_id"))
+    }
+    getId()},[])
     useEffect(()=>{const fetchdata=async()=>{
-        const res=await fetch("http://localhost:8000/movies/"+movieid.id)
+        console.log("http://localhost:8000/movies/"+mid)
+        const res=await fetch("http://localhost:8000/movies/"+mid)
         setMovies(await res.json())
-        const wat=await fetch("http://localhost:8000/movies/watched/"+movieid.id+"/"+localStorage.getItem("user_id"))
-        let w=await wat.json()
+        const wat=await fetch("http://localhost:8000/movies/watched/"+mid+"/"+localStorage.getItem("user_id"))
+        const w=await wat.json()
         if(w.watched.length!=0){
             setWatched(true)
         }else{
@@ -54,46 +59,48 @@ export default function MoviePage({params}:any){
     fetchdata()
     },[]) 
     useEffect(()=>{const fetchdata=async()=>{
+        if(logged_id!=null){
         if(watched==true){
-            let res=await axios.post("http://localhost:8000/watchedmovie",data)
+            const res=await axios.post("http://localhost:8000/watchedmovie",data)
             toast(res.data.message)
             
         }else{
-            let res=await axios.post("http://localhost:8000/removewatchedmovie",data)
+            const res=await axios.post("http://localhost:8000/removewatchedmovie",data)
             toast(res.data.message)
-        }
+        }}
     }
     fetchdata()},[data])
     useEffect(()=>{const fetchdata=async()=>{
+        if(logged_id!=null){
         if(fav==true){
-            let res=await axios.post("http://localhost:8000/favmovie",favdata)
+            const res=await axios.post("http://localhost:8000/favmovie",favdata)
             toast(res.data.message)
         }else{
-            let res=await axios.post("http://localhost:8000/removefavmovie",favdata)
+            const res=await axios.post("http://localhost:8000/removefavmovie",favdata)
             toast(res.data.message)
-        }
+        }}
     }
     fetchdata()},[favdata])
     function watchedorunwatched(){
         if(watched==true){
             setWatched(false)
-            setData({movie_id:String(movieid.id),user_id:String(localStorage.getItem("user_id"))})
+            setData({movie_id:String(mid),user_id:String(localStorage.getItem("user_id"))})
         }else{
             setWatched(true)
-            setData({movie_id:String(movieid.id),user_id:String(localStorage.getItem("user_id"))})
+            setData({movie_id:String(mid),user_id:String(localStorage.getItem("user_id"))})
         }
     }
     function favorunfav(){
         if(fav==true){
             setFav(false)
-            setfavData({movie_id:String(movieid.id),user_id:String(localStorage.getItem("user_id"))})
+            setfavData({movie_id:String(mid),user_id:String(localStorage.getItem("user_id"))})
         }else{
             setFav(true)
-            setfavData({movie_id:String(movieid.id),user_id:String(localStorage.getItem("user_id"))})
+            setfavData({movie_id:String(mid),user_id:String(localStorage.getItem("user_id"))})
         }
     }
     if(moviedata!=undefined){
-        let movie=moviedata[0]
+        const movie=moviedata[0]
         return(
             <>
             <ToastContainer/>

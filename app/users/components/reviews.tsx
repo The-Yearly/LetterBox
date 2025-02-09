@@ -2,9 +2,8 @@ import styles from "../styles/profile.module.css"
 import Link from "next/link"
 import Image from "next/image"
 import { movie_reviews_users } from "@/app/assets/interfaces/movies_reviews_users"
-import likeIco from "@/app/assets/images/likes.png"
-import { useState,useEffect } from "react"
-export default function reviewsPage(props:any){
+import { useEffect,useState } from "react"
+export default function ReviewsPage(props:{id:number;page:string}){
     const[reviews,setReviews]=useState<movie_reviews_users[]|null>(null)
     useEffect(()=>{const fetchdata=async ()=>{
         const reviewsres=await fetch("http://localhost:8000/users/reviews/"+props.id)

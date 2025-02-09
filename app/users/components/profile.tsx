@@ -6,7 +6,7 @@ import { User } from "@/app/assets/interfaces/user"
 import { useEffect,useState } from "react"
 import Link from "next/link"
 import ReviewsPage from "./reviews"
-export default function Profile(props:any){
+export default function Profile(props:{id:number}){
     const [User,setUsers]=useState<User[]|null>(null)
     const [movies,setMovies]=useState<Moviedb[]|null>(null)
     const [favmovies,setFav]=useState<Moviedb[]|null>(null)
@@ -41,7 +41,7 @@ export default function Profile(props:any){
                     <p id={styles.bioHeading}>About Me</p>
                     <p id={styles.profileBio}>{User[0].user_bio}</p>
                 </div>
-                <ReviewsPage id={props.id} page="profile" no="2"/>
+                <ReviewsPage id={props.id} page="profile"/>
             </>
         )
 }}  

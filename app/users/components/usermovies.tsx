@@ -4,7 +4,7 @@ import Link from "next/link"
 import { User } from "@/app/assets/interfaces/user"
 import { Moviedb } from "@/app/assets/interfaces/moviesdb"
 import { useState,useEffect } from "react"
-export default function UserMovies(props:any){
+export default function UserMovies(props:{id:number}){
     const[user,setUser]=useState<User[]|null>(null)
     const [movies,setMovies]=useState<Moviedb[]|null>(null)
     useEffect(()=>{const fetchdata=async()=>{

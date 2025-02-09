@@ -3,19 +3,19 @@ import Image from "next/image";
 import styles from "./components.module.css"
 import { useState,useEffect } from "react";
 import { Moviedb } from "../assets/interfaces/moviesdb";
-import grey from "@/app/assets/images/grey.png"
 export default function BigThreeImages(){
-      let [count,setCount]=useState(0)
+      const [count,setCount]=useState(0)
       const [topThree,setTopThree]=useState<Moviedb[]|null>(null)
-      function changeImage(){
-        count=count+1
-        if(count>=3){
-         count=0
+      useEffect(()=>{const changeImage=()=>{
+        let c=count
+        c+=1
+        if(c>=3){
+          c=0
         }
-        setCount(count)
+        setCount(c)
       }
-      useEffect(()=>{
-        setInterval(changeImage,4000)
+        const i= setInterval(changeImage,4000)
+        return()=>clearInterval(i)
 
       })
       useEffect(()=>{const fetchdata=async()=>{
@@ -26,7 +26,7 @@ export default function BigThreeImages(){
       if(topThree!=undefined){
         return(
           <>
-          <Image id={styles.TopMovie} src={topThree[count].movie_banner} placeholder="empty" alt="Movie Poster" height={50} width={1050}></Image>
+          <Image id={styles.TopMovie} blurDataURL="blur" src={topThree[count].movie_banner} placeholder="empty" alt="Movie Poster" height={50} width={1050}></Image>
         <p id={styles.Title}>
         Track films you’ve watched.<br/>Save those you want to see.<br/>Tell your friends what’s good.
         </p>

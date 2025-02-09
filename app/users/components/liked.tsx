@@ -4,7 +4,7 @@ import Link from "next/link"
 import { User } from "@/app/assets/interfaces/user"
 import { Moviedb } from "@/app/assets/interfaces/moviesdb"
 import { useEffect, useState } from "react"
-export default function LikedMovies(props:any){
+export default function LikedMovies(props:{id:number}){
     const [user,setUser]=useState<User[]|null>(null)
     console.log(props.id)
     const [liked,setLiked]=useState<Moviedb[]|null>(null)

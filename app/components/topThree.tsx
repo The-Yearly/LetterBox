@@ -5,7 +5,7 @@ import likesico from "../assets/images/likes.png"
 import { Moviedb } from "../assets/interfaces/moviesdb";
 import Link from "next/link";
 export default async function TopThree(){
-    const res=await fetch("http://backend_app:8000/moviestop/3")
+    const res=await fetch("http://localhost:8000/moviestop/3")
     const topThree:Moviedb[]=await res.json()
     return(
         <div className={styles.TopThree}>

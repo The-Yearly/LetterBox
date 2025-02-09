@@ -1,11 +1,11 @@
 'use client'
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Movie_Review_User_Post} from "@/app/assets/interfaces/movie_review_userpost"
 import styles from "../styles/userReview.module.css"
 
 import { toast, ToastContainer } from "react-toastify"
 import axios from "axios"
-export default function UserReview(props:any){
+export default function UserReview(props:{id:number}){
     const logged_id=localStorage.getItem("user_id")
     const[title,setTitle]=useState("")
     const [review,setReview]=useState("")
@@ -18,14 +18,14 @@ export default function UserReview(props:any){
         }
     }
     push()},[data])
-    function gotTitle(event:any){
+    function gotTitle(event:React.ChangeEvent<HTMLInputElement>){
         if(event.target.value.length!=0){
             setTitle(event.target.value)
         }else{
             setTitle("")
         }
     }
-    function gotReview(event:any){
+    function gotReview(event:React.ChangeEvent<HTMLTextAreaElement>){
         if(event.target.value.length!=0){
             setReview(event.target.value)
         }else{
@@ -35,8 +35,7 @@ export default function UserReview(props:any){
     function post(){
         if(title!=""){
             if(review!=""){
-                console.log("HHH")
-                setData({movie_id:props.id,user_id:logged_id,review_title:title,review_content:review})
+                setData({movie_id:String(props.id),user_id:logged_id,review_title:title,review_content:review})
                 console.log(data)
             }else{
                 toast("Review Cant Be Empty")

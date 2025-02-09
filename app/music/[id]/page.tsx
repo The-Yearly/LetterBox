@@ -4,12 +4,13 @@ import Link from "next/link"
 import { Moviedb } from "@/app/assets/interfaces/moviesdb"
 import { Musics } from "@/app/assets/interfaces/music"
 import pic from "@/app/assets/images/profile.png"
-export default async function Music({params}:any){
-    let mid=await params
-    let moviefetch=await fetch("http://backend_app:8000/music/"+mid.id)
-    let movies:Moviedb[]=await moviefetch.json()
-    let musicres=await fetch("http://backend_app:8000/musicdets/"+mid.id)
-    let music:Musics[]=await musicres.json()
+interface idi{id:number} 
+export default async function Music({params}:{params:Promise<idi>}){
+    const mid=await params
+    const moviefetch=await fetch("http://localhost:8000/music/"+mid.id)
+    const movies:Moviedb[]=await moviefetch.json()
+    const musicres=await fetch("http://localhost:8000/musicdets/"+mid.id)
+    const music:Musics[]=await musicres.json()
     return(
         <>
             <div id={styles.userCard}>

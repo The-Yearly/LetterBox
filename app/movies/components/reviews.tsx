@@ -5,17 +5,15 @@ import { movie_reviews_users } from "@/app/assets/interfaces/movies_reviews_user
 import { useState,useEffect } from "react";
 import pic from "@/app/assets/images/profile.png"
 import UserReview from "./userReview";
-export default function MovieReviewsPage(props:any){
+export default function MovieReviewsPage(props:{id:number}){
     const[reviews,setReviews]=useState<movie_reviews_users[]|null>(null)
     const[offset,setOffset]=useState(0)
-    let revi=0
     useEffect(()=>{const fetchdata=async()=>{
         const revres=await fetch("http://localhost:8000/movies/reviews/"+props.id+"/"+offset)
         setReviews(await revres.json())
     }
     fetchdata()},[offset])
     if(reviews!=null){
-        revi=reviews.length
         return(
         <>
         <UserReview id={props.id}/>

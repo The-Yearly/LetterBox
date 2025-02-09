@@ -4,7 +4,7 @@ import styles from "../styles/follwers_following.module.css"
 import Image from "next/image"
 import Link from "next/link"
 import pic from "@/app/assets/images/profile.png"
-export default function FollowersPage(props:any){
+export default function FollowersPage(props:{id:number}){
     const [followers,setFollowers]=useState<Users_Following_Followers[]|null>(null)
     useEffect(()=>{const fetchdata=async()=>{
         const flwersres=await fetch("http://localhost:8000/users/followers/"+props.id)
@@ -15,7 +15,7 @@ export default function FollowersPage(props:any){
     if(followers!=null){
         return(
             <div id={styles.allFollowers}>
-                <p id={styles.followersheading}>{"'s Followers "+"("+followers.length+")"}</p>
+                <p id={styles.followersheading}>{"Followers "+"("+followers.length+")"}</p>
                 <ul className={styles.followersfollowingList}>
                     {followers.map(flwrs=>
                     <li key={flwrs.follower_id}>

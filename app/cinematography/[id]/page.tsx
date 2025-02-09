@@ -4,12 +4,13 @@ import Link from "next/link"
 import { Moviedb } from "@/app/assets/interfaces/moviesdb"
 import { Cinematography } from "@/app/assets/interfaces/cinematography"
 import pic from "@/app/assets/images/profile.png"
-export default async function Cinematographers({params}:any){
-    let cid=await params
-    let moviefetch=await fetch("http://backend_app:8000/cinematography/"+cid.id)
-    let dirfetch=await fetch("http://backend_app:8000/cine/"+cid.id)
-    let movies:Moviedb[]=await moviefetch.json()
-    let cine:Cinematography[]=await dirfetch.json()
+interface idi{id:number}
+export default async function Cinematographers({params}:{params:Promise<idi>}){
+    const cid=await params
+    const moviefetch=await fetch("http://localhost:8000/cinematography/"+cid.id)
+    const dirfetch=await fetch("http://localhost:8000/cine/"+cid.id)
+    const movies:Moviedb[]=await moviefetch.json()
+    const cine:Cinematography[]=await dirfetch.json()
     return(
         <>
             <div id={styles.userCard}>

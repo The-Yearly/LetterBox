@@ -4,12 +4,13 @@ import Link from "next/link"
 import { Moviedb } from "@/app/assets/interfaces/moviesdb"
 import { Director} from "@/app/assets/interfaces/director_id"
 import pic from "@/app/assets/images/profile.png"
-export default async function Directors({params}:any){
-    let did=params
-    let moviefetch=await fetch("http://backend_app:8000/directors/"+did.id)
-    let dirfetch=await fetch("http://backend_app:8000/directordets/"+ did.id)
-    let movies:Moviedb[]=await moviefetch.json()
-    let director:Director[]=await dirfetch.json()
+interface idi{id:number}
+export default async function Directors({params}:{params:Promise<idi>}){
+    const did=await params
+    const moviefetch=await fetch("http://localhost:8000/directors/"+did.id)
+    const dirfetch=await fetch("http://localhost:8000/directordets/"+ did.id)
+    const movies:Moviedb[]=await moviefetch.json()
+    const director:Director[]=await dirfetch.json()
     return(
         <>
          <div id={styles.userCard}>

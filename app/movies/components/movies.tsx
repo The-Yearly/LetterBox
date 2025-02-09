@@ -17,30 +17,26 @@ export default function AllMovies(){
     const [langs,setLangs]=useState<Language[]|null>(null)
     const [selectedLang,setSelectedLang]=useState(0)
     useEffect(() => {
-        
-            fetch("http://localhost:8000/movies") .then(
-               response => response.json() .then(
-                data => setMovie(data)
-               )
+        fetch("http://localhost:8000/movies") .then(
+            response => response.json() .then(
+            data => setMovie(data)
             )
-            
-            
-    
+        )
     }, [])
     
     useEffect(()=>{
         const fetchdata=async(selectedGenre:number,selectedLang:number)=>{
 
          if(selectedGenre!=0 && selectedLang==0){
-            let moviefetch=await fetch("http://localhost:8000/genres/"+selectedGenre)
+            const moviefetch=await fetch("http://localhost:8000/genres/"+selectedGenre)
             setMovie(await moviefetch.json())
         }
         else if(selectedLang!=0 && selectedGenre==0){
-            let moviefetch=await fetch("http://localhost:8000/languages/movies/"+selectedLang)
+            const moviefetch=await fetch("http://localhost:8000/languages/movies/"+selectedLang)
             setMovie(await moviefetch.json())
         }
-        let genres=await fetch("http://localhost:8000/allgenres")
-        let langres=await fetch("http://localhost:8000/languages")
+        const genres=await fetch("http://localhost:8000/allgenres")
+        const langres=await fetch("http://localhost:8000/languages")
         setGenres(await genres.json())
         setLangs(await langres.json())
     }

@@ -4,12 +4,12 @@ import Link from "next/link"
 import { Moviedb } from "@/app/assets/interfaces/moviesdb"
 import pic from "@/app/assets/images/profile.png"
 import { Producer} from "@/app/assets/interfaces/producer"
-export default async function Producers({params}:any){
-    let prid=await params
-    let moviefetch=await fetch("http://backend_app:8000/producers/"+prid.id)
-    let movies:Moviedb[]=await moviefetch.json()
-        let prodres=await fetch("http://backend_app:8000/producerdets/"+prid.id)
-        let prod:Producer[]=await prodres.json()
+export default async function Producers({params}:{params:Promise<{id:number}>}){
+    const prid=await params
+    const moviefetch=await fetch("http://localhost:8000/producers/"+prid.id)
+    const movies:Moviedb[]=await moviefetch.json()
+    const prodres=await fetch("http://localhost:8000/producerdets/"+prid.id)
+    const prod:Producer[]=await prodres.json()
     return(
         <>
              <div id={styles.userCard}>

@@ -5,10 +5,11 @@ import { Moviedb } from "@/app/assets/interfaces/moviesdb"
 import like from "@/app/assets/images/likes.png"
 import Image from "next/image"
 import Link from "next/link"
-export default async function TopFiveMovies(props:any){
-    const res=await fetch("http://backend_app:8000/moviestop/"+5)
+interface pg{page:string|undefined}
+export default async function TopFiveMovies(props:pg){
+    const res=await fetch("http://localhost:8000/moviestop/"+5)
     const movies:Moviedb[]=await res.json()
-    let page=props.page
+    const page=props.page
     return(
         <div className={page=="home"?styles.a:styles.b}>
             <ul className={styles.topRow}>

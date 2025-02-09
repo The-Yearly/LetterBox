@@ -3,7 +3,6 @@ import Image from "next/image"
 import styles from "../userstyle.module.css"
 import Profile from "@/app/users/components/profile"
 import { User } from "@/app/assets/interfaces/user"
-import { Users_Following_Followers } from "@/app/assets/interfaces/users_following_followers"
 import { Moviedb } from "@/app/assets/interfaces/moviesdb"
 import {useState,use,useEffect} from "react"
 import { Users_List } from "@/app/assets/interfaces/users_list"
@@ -18,75 +17,75 @@ import pic from "@/app/assets/images/profile.png"
 import axios from "axios"
 import { ToastContainer, toast } from 'react-toastify';
 import { Follow } from "@/app/assets/interfaces/follow"
-interface userid{id:number}
-export default function UserProfileI({params}:any){
-    const userid:userid=use(params)
+export default function UserProfileI({params}:{params:Promise<{id:number}>}){
+    const userid=use(params)
+    const uid=userid.id
     const [isfollowing,setIsFollowing]=useState(false)
-    const [followers,setFollowers]=useState<Users_Following_Followers[]|null>(null)
-    const [follwing,setFollowing]=useState<Users_Following_Followers[]|null>(null)
     const [movies,setMovies]=useState<Moviedb[]|null>(null)
     const [User,setUsers]=useState<User[]|null>(null)
     const [page,changeContent]=useState(1)
     const [lists,setLists]=useState<Users_List[]|null>(null)
     const [data,setData]=useState<Follow|null>(null)
+    const logged_id=localStorage.getItem("user_id")
     const myid=localStorage.getItem("user_id")
     useEffect(()=>{const fetchdata=async()=>{
-        console.log("Hello")
-        const usersres=await fetch("http://localhost:8000/users/"+userid.id)
+        const usersres=await fetch("http://localhost:8000/users/"+uid)
         const user=await usersres.json()
         setUsers(user)
-        const moviesres=await fetch("http://localhost:8000/users/movies/"+userid.id)
+        const moviesres=await fetch("http://localhost:8000/users/movies/"+uid)
         setMovies(await moviesres.json())
-        const listres=await fetch("http://localhost:8000/users/list/"+userid.id)
+        const listres=await fetch("http://localhost:8000/users/list/"+uid)
         setLists(await listres.json())
-        const flres=await fetch("http://localhost:8000/isFollowing/"+userid.id+"/"+localStorage.getItem("user_id"))
+        if(logged_id!=null){
+        const flres=await fetch("http://localhost:8000/isFollowing/"+uid+"/"+logged_id)
         const flr=await flres.json()
         if(flr.length!=0){
             setIsFollowing(true)
         }else{
             setIsFollowing(false)
-        }
+        }}
     }
     fetchdata()
-    },[userid.id])
+    },[uid])
     useEffect(()=>{const push=async()=>{
+        if(logged_id!=null){
         if(isfollowing==true){
         const res=await axios.post("http://localhost:8000/follow",data)
         toast(await res.data.message)}
         else if(isfollowing==false){
             const res=await axios.post("http://localhost:8000/unfollow",data)
             toast(await res.data.message)
-        }
+        }}
     }
     push()},[data])
     function follow(){
-        setData({follower_id:String(myid),following_id:String(userid.id)})
+        setData({follower_id:String(myid),following_id:String(uid)})
         setIsFollowing(true)
     }
     function unfollow(){
-        setData({follower_id:String(myid),following_id:String(userid.id)})
+        setData({follower_id:String(myid),following_id:String(uid)})
         setIsFollowing(false)
     }
         function renderComponent(){
             switch(page){
                 case 1:
-                    return <Profile id={User?User[0].user_id:0}/>
+                    return <Profile id={uid}/>
                 case 2:
-                    return <UserMovies id={User?User[0].user_id:0}/>
+                    return <UserMovies id={uid}/>
                 case 3:
-                    return <ReviewsPage id={User?User[0].user_id:0} page="reviews" no="3"/>
+                    return <ReviewsPage id={uid} page="reviews"/>
                 case 5:
-                    return <WatchList id={User?User[0].user_id:0}/>
+                    return <WatchList id={uid}/>
                 case 6:
-                    return <UserList id={User?User[0].user_id:0}/>
+                    return <UserList id={uid}/>
                 case 7:
-                    return <LikedMovies id={User?User[0].user_id:0}/>
+                    return <LikedMovies id={uid}/>
                 case 8:
-                    return <FollowingPage id={User?User[0].user_id:0}/>
+                    return <FollowingPage id={uid}/>
                 case 9:
-                    return <FollowersPage id={User?User[0].user_id:0}/> 
+                    return <FollowersPage id={uid}/> 
                 default:
-                    return <Profile id={User?User[0].user_id:0}/>
+                    return <Profile id={uid}/>
             }
         }
         if (!User) {
