@@ -666,6 +666,3 @@ app.listen(port,()=>{
     console.log("Server Is Starting ;)");
 });
 
-app.post("/api", (req, res) => {
-    res.json({ message: "Success", data: req.body });
-  });
