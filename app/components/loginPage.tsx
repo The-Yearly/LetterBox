@@ -9,13 +9,16 @@ export default function LoginPage(){
     const [userName,setUserName]=useState("")
     const [passWord,setPassword]=useState("")
     useEffect(()=>{const fetchdata=async()=>{
+        if(data!=null){
         const res= await axios.post("https://letter-box-steel.vercel.app/login",data)
+        toast(res.data.message)
         if(res.data.message=="Logged In"){
             localStorage.setItem("user_id",String(res.data.id[0].user_id))
             localStorage.setItem("user_name",String(data?.user_name))
             toast(res.data.message)
             window.location.reload()
         }
+    }
     }
     fetchdata()},[data])
     function gotUser(event:React.ChangeEvent<HTMLInputElement>){

@@ -48,14 +48,19 @@ export default function UserProfileI({params}:{params:Promise<{id:number}>}){
     fetchdata()
     },[uid])
     useEffect(()=>{const push=async()=>{
-        if(logged_id!=null){
-        if(isfollowing==true){
-        const res=await axios.post("https://letter-box-steel.vercel.app/follow",data)
-        toast(await res.data.message)}
-        else if(isfollowing==false){
-            const res=await axios.post("https://letter-box-steel.vercel.app/unfollow",data)
-            toast(await res.data.message)
-        }}
+        if(logged_id!=null && data!=null){
+            console.log(isfollowing)
+            if(isfollowing==true){
+                const res=await axios.post("https://letter-box-steel.vercel.app/follow",data)
+                toast(await res.data.message)
+                window.location.reload()    
+            }
+            else if(isfollowing==false){
+                console.log(isfollowing)
+                const res=await axios.post("https://letter-box-steel.vercel.app/unfollow",data)
+                toast(await res.data.message)
+                window.location.reload()   
+            }}
     }
     push()},[data])
     function follow(){
@@ -88,17 +93,17 @@ export default function UserProfileI({params}:{params:Promise<{id:number}>}){
                     return <Profile id={uid}/>
             }
         }
-        if (!User) {
-            return <p style={{ textAlign: "center", fontSize: "20px" }}>Loading...</p>;
-        }   
+        if(User!=null){
         return(
             <>  
                 <ToastContainer/>
                 <div id={styles.userCard}>
                     <Image id={styles.profilePic} src={User[0].user_userPic?User[0].user_userPic:pic} alt="Profile Pic" height={400} width={300}/>
                     <p id={styles.username}>{User[0].user_name}</p>
+                    {logged_id!=null && (<>
                     <button id={styles.followButton} className={isfollowing?styles.hide:styles.show} onClick={follow}>Follow</button>
                     <button id={styles.followButton} className={isfollowing?styles.show:styles.hide} onClick={unfollow}>UnFollow</button>
+                    </>)}
                     <div id={styles.stats}>
                     <div id={styles.moviesSeen}><p id={styles.moviesSeenno}>{movies?movies.length:0}<br/><button onClick={()=>{changeContent(2)}}>Films</button></p></div>
                     <div id={styles.moviesThisYear}><p id={styles.moviesThisYearno}>{movies?movies.length:0}<br/><button onClick={()=>{changeContent(2)}}>This Year</button></p></div>
@@ -122,4 +127,5 @@ export default function UserProfileI({params}:{params:Promise<{id:number}>}){
                     {renderComponent()}
             </>
         )
+    }
     }
